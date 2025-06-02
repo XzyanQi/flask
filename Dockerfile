@@ -22,4 +22,4 @@ COPY nltk_data /app/nltk_data
 EXPOSE 8080
 
 # Start Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "300", "application:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "application:application"]
