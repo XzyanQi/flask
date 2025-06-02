@@ -15,14 +15,12 @@ Mindfulness is a chatbot application designed to help college students recognize
 ## **Import All Packages/Library dan Install package**
 """
 
-# Pasang paket yang dibutuhkan
+
 # pip install PySastrawi  # Pasang PySastrawi untuk stemming bahasa Indonesia
-# pip install transformers[torch] faiss-cpu sentencepiece datasets  # Pasang transformers untuk NLP modern
+# pip install transformers faiss-cpu sentencepiece datasets  # Pasang transformers untuk NLP modern
 # pip install tensorflow  # Pasang tensorflow untuk deep learning
 # pip install nltk  # Pasang nltk untuk natural language toolkit
-# pip install sentencepiece  # Pasang sentencepiece untuk tokenisasi
 # pip install scikit-learn  # Pasang scikit-learn untuk machine learning
-# pip install faiss-cpu
 
 import nltk
 import re
@@ -41,7 +39,7 @@ nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
-# Preprocessing function
+# Preprocessing text
 def preprocess_text(text):
     if isinstance(text, str):
         text = text.lower()
@@ -54,19 +52,18 @@ def preprocess_text(text):
 
 # Load dataset
 data = pd.read_csv('translated_train.csv')
-data['translated_response'].fillna("Sorry, I have no answer for this.", inplace=True)
+data['translated_response'] = data['translated_response'].fillna("Sorry, I have no answer for this.")
 data['processed_context'] = data['translated_context'].apply(preprocess_text)
 data['processed_response'] = data['translated_response'].apply(preprocess_text)
 data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
 df_terjemahan = data.copy()
 
-# Load IndoBERT Tokenizer & Model (hanya TensorFlow)
-model_name = "cahya/distilbert-base-indonesian"
+# Load model
+model_name = "indobenchmark/indobert-base-p1"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = TFAutoModel.from_pretrained(model_name)
 
-# Encode function
-
+# Encoding function
 def encode_text(text):
     clean_text = preprocess_text(text)
     inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
@@ -76,15 +73,16 @@ def encode_text(text):
 
 # Encode corpus
 corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
-np.save('corpus_embeddings.npy', corpus_embeddings)
-corpus_embeddings = np.load('corpus_embeddings.npy')
+np.save('context_embeddings.npy', corpus_embeddings)
 
-# FAISS index
+# Load embeddings
+corpus_embeddings = np.load('context_embeddings.npy')
+
+# Buat FAISS index
 index = faiss.IndexFlatL2(corpus_embeddings.shape[1])
 index.add(corpus_embeddings)
 
-# Query embedding
-
+# Dapatkan embedding query
 def get_query_embedding(text):
     clean_text = preprocess_text(text)
     inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
@@ -92,8 +90,7 @@ def get_query_embedding(text):
     pooled = tf.reduce_mean(outputs.last_hidden_state, axis=1)
     return pooled.numpy().reshape(1, -1)
 
-# Chatbot response with fallback
-
+# Ambil respons dengan fallback
 def get_semantic_chatbot_response_with_fallback(query, df, index, similarity_threshold=1.0):
     query_emb = get_query_embedding(query)
     distances, indices = index.search(query_emb.astype('float32'), k=1)
@@ -105,8 +102,7 @@ def get_semantic_chatbot_response_with_fallback(query, df, index, similarity_thr
     else:
         return "Maaf, aku kurang memahami maksudmu. Bisa kamu jelaskan lebih lanjut?"
 
-# Uji coba
-print("\nUji Coba Mindfulness\n")
+# Uji coba chatbot
 queries = [
     "Saya merasa sangat sedih.",
     "Butuh bantuan untuk mengatasi kecemasan",
@@ -120,7 +116,6 @@ for i, query in enumerate(queries, start=1):
     print(f"Mindfulness {i}: {response}\n")
 
 # Visualisasi distribusi similarity
-print("Visualisasi distribusi similarity...")
 dist_list = []
 for q in df_terjemahan['processed_context'].sample(50):
     q_emb = get_query_embedding(q)
