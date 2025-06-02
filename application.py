@@ -42,29 +42,28 @@ def download_from_gdrive(file_id, destination):
                 f.write(chunk)
     print(" tf_model.h5 berhasil diunduh.")
 
+initialized = False
+
 def initialize_components():
-    global tokenizer, model, index, corpus, corpus_embeddings
+    global tokenizer, model, index, corpus, corpus_embeddings, initialized
 
-    if tokenizer is None:
-        print("Memuat tokenizer...")
-        tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-lite-base-p1")
+    if initialized:
+        return
 
-    if model is None:
-        print("Memuat model...")
-        model = TFAutoModel.from_pretrained("indobenchmark/indobert-lite-base-p1")
+    print(" Memuat semua komponen...")
 
-    if index is None:
-        print("Memuat FAISS index...")
-        index = faiss.read_index("mindfulness_index.faiss")
+    tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-lite-base-p1")
+    model = TFAutoModel.from_pretrained("indobenchmark/indobert-lite-base-p1")
 
-    if corpus is None:
-        print("Memuat corpus...")
-        with open("model/corpus_final.json", "r", encoding="utf-8") as f:
-            corpus = json.load(f)
+    index = faiss.read_index("mindfulness_index.faiss")
 
-    if corpus_embeddings is None:
-        print("Memuat context_embeddings.npy...")
-        corpus_embeddings = np.load("context_embeddings.npy")
+    with open("model/corpus_final.json", "r", encoding="utf-8") as f:
+        corpus = json.load(f)
+
+    corpus_embeddings = np.load("context_embeddings.npy")
+
+    initialized = True
+    print(" Semua komponen berhasil dimuat.")
 
 
 def get_embedding(text):
