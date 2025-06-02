@@ -1,0 +1,6 @@
+*.h5
+*.faiss
+*.npy
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
