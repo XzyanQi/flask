@@ -37,8 +37,8 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
-from keras.layers import Input, Embedding, LSTM, Dense
-from transformers import TFDistilBertModel, DistilBertTokenizer
+from tensorflow.keras.layers import Input, Embedding, LSTM, Dense
+from transformers import AutoTokenizer, TFAutoModel, AutoModel
 import torch
 import faiss
 import pandas as pd
@@ -64,6 +64,7 @@ import os
 import time
 import tensorflow as tf
 
+
 """## **Dataset**
 
 ### **Show Dataset**
@@ -73,7 +74,7 @@ import tensorflow as tf
 data = pd.read_csv('translated_train.csv')
 
 # Fungsi preprocess teks
-def preprocess_text_indonesian(text):
+def preprocess_text(text):
     # Cek apakah input adalah string sebelum diproses
     if isinstance(text, str):
         # Ubah jadi huruf kecil semua
@@ -92,8 +93,8 @@ def preprocess_text_indonesian(text):
         return ''  # atau pd.NA
 
 # Terapkan preprocessing pada kolom context dan response
-data['processed_context'] = data['translated_context'].apply(preprocess_text_indonesian)
-data['processed_response'] = data['translated_response'].apply(preprocess_text_indonesian)
+data['processed_context'] = data['translated_context'].apply(preprocess_text)
+data['processed_response'] = data['translated_response'].apply(preprocess_text)
 
 # Tampilkan data hasil preprocessing
 data[['translated_context', 'processed_context', 'translated_response', 'processed_response']].head()
@@ -104,14 +105,12 @@ df_terjemahan = data.copy()
 """### **Translate Dataset**"""
 
 # Isi nilai kosong (NaN) di kolom 'translated_response' dengan kalimat default
-data['translated_response'] = data['translated_response'].fillna("Sorry, I have no answer for this.")
-
+data['translated_response'].fillna("Sorry, I have no answer for this.", inplace=True)
 
 # Hapus data duplikat berdasarkan kolom 'processed_context' dan 'processed_response', lalu reset index
 data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
 
 df_terjemahan.head()
-
 
 """## **Data Preprocessing**
 
@@ -149,38 +148,29 @@ print("Jumlah sampel:", len(df_terjemahan))
 ### **Retrieve Model and Tokenizer**
 """
 
-from transformers import DistilBertTokenizer, TFDistilBertModel
-
 # Model untuk Retrieval (Encoder)
-model_name = "cahya/distilbert-base-indonesian"
-save_path = "model/indobert_local/"
+retriever_model_name = "cahya/distilbert-base-indonesian"
 
-# Load dan simpan tokenizer & model ke local
-tokenizer = DistilBertTokenizer.from_pretrained(model_name)
-model = TFDistilBertModel.from_pretrained(model_name, from_pt=True)
+# Gunakan AutoTokenizer
+retriever_tokenizer = AutoTokenizer.from_pretrained(retriever_model_name)
+retriever_model = TFAutoModel.from_pretrained(retriever_model_name, from_pt=True)
 
-tokenizer.save_pretrained(save_path)
-model.save_pretrained(save_path)
+print(f"Model Retriever '{retriever_model_name}' dan Tokenizer berhasil dimuat dalam format TensorFlow.")
 
-print(f"Model dan Tokenizer '{model_name}' berhasil dimuat dan disimpan.")
-
-# Bersihkan data
+# Hapus duplikat pada dataframe berdasarkan kolom 'processed_context' dan 'processed_response', lalu reset indeks
 df_terjemahan = df_terjemahan.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
+
+# Isi nilai kosong (NaN) di kolom 'processed_response' dengan kalimat pengganti dalam bahasa Indonesia
 df_terjemahan['processed_response'] = df_terjemahan['processed_response'].fillna("maaf aku tidak punya jawaban untuk ini")
 
-
 # Muat tokenizer dan model IndoBERT
-# tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-multilingual-cased')
-# model = TFDistilBertModel.from_pretrained('distilbert-base-multilingual-cased')
+tokenizer = AutoTokenizer.from_pretrained("cahya/distilbert-base-indonesian")
+model = AutoModel.from_pretrained("cahya/distilbert-base-indonesian")
 
-# def encode_text(text):
-#     inputs = tokenizer(
-#         text, return_tensors='tf', padding=True, truncation=True, max_length=128
-#     )
-#     outputs = model(**inputs)
-#     embeddings = outputs.last_hidden_state
-#     embeddings = tf.reduce_mean(embeddings, axis=1).numpy()
-#     return embeddings.squeeze()
+# Tentukan device (GPU jika ada, kalau tidak CPU)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)  # Pindahkan model ke device yang dipilih
+
 
 def batch_encode_texts(texts, tokenizer, model, batch_size=32):
     embeddings = []
@@ -204,51 +194,22 @@ np.save('corpus_embeddings.npy', corpus_embeddings)
 corpus_embeddings = np.load('corpus_embeddings.npy')
 
 
-# def get_batch_embeddings(texts, batch_size=16):
-#     embeddings = []
-
-#     for i in range(0, len(texts), batch_size):
-#         batch = texts[i:i + batch_size]
-
-#         # Tokenisasi batch
-#         inputs = tokenizer(batch, return_tensors='tf', padding=True, truncation=True, max_length=128)
-
-#         # Forward pass tanpa gradien
-#         outputs = model(**inputs)
-
-#         # Ambil last hidden state dan hitung mean pooling
-#         last_hidden = outputs.last_hidden_state  # shape: (batch_size, seq_len, hidden_dim)
-#         mask = tf.cast(inputs['attention_mask'], dtype=tf.float32)  # shape: (batch_size, seq_len)
-#         mask = tf.expand_dims(mask, axis=-1)  # shape: (batch_size, seq_len, 1)
-
-#         summed = tf.reduce_sum(last_hidden * mask, axis=1)  # sum along sequence
-#         counts = tf.reduce_sum(mask, axis=1)  # valid token counts
-#         mean_pooled = summed / tf.maximum(counts, 1e-9)  # avoid division by zero
-
-#         embeddings.append(mean_pooled.numpy())
-
-#     return np.vstack(embeddings)
-
-
 def get_query_embedding(query):
-    preprocessed = preprocess_text_indonesian(query)
+    preprocessed = preprocess_text_indonesian(query)  # Pra-pemrosesan teks query
+    inputs = tokenizer(preprocessed, return_tensors='pt', truncation=True, padding=True, max_length=128)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
 
-    # Tokenisasi menggunakan TensorFlow
-    inputs = tokenizer(preprocessed, return_tensors='tf', truncation=True, padding=True, max_length=128)
+    with torch.no_grad():
+        outputs = model(**inputs)
 
-    # Dapatkan output model
-    outputs = model(**inputs)
     last_hidden = outputs.last_hidden_state
+    attention_mask = inputs['attention_mask']
+    mask_expanded = attention_mask.unsqueeze(-1).expand(last_hidden.size()).float()
+    summed = torch.sum(last_hidden * mask_expanded, 1)
+    counts = torch.clamp(mask_expanded.sum(1), min=1e-9)
+    mean_pooled = summed / counts
 
-    # Hitung mean pooling
-    attention_mask = tf.cast(inputs['attention_mask'], dtype=tf.float32)
-    attention_mask = tf.expand_dims(attention_mask, axis=-1)
-
-    summed = tf.reduce_sum(last_hidden * attention_mask, axis=1)
-    counts = tf.reduce_sum(attention_mask, axis=1)
-    mean_pooled = summed / tf.maximum(counts, 1e-9)
-
-    return mean_pooled.numpy().reshape(1, -1)
+    return mean_pooled.cpu().numpy().reshape(1, -1)  # Bentukkan embedding jadi 2D
 
 
 def get_semantic_chatbot_response_with_fallback(user_query, df, context_embeddings, similarity_threshold=0.3):
@@ -289,11 +250,11 @@ def get_semantic_chatbot_response_with_fallback(user_query, df, context_embeddin
 # Fungsi untuk meng-encode teks menjadi embedding menggunakan retriever model
 def encode_text(text):
     # Tokenisasi teks dengan padding, truncation, dan maksimal panjang 128 token
-    inputs = tokenizer(
+    inputs = retriever_tokenizer(
         text, return_tensors='tf', padding=True, truncation=True, max_length=128
     )
     # Dapatkan output model (last hidden state)
-    outputs = model(**inputs)
+    outputs = retriever_model(**inputs)
     embeddings = outputs.last_hidden_state
     # Rata-rata pooling sepanjang dimensi token (axis=1)
     embeddings = tf.reduce_mean(embeddings, axis=1).numpy()
@@ -301,7 +262,7 @@ def encode_text(text):
     return embeddings.squeeze()
 
 # Buat embedding dari tiap teks dalam kolom 'processed_context' dengan fungsi encode_text
-corpus_embeddings = batch_encode_texts(df_terjemahan['processed_context'].tolist(), tokenizer, model)
+corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
 
 # Inisialisasi index Faiss dengan metrik L2 (euclidean distance)
 index = faiss.IndexFlatL2(corpus_embeddings.shape[1])
@@ -312,15 +273,17 @@ index.add(corpus_embeddings)
 # Fungsi untuk mengambil data terdekat berdasarkan query menggunakan Faiss
 def retrieve(query, k=1):
     # Pra-pemrosesan dan encode query menjadi embedding (1xD)
-    query_embedding = encode_text(preprocess_text_indonesian(query)).reshape(1, -1)
+    query_embedding = encode_text(preprocess_text(query)).reshape(1, -1)
 
     # Cari k embedding terdekat di index Faiss
     _, I = index.search(query_embedding, k)
 
     # Kembalikan baris dataframe sesuai indeks hasil pencarian
-    return data.iloc[I[0]]
+    return df.iloc[I[0]]
+
 
 """### **Add Banned Words**"""
+
 
 # menyimpan chat sebelumnya
 history = []
@@ -375,10 +338,11 @@ plt.xlabel("Jarak")
 plt.ylabel("Jumlah")
 plt.show()
 
+
 # Fungsi untuk mendapatkan respons chatbot berdasarkan pencarian similarity dengan ambang batas fallback
 def get_semantic_chatbot_response_with_fallback(query, df, index, similarity_threshold=1.0):
     # Pra-pemrosesan dan encode query menjadi embedding (reshape ke 2D)
-    query_emb = encode_text(preprocess_text_indonesian(query)).reshape(1, -1)
+    query_emb = encode_text(preprocess_text(query)).reshape(1, -1)
     # Cari embedding terdekat dalam index FAISS
     distances, indices = index.search(query_emb, k=1)
 
@@ -415,20 +379,3 @@ for i, query in enumerate(queries, start=1):
     print(f"Mindfulness {i}: {response}\n")
 
 print("Uji Coba Mindfulness selesai.")
-
-# """Simpan Model"""
-
-# faiss.write_index(index, 'mindfulness_index.faiss') # fa|iss
-
-# np.save('context_embeddings.npy', corpus_embeddings) # embedding
-
-# retriever_tokenizer.save_pretrained('mindfulness_tokenizer/') # Tokenizer Indobert
-
-# import shutil
-
-# shutil.make_archive('mindfulness_tokenizer', 'zip', 'mindfulness_tokenizer')
-
-# pip freeze > requirements.txt
-
-# from google.colab import files
-# files.download("requirements.txt")
