@@ -57,7 +57,7 @@ data = data.drop_duplicates(subset=['processed_context', 'processed_response']).
 df_terjemahan = data.copy()
 
 # Load model
-model_name = "indobenchmark/indobert-base-p1"
+model_name = "indobenchmark/indobert-lite-base-p1"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = TFAutoModel.from_pretrained(model_name)
 
