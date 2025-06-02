@@ -6,22 +6,8 @@ import numpy as np
 import tensorflow as tf
 from scripts.nlp_translate import preprocess_text_indonesian
 import time
-
-# Load FAISS index
-index = faiss.read_index("mindfulness_index.faiss")
-
-# Load corpus.json
-with open("model/corpus_final.json", "r", encoding="utf-8") as f:
-    corpus = json.load(f)
-
-# Load corpus embeddings
-corpus_embeddings = np.load("context_embeddings.npy")
-
-# Load tokenizer dan model dari lokal
-tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
-model = TFAutoModel.from_pretrained("model/indobert_local/")
-
-print(" Semua model, index, dan tokenizer berhasil dimuat dari lokal.")
+import os
+import requests
 
 # Flask App
 application = Flask(__name__, static_folder="static")
@@ -33,13 +19,42 @@ index = None
 corpus = None
 corpus_embeddings = None
 
+def download_from_gdrive(file_id, destination):
+    def get_confirm_token(response):
+        for key, value in response.cookies.items():
+            if key.startswith("download_warning"):
+                return value
+        return None
+
+    print("Mengunduh tf_model.h5 dari Google Drive...")
+    URL = "https://docs.google.com/uc?export=download"
+    session = requests.Session()
+    response = session.get(URL, params={'id': file_id}, stream=True)
+    token = get_confirm_token(response)
+
+    if token:
+        params = {'id': file_id, 'confirm': token}
+        response = session.get(URL, params=params, stream=True)
+
+    with open(destination, 'wb') as f:
+        for chunk in response.iter_content(32768):
+            if chunk:
+                f.write(chunk)
+    print("✅ tf_model.h5 berhasil diunduh.")
+
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
 
     if tokenizer is None or model is None:
         print("Memuat model dan tokenizer dari lokal...")
         tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
-        model = TFAutoModel.from_pretrained("model/indobert_local/")
+        
+        model_path = "model/indobert_local/tf_model.h5"
+        if not os.path.exists(model_path):
+            os.makedirs("model/indobert_local/", exist_ok=True)
+            download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
+        
+        model = tf.keras.models.load_model(model_path)
         print("Tokenizer dan model berhasil dimuat.")
 
     if index is None:
@@ -59,11 +74,10 @@ def initialize_components():
         print("Embedding corpus berhasil dimuat.")
 
 def get_embedding(text):
-    initialize_components()
     clean_text = preprocess_text_indonesian(text)
     inputs = tokenizer(clean_text, return_tensors="tf", truncation=True, padding=True, max_length=512)
-    outputs = model(inputs).last_hidden_state
-    vec = tf.reduce_mean(outputs, axis=1)
+    outputs = model(inputs)
+    vec = tf.reduce_mean(outputs.last_hidden_state, axis=1)
     return vec[0].numpy()
 
 @application.route("/search", methods=["POST"])
@@ -115,6 +129,6 @@ def root():
 def serve_static(path):
     return send_from_directory("static", path)
 
-# Tidak perlu dijalankan langsung di Elastic Beanstalk
+# Tidak perlu run langsung, karena pakai gunicorn
 # if __name__ == "__main__":
 #     application.run(debug=True)
