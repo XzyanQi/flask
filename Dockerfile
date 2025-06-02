@@ -1,15 +1,9 @@
-FROM python:3.10-alpine
+FROM python:3.10-slim
 
-# Instal dependensi sistem untuk alpine
-RUN apk update && apk add --no-cache \
-    build-base \
-    gcc \
-    g++ \
-    libffi-dev \
-    openssl-dev \
-    git \
-    wget \
-    && rm -rf /var/cache/apk/*
+# Dependensi Debian slim
+RUN apt-get update && apt-get install -y \
+    build-essential gcc g++ libffi-dev libssl-dev git wget \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
