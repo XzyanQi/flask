@@ -66,6 +66,7 @@ def initialize_components():
         print("Memuat context_embeddings.npy...")
         corpus_embeddings = np.load("context_embeddings.npy")
 
+
 def get_embedding(text):
     clean_text = preprocess_text_indonesian(text)
     inputs = tokenizer(clean_text, return_tensors="tf", truncation=True, padding=True, max_length=512)
