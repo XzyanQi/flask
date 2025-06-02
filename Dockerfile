@@ -1,33 +1,36 @@
 FROM python:3.10-slim
 
-# Install dependensi sistem yang ringan & penting
+# Install sistem dependencies agar pip install transformers tidak gagal
 RUN apt-get update && apt-get install -y \
     build-essential \
+    gcc \
+    g++ \
     libffi-dev \
     libssl-dev \
-    libgl1-mesa-glx \
     git \
     wget \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set workdir
+# Set direktori kerja
 WORKDIR /app
 
-# Copy requirements dan install python package
+# Copy requirements terlebih dahulu
 COPY requirements.txt .
 
-# Upgrade pip & install dependencies
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Upgrade pip
+RUN pip install --upgrade pip
 
-# Salin semua file project
+# Install semua dependencies tanpa skip error
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy seluruh file project
 COPY . .
 
-# Download data NLTK (hindari crash preprocessing)
+# Download data NLTK
 RUN python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 
-# Buka port Railway
+# Expose port Railway
 EXPOSE 8080
 
-# Jalankan pakai gunicorn
+# Jalankan aplikasi pakai gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "300", "application:application"]
