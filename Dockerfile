@@ -1,5 +1,5 @@
 # Gunakan image dasar yang kompatibel dengan TensorFlow & FAISS
-FROM python:3.10-slim
+FROM python:3.10-alpine
 
 # Install dependencies dasar sistem + lib untuk audio, NLP, FAISS
 RUN apt-get update && apt-get install -y \
