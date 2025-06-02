@@ -29,7 +29,7 @@ COPY . .
 # Download data NLTK
 ENV NLTK_DATA /app/nltk_data
 RUN mkdir -p $NLTK_DATA
-RUN python -m nltk.downloader -d $NLTK_DATA punkt stopwords
+RUN python -m nltk.downloader -d $NLTK_DATA punkt stopwords -v
 
 # Expose port Railway
 EXPOSE 8080
