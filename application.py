@@ -40,7 +40,7 @@ def download_from_gdrive(file_id, destination):
         for chunk in response.iter_content(32768):
             if chunk:
                 f.write(chunk)
-    print("✅ tf_model.h5 berhasil diunduh.")
+    print(" tf_model.h5 berhasil diunduh.")
 
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
