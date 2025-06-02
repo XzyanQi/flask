@@ -10,9 +10,10 @@ WORKDIR /app
 # Copy dan install dependencies (pakai source CPU untuk torch)
 COPY requirements.txt .
 
-RUN pip install --upgrade pip \
- && pip install --no-cache-dir --find-links https://download.pytorch.org/whl/cpu/ -r requirements.txt \
- && rm -rf ~/.cache/pip
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir --find-links https://download.pytorch.org/whl/cpu/ -r requirements.txt && \
+    rm -rf ~/.cache/pip
+
 
 # Copy semua file
 COPY . .
