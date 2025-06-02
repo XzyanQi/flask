@@ -27,8 +27,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Download data NLTK
-ENV NLTK_DATA /usr/share/nltk_data
-RUN python -m nltk.downloader -d /usr/share/nltk_data punkt stopwords
+ENV NLTK_DATA /app/nltk_data
+RUN mkdir -p $NLTK_DATA
+RUN python -m nltk.downloader -d $NLTK_DATA punkt stopwords
 
 # Expose port Railway
 EXPOSE 8080
