@@ -1,5 +1,5 @@
-# Gunakan image dasar yang kompatibel dengan TensorFlow & FAISS
-FROM python:3.10-alpine
+# Gunakan image dasar yang ringan & kompatibel
+FROM python:3.10-slim
 
 # Install dependencies dasar sistem + lib untuk audio, NLP, FAISS
 RUN apt-get update && apt-get install -y \
@@ -11,19 +11,26 @@ RUN apt-get update && apt-get install -y \
     libsndfile1 \
     wget \
     git \
-    && apt-get clean
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Salin semua file ke dalam container
+# Salin semua file ke dalam container, file berat sebaiknya dikecualikan lewat .dockerignore
 COPY . .
 
-# Install Python dependencies
+# Install Python dependencies versi minimal agar image lebih kecil
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir \
+    tensorflow-cpu==2.12.0 \
+    transformers \
+    faiss-cpu \
+    flask \
+    numpy \
+    nltk \
+    gdown
 
-# Download NLTK data (setelah install requirements)
+# Download NLTK data
 RUN python -m nltk.downloader punkt stopwords
 
 # Buka port
