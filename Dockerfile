@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Salin semua file ke dalam container, file berat sebaiknya dikecualikan lewat .dockerignore
+# Salin semua file ke dalam container, file berat ada di .dockerignore
 COPY . .
 
 # Install Python dependencies versi minimal agar image lebih kecil
