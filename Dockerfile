@@ -1,33 +1,27 @@
 FROM python:3.10-slim
 
-# Install dependencies
+# Install Debian deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential gcc g++ libffi-dev libssl-dev git wget \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set work directory
 WORKDIR /app
 
-# Salin requirements dulu biar pip install bisa cache step-nya
+# Copy dan install dependencies (pakai source CPU untuk torch)
 COPY requirements.txt .
 
-# Upgrade pip dan install dependencies
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    && rm -rf ~/.cache/pip
+ && pip install --no-cache-dir --find-links https://download.pytorch.org/whl/cpu/ -r requirements.txt \
+ && rm -rf ~/.cache/pip
 
-# Copy seluruh source code
+# Copy semua file
 COPY . .
 
-# Set NLTK environment variable
+# Set env untuk NLTK
 ENV NLTK_DATA=/app/nltk_data
-
-# Copy folder NLTK jika belum otomatis ikut
 COPY nltk_data /app/nltk_data
 
-# Port yang diekspos oleh aplikasi Flask (via gunicorn)
 EXPOSE 8080
 
-# Jalankan server gunicorn
+# Jalankan pakai gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "300", "application:application"]
-
