@@ -26,7 +26,7 @@ importlib_metadata==8.7.0
 itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib==1.5.1
-keras==3.10.0
+keras==2.11.0
 kiwisolver==1.4.8
 libclang==18.1.1
 Markdown==3.8
