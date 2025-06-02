@@ -35,7 +35,7 @@ RUN pip install --no-cache-dir \
 RUN python -m nltk.downloader punkt stopwords
 
 # Buka port
-EXPOSE 8000
+EXPOSE 8080
 
 # Jalankan aplikasi dengan Gunicorn
-CMD ["gunicorn", "-w", "2", "--timeout", "300", "-b", "0.0.0.0:8000", "application:application"]
+CMD ["gunicorn", "-w", "2", "--timeout", "300", "-b", "0.0.0.0:8080", "application:application"]
