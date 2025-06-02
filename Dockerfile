@@ -28,7 +28,8 @@ RUN pip install --no-cache-dir \
     flask \
     numpy \
     nltk \
-    gdown
+    gdown \
+    gunicorn
 
 # Download NLTK data
 RUN python -m nltk.downloader punkt stopwords
