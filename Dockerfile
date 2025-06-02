@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Install sistem dependencies agar pip install transformers tidak gagal
+# Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
@@ -11,28 +11,29 @@ RUN apt-get update && apt-get install -y \
     wget \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set direktori kerja
+# Set working directory
 WORKDIR /app
 
-# Copy requirements terlebih dahulu
+# Copy requirements
 COPY requirements.txt .
 
-# Upgrade pip
+# Install Python dependencies
 RUN pip install --upgrade pip
-
-# Install semua dependencies tanpa skip error
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy seluruh file project
+# Copy entire project
 COPY . .
 
-# Download data NLTK
+# Set NLTK_DATA environment variable
 ENV NLTK_DATA /app/nltk_data
-RUN mkdir -p $NLTK_DATA
-RUN python -m nltk.downloader -d $NLTK_DATA punkt stopwords -v
+
+# (Karena sudah ada lokal)
+# COPY folder nltk_data dari lokal ke container
+COPY nltk_data $NLTK_DATA
 
 # Expose port Railway
 EXPOSE 8080
 
 # Jalankan aplikasi pakai gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "300", "application:application"]
+
