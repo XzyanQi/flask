@@ -1,7 +1,7 @@
 # Gunakan image dasar yang kompatibel dengan TensorFlow & FAISS
-FROM python:3.9-slim
+FROM python:3.10-slim
 
-# Install dependencies dasar
+# Install dependencies dasar sistem + lib untuk audio, NLP, FAISS
 RUN apt-get update && apt-get install -y \
     build-essential \
     libglib2.0-0 \
@@ -16,15 +16,18 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Salin semua file
+# Salin semua file ke dalam container
 COPY . .
 
-# Install dependencies dari requirements.txt
+# Install Python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port untuk Flask
+# Download NLTK data (setelah install requirements)
+RUN python -m nltk.downloader punkt stopwords
+
+# Buka port
 EXPOSE 8000
 
-# Jalankan aplikasi
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "application:application"]
+# Jalankan aplikasi dengan Gunicorn
+CMD ["gunicorn", "-w", "2", "--timeout", "300", "-b", "0.0.0.0:8000", "application:application"]
