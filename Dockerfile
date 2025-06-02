@@ -1,41 +1,30 @@
-# Gunakan image dasar yang ringan & kompatibel
 FROM python:3.10-slim
 
-# Install dependencies dasar sistem + lib untuk audio, NLP, FAISS
+# Pasang dependensi sistem dulu (biar Sastrawi & cffi bisa install)
 RUN apt-get update && apt-get install -y \
     build-essential \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    libsndfile1 \
+    gcc \
+    libffi-dev \
+    libssl-dev \
     wget \
     git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
+# Set working dir
 WORKDIR /app
 
-# Salin semua file ke dalam container, file berat ada di .dockerignore
+# Copy project
 COPY . .
 
-# Install Python dependencies versi minimal agar image lebih kecil
+# Install dependencies Python (Sastrawi sekarang harusnya berhasil)
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir \
-    tensorflow-cpu==2.12.0 \
-    transformers \
-    faiss-cpu \
-    flask \
-    numpy \
-    nltk \
-    gdown \
-    gunicorn
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Download NLTK data
+# Download resource NLTK
 RUN python -m nltk.downloader punkt stopwords
 
-# Buka port
+# Buka port Railway
 EXPOSE 8080
 
-# Jalankan aplikasi dengan Gunicorn
+# Jalankan dengan Gunicorn
 CMD ["gunicorn", "-w", "2", "--timeout", "300", "-b", "0.0.0.0:8080", "application:application"]
