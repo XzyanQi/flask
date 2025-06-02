@@ -4,7 +4,7 @@ import faiss
 import json
 import numpy as np
 import tensorflow as tf
-from scripts.nlp_translate import preprocess_text_indonesian
+from scripts.nlp_translate import preprocess_text as preprocess_text_indonesian
 import time
 import os
 import requests
