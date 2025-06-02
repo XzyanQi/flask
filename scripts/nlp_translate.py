@@ -25,311 +25,106 @@ Mindfulness is a chatbot application designed to help college students recognize
 # pip install faiss-cpu
 
 import nltk
+import re
+import string
+import numpy as np
+import pandas as pd
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from transformers import AutoTokenizer, TFAutoModel
+import faiss
+from sklearn.metrics.pairwise import cosine_similarity
+import matplotlib.pyplot as plt
+import tensorflow as tf
 
 nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
-import re
-import string
-import numpy as np
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.corpus import stopwords
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
-from tensorflow.keras.layers import Input, Embedding, LSTM, Dense
-from transformers import AutoTokenizer, TFAutoModel, AutoModel
-import torch
-import faiss
-import pandas as pd
-import requests
-import csv
-from io import StringIO
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.naive_bayes import BernoulliNB
-from sklearn.metrics import accuracy_score
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from nltk.stem import SnowballStemmer
-from sklearn.preprocessing import StandardScaler
-from imblearn.over_sampling import SMOTE
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.svm import SVC
-from collections import defaultdict
-import os
-import time
-import tensorflow as tf
-
-
-"""## **Dataset**
-
-### **Show Dataset**
-"""
-
-# Muat dataset
-data = pd.read_csv('translated_train.csv')
-
-# Fungsi preprocess teks
+# Preprocessing function
 def preprocess_text(text):
-    # Cek apakah input adalah string sebelum diproses
     if isinstance(text, str):
-        # Ubah jadi huruf kecil semua
         text = text.lower()
-        # Hilangkan tanda baca
         text = text.translate(str.maketrans('', '', string.punctuation))
-        # Hilangkan angka
         text = re.sub(r'\d+', '', text)
-        # Tokenisasi dan hilangkan stopword bahasa Indonesia
         stop_words = set(stopwords.words('indonesian'))
         words = word_tokenize(text)
-        text = ' '.join([word for word in words if word not in stop_words])
-        return text
-    else:
-        # Jika bukan string, bisa kembalikan string kosong atau NaN
-        return ''  # atau pd.NA
+        return ' '.join([word for word in words if word not in stop_words])
+    return ''
 
-# Terapkan preprocessing pada kolom context dan response
+# Load dataset
+data = pd.read_csv('translated_train.csv')
+data['translated_response'].fillna("Sorry, I have no answer for this.", inplace=True)
 data['processed_context'] = data['translated_context'].apply(preprocess_text)
 data['processed_response'] = data['translated_response'].apply(preprocess_text)
-
-# Tampilkan data hasil preprocessing
-data[['translated_context', 'processed_context', 'translated_response', 'processed_response']].head()
-
-# Membuat DataFrame
+data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
 df_terjemahan = data.copy()
 
-"""### **Translate Dataset**"""
+# Load IndoBERT Tokenizer & Model (hanya TensorFlow)
+model_name = "cahya/distilbert-base-indonesian"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = TFAutoModel.from_pretrained(model_name)
 
-# Isi nilai kosong (NaN) di kolom 'translated_response' dengan kalimat default
-data['translated_response'].fillna("Sorry, I have no answer for this.", inplace=True)
+# Encode function
 
-# Hapus data duplikat berdasarkan kolom 'processed_context' dan 'processed_response', lalu reset index
-data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
+def encode_text(text):
+    clean_text = preprocess_text(text)
+    inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
+    outputs = model(inputs)
+    embeddings = tf.reduce_mean(outputs.last_hidden_state, axis=1)
+    return embeddings.numpy().squeeze()
 
-df_terjemahan.head()
-
-"""## **Data Preprocessing**
-
-### **Checking Missing Value**
-"""
-
-# Cek jumlah missing value per kolom
-print(df_terjemahan.isna().sum())
-
-# Hapus baris duplikat berdasarkan Context & Response (kalau ada), lalu buat salinan aman
-df_terjemahan = df_terjemahan.drop_duplicates(subset=['Context', 'Response']).copy()
-
-# Isi NaN pada kolom 'Response' jika ada
-if 'Response' in df_terjemahan.columns:
-    df_terjemahan['Response'] = df_terjemahan['Response'].fillna(
-        "Maaf, aku tidak punya jawaban untuk ini."
-    )
-
-# Isi NaN pada kolom 'translated_response' jika ada
-if 'translated_response' in df_terjemahan.columns:
-    df_terjemahan['translated_response'] = df_terjemahan['translated_response'].fillna(
-        "Sorry, I have no answer for this."
-    )
-
-"""### **Check Data Sample**"""
-
-print("Jumlah sampel:", len(df_terjemahan))
-
-"""**Insight:**
-- Tidak terdapat missing value dalam dataset
-- Dataset memiliki jumlah sampel sebanyak 2752
-
-## **Modelling**
-
-### **Retrieve Model and Tokenizer**
-"""
-
-# Model untuk Retrieval (Encoder)
-retriever_model_name = "cahya/distilbert-base-indonesian"
-
-# Gunakan AutoTokenizer
-retriever_tokenizer = AutoTokenizer.from_pretrained(retriever_model_name)
-retriever_model = TFAutoModel.from_pretrained(retriever_model_name, from_pt=True)
-
-print(f"Model Retriever '{retriever_model_name}' dan Tokenizer berhasil dimuat dalam format TensorFlow.")
-
-# Hapus duplikat pada dataframe berdasarkan kolom 'processed_context' dan 'processed_response', lalu reset indeks
-df_terjemahan = df_terjemahan.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
-
-# Isi nilai kosong (NaN) di kolom 'processed_response' dengan kalimat pengganti dalam bahasa Indonesia
-df_terjemahan['processed_response'] = df_terjemahan['processed_response'].fillna("maaf aku tidak punya jawaban untuk ini")
-
-# Muat tokenizer dan model IndoBERT
-tokenizer = AutoTokenizer.from_pretrained("cahya/distilbert-base-indonesian")
-model = AutoModel.from_pretrained("cahya/distilbert-base-indonesian")
-
-# Tentukan device (GPU jika ada, kalau tidak CPU)
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)  # Pindahkan model ke device yang dipilih
-
-
-def batch_encode_texts(texts, tokenizer, model, batch_size=32):
-    embeddings = []
-    for i in range(0, len(texts), batch_size):
-        batch = texts[i:i+batch_size]
-        inputs = tokenizer(batch, padding=True, truncation=True, return_tensors='tf', max_length=128)
-        outputs = model(**inputs)
-        # Ambil mean-pooled hidden states
-        batch_embeddings = tf.reduce_mean(outputs.last_hidden_state, axis=1)
-        embeddings.append(batch_embeddings.numpy())
-    return np.vstack(embeddings)
-
-corpus_embeddings = batch_encode_texts(df_terjemahan['processed_context'].tolist(), tokenizer, model)
-
-
-
-# Simpan
+# Encode corpus
+corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
 np.save('corpus_embeddings.npy', corpus_embeddings)
-
-# Saat load berikutnya
 corpus_embeddings = np.load('corpus_embeddings.npy')
 
-
-def get_query_embedding(query):
-    preprocessed = preprocess_text_indonesian(query)  # Pra-pemrosesan teks query
-    inputs = tokenizer(preprocessed, return_tensors='pt', truncation=True, padding=True, max_length=128)
-    inputs = {k: v.to(device) for k, v in inputs.items()}
-
-    with torch.no_grad():
-        outputs = model(**inputs)
-
-    last_hidden = outputs.last_hidden_state
-    attention_mask = inputs['attention_mask']
-    mask_expanded = attention_mask.unsqueeze(-1).expand(last_hidden.size()).float()
-    summed = torch.sum(last_hidden * mask_expanded, 1)
-    counts = torch.clamp(mask_expanded.sum(1), min=1e-9)
-    mean_pooled = summed / counts
-
-    return mean_pooled.cpu().numpy().reshape(1, -1)  # Bentukkan embedding jadi 2D
-
-
-def get_semantic_chatbot_response_with_fallback(user_query, df, context_embeddings, similarity_threshold=0.3):
-    preprocessed_query = preprocess_text_indonesian(user_query)
-    print(f"Query pengguna setelah pra-pemrosesan: '{preprocessed_query}'")
-
-    if not preprocessed_query.strip():
-        return "Maaf, pertanyaan Anda kosong atau tidak dapat dipahami."
-
-    embedding = get_query_embedding(preprocessed_query)
-    similarity_scores = cosine_similarity(embedding, context_embeddings)[0]
-    max_score = np.max(similarity_scores)
-
-    print(f"Skor kemiripan tertinggi: {max_score:.4f}")
-
-    if max_score < similarity_threshold:
-        print(f"Skor kemiripan ({max_score:.4f}) < threshold ({similarity_threshold})")
-        return "Maaf, saya belum memahami pertanyaan Anda dengan baik. Bisa dijelaskan dengan cara lain?"
-
-    best_idx = np.argmax(similarity_scores)
-    response_col = 'translated_response'
-
-    try:
-        response_text = df_terjemahan.iloc[best_idx][response_col]
-        print(f"Indeks respons terbaik: {best_idx}")
-        print(f"Respons yang ditemukan: {response_text}")
-        if not isinstance(response_text, str) or not response_text.strip():
-            return "Maaf, saya tidak menemukan jawaban yang sesuai."
-        return response_text
-    except KeyError:
-        return f"Error: Kolom '{response_col}' tidak ditemukan."
-    except Exception as e:
-        print(f"Kesalahan saat mengambil respons: {e}")
-        return "Maaf, terjadi kesalahan teknis."
-
-"""### **Encoding Text**"""
-
-# Fungsi untuk meng-encode teks menjadi embedding menggunakan retriever model
-def encode_text(text):
-    # Tokenisasi teks dengan padding, truncation, dan maksimal panjang 128 token
-    inputs = retriever_tokenizer(
-        text, return_tensors='tf', padding=True, truncation=True, max_length=128
-    )
-    # Dapatkan output model (last hidden state)
-    outputs = retriever_model(**inputs)
-    embeddings = outputs.last_hidden_state
-    # Rata-rata pooling sepanjang dimensi token (axis=1)
-    embeddings = tf.reduce_mean(embeddings, axis=1).numpy()
-    # Buang dimensi ekstra jika ada dan kembalikan embedding
-    return embeddings.squeeze()
-
-# Buat embedding dari tiap teks dalam kolom 'processed_context' dengan fungsi encode_text
-corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
-
-# Inisialisasi index Faiss dengan metrik L2 (euclidean distance)
+# FAISS index
 index = faiss.IndexFlatL2(corpus_embeddings.shape[1])
-
-# Tambahkan semua embedding ke index Faiss
 index.add(corpus_embeddings)
 
-# Fungsi untuk mengambil data terdekat berdasarkan query menggunakan Faiss
-def retrieve(query, k=1):
-    # Pra-pemrosesan dan encode query menjadi embedding (1xD)
-    query_embedding = encode_text(preprocess_text(query)).reshape(1, -1)
+# Query embedding
 
-    # Cari k embedding terdekat di index Faiss
-    _, I = index.search(query_embedding, k)
+def get_query_embedding(text):
+    clean_text = preprocess_text(text)
+    inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
+    outputs = model(inputs)
+    pooled = tf.reduce_mean(outputs.last_hidden_state, axis=1)
+    return pooled.numpy().reshape(1, -1)
 
-    # Kembalikan baris dataframe sesuai indeks hasil pencarian
-    return df.iloc[I[0]]
+# Chatbot response with fallback
 
+def get_semantic_chatbot_response_with_fallback(query, df, index, similarity_threshold=1.0):
+    query_emb = get_query_embedding(query)
+    distances, indices = index.search(query_emb.astype('float32'), k=1)
+    closest_distance = distances[0][0]
+    closest_idx = indices[0][0]
 
-"""### **Add Banned Words**"""
+    if closest_distance <= similarity_threshold:
+        return df.iloc[closest_idx]['translated_response']
+    else:
+        return "Maaf, aku kurang memahami maksudmu. Bisa kamu jelaskan lebih lanjut?"
 
+# Uji coba
+print("\nUji Coba Mindfulness\n")
+queries = [
+    "Saya merasa sangat sedih.",
+    "Butuh bantuan untuk mengatasi kecemasan",
+    "Bagaimana seseorang memulai proses konseling?"
+]
+SIMILARITY_THRESHOLD = 50.0
 
-# menyimpan chat sebelumnya
-history = []
-#  Set Kata-kata terlarang yang tidak boleh muncul dalam input/chat
-banned_words = {'kafir', 'bom', 'gay', 'lesbi', 'trans', 'transgender', 'homo', 'dick', 'iblis', 'sialan', 'lonte', 'perek',
-                'agama', 'islam', 'kristen', 'buddha', 'hindu', 'konghucu', 'yahudi', 'genoshida'}
+for i, query in enumerate(queries, start=1):
+    print(f"Query Pengguna {i}: {query}")
+    response = get_semantic_chatbot_response_with_fallback(query, df_terjemahan, index, similarity_threshold=SIMILARITY_THRESHOLD)
+    print(f"Mindfulness {i}: {response}\n")
 
-# Fungsi untuk memriksa kata terlarang
-def is_banned(text):
-    return any(word in text.lower() for word in banned_words)
-
-def mindfulness_chat():
-    print("Mindfulness siap mendengarkan (ketik 'exit' untuk berhenti).")
-
-    while True:
-        user_input = input("Kamu: ")
-
-        # Jika user ingin keluar dari chat
-        if user_input.lower() in ['exit', 'quit']:
-            print("Mindfulness: Sampai jumpa lagi, tetap jaga dirimu ya.")
-            break
-
-        # Cek apakah input mengandung kata terlarang
-        if is_banned(user_input):
-            print("Mindfulness: Maaf, aku tidak bisa menanggapi hal tersebut.")
-            continue
-
-        # Gabungkan konteks chat terakhir (3 percakapan terakhir) dengan input terbaru
-        recent_context = " ".join(h['user'] for h in history[-3:])
-        combined_query = recent_context + " " + user_input if recent_context else user_input
-
-        # Ambil jawaban dari fungsi retrieve berdasarkan combined_query
-        retrieved_docs = retrieve(combined_query, k=1)
-        jawaban = retrieved_docs['processed_response'].values[0]
-
-        # Tampilkan jawaban chatbot
-        print(f"Mindfulness: {jawaban}")
-
-        # Simpan percakapan user dan bot ke history lokal
-        history.append({"user": user_input, "bot": jawaban})
-
-# Visualisasi Nilai Simililarity di FAISS
+# Visualisasi distribusi similarity
+print("Visualisasi distribusi similarity...")
 dist_list = []
 for q in df_terjemahan['processed_context'].sample(50):
-    q_emb = encode_text(q).reshape(1, -1)
-    d, _ = index.search(q_emb, k=1)
+    q_emb = get_query_embedding(q)
+    d, _ = index.search(q_emb.astype('float32'), k=1)
     dist_list.append(d[0][0])
 
 plt.hist(dist_list, bins=20)
@@ -337,45 +132,3 @@ plt.title("Distribusi Nilai Similarity (Distance) di FAISS")
 plt.xlabel("Jarak")
 plt.ylabel("Jumlah")
 plt.show()
-
-
-# Fungsi untuk mendapatkan respons chatbot berdasarkan pencarian similarity dengan ambang batas fallback
-def get_semantic_chatbot_response_with_fallback(query, df, index, similarity_threshold=1.0):
-    # Pra-pemrosesan dan encode query menjadi embedding (reshape ke 2D)
-    query_emb = encode_text(preprocess_text(query)).reshape(1, -1)
-    # Cari embedding terdekat dalam index FAISS
-    distances, indices = index.search(query_emb, k=1)
-
-    closest_distance = distances[0][0]  # Jarak similarity terdekat
-    closest_idx = indices[0][0]         # Indeks data terdekat
-
-    # Jika jarak similarity <= threshold, ambil jawaban sesuai indeks
-    if closest_distance <= similarity_threshold:
-        jawaban = df.iloc[closest_idx]['translated_response']
-    else:
-        # Jika tidak, berikan fallback response
-        jawaban = "Maaf, aku kurang memahami maksudmu. Bisa kamu jelaskan lebih lanjut?"
-
-    print(f"Similarity distance: {closest_distance:.4f}")
-    return jawaban
-
-print("\nUji Coba Mindfulness\n")
-
-# Daftar Pertanyaan yang akan diuji
-queries = [
-    "Saya merasa sangat sedih.",
-    "Butuh bantuan untuk mengatasi kecemasan",
-    "Bagaimana seseorang memulai proses konseling?"
-]
-
-# Tentukan ambang batas similarity threshold
-SIMILARITY_THRESHOLD = 50.0
-
-for i, query in enumerate(queries, start=1):
-    print(f"Query Pengguna {i}: {query}")
-    response = get_semantic_chatbot_response_with_fallback(
-        query, df_terjemahan, index, similarity_threshold=SIMILARITY_THRESHOLD
-    )
-    print(f"Mindfulness {i}: {response}\n")
-
-print("Uji Coba Mindfulness selesai.")
