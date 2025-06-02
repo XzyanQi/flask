@@ -45,33 +45,26 @@ def download_from_gdrive(file_id, destination):
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
 
-    if tokenizer is None or model is None:
-        print("Memuat model dan tokenizer dari lokal...")
-        tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
+    if tokenizer is None:
+        print("Memuat tokenizer...")
+        tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-lite-base-p1")
 
-        model_path = "model/indobert_local/tf_model.h5"
-        if not os.path.exists(model_path):
-            os.makedirs("model/indobert_local/", exist_ok=True)
-            download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
-
-        model = tf.keras.models.load_model(model_path)
-        print("Tokenizer dan model berhasil dimuat.")
+    if model is None:
+        print("Memuat model...")
+        model = TFAutoModel.from_pretrained("indobenchmark/indobert-lite-base-p1")
 
     if index is None:
         print("Memuat FAISS index...")
         index = faiss.read_index("mindfulness_index.faiss")
-        print("Index FAISS berhasil dimuat.")
 
     if corpus is None:
         print("Memuat corpus...")
         with open("model/corpus_final.json", "r", encoding="utf-8") as f:
             corpus = json.load(f)
-        print("Corpus berhasil dimuat.")
 
     if corpus_embeddings is None:
         print("Memuat context_embeddings.npy...")
         corpus_embeddings = np.load("context_embeddings.npy")
-        print("Embedding corpus berhasil dimuat.")
 
 def get_embedding(text):
     clean_text = preprocess_text_indonesian(text)
