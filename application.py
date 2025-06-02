@@ -48,12 +48,12 @@ def initialize_components():
     if tokenizer is None or model is None:
         print("Memuat model dan tokenizer dari lokal...")
         tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
-        
+
         model_path = "model/indobert_local/tf_model.h5"
         if not os.path.exists(model_path):
             os.makedirs("model/indobert_local/", exist_ok=True)
             download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
-        
+
         model = tf.keras.models.load_model(model_path)
         print("Tokenizer dan model berhasil dimuat.")
 
@@ -82,6 +82,7 @@ def get_embedding(text):
 
 @application.route("/search", methods=["POST"])
 def search():
+    initialize_components()
     overall_start_time = time.time()
     data = request.get_json()
     query = data.get("text", "")
@@ -132,3 +133,4 @@ def serve_static(path):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     application.run(host="0.0.0.0", port=port)
+
