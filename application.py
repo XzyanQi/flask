@@ -129,6 +129,6 @@ def root():
 def serve_static(path):
     return send_from_directory("static", path)
 
-# Tidak perlu run langsung, karena pakai gunicorn
-# if __name__ == "__main__":
-#     application.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    application.run(host="0.0.0.0", port=port)
