@@ -32,11 +32,9 @@ from nltk.corpus import stopwords
 from transformers import AutoTokenizer, TFAutoModel
 import faiss
 from sklearn.metrics.pairwise import cosine_similarity
-import matplotlib.pyplot as plt
 import tensorflow as tf
 
 nltk.download('punkt')
-nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 # Preprocessing text
@@ -67,8 +65,8 @@ model = TFAutoModel.from_pretrained(model_name)
 def encode_text(text):
     clean_text = preprocess_text(text)
     inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
-    outputs = model(inputs)
-    embeddings = tf.reduce_mean(outputs.last_hidden_state, axis=1)
+    outputs = model(inputs)[0]  # Ambil last_hidden_state
+    embeddings = tf.reduce_mean(outputs, axis=1)
     return embeddings.numpy().squeeze()
 
 # Encode corpus
@@ -86,8 +84,8 @@ index.add(corpus_embeddings)
 def get_query_embedding(text):
     clean_text = preprocess_text(text)
     inputs = tokenizer(clean_text, return_tensors='tf', padding=True, truncation=True, max_length=128)
-    outputs = model(inputs)
-    pooled = tf.reduce_mean(outputs.last_hidden_state, axis=1)
+    outputs = model(inputs)[0]
+    pooled = tf.reduce_mean(outputs, axis=1)
     return pooled.numpy().reshape(1, -1)
 
 # Ambil respons dengan fallback
@@ -114,16 +112,3 @@ for i, query in enumerate(queries, start=1):
     print(f"Query Pengguna {i}: {query}")
     response = get_semantic_chatbot_response_with_fallback(query, df_terjemahan, index, similarity_threshold=SIMILARITY_THRESHOLD)
     print(f"Mindfulness {i}: {response}\n")
-
-# Visualisasi distribusi similarity
-dist_list = []
-for q in df_terjemahan['processed_context'].sample(50):
-    q_emb = get_query_embedding(q)
-    d, _ = index.search(q_emb.astype('float32'), k=1)
-    dist_list.append(d[0][0])
-
-plt.hist(dist_list, bins=20)
-plt.title("Distribusi Nilai Similarity (Distance) di FAISS")
-plt.xlabel("Jarak")
-plt.ylabel("Jumlah")
-plt.show()
