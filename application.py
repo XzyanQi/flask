@@ -9,10 +9,8 @@ import time
 import os
 import requests
 
-# Flask App
 application = Flask(__name__, static_folder="static")
 
-# Lazy Load Object
 tokenizer = None
 model = None
 index = None
@@ -42,40 +40,46 @@ def download_from_gdrive(file_id, destination):
                 f.write(chunk)
     print(" tf_model.h5 berhasil diunduh.")
 
-initialized = False
-
 def initialize_components():
-    global tokenizer, model, index, corpus, corpus_embeddings, initialized
+    global tokenizer, model, index, corpus, corpus_embeddings
 
-    if initialized:
-        return
+    if tokenizer is None or model is None:
+        print("Memuat model dan tokenizer dari lokal...")
+        tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
+        model_path = "model/indobert_local/tf_model.h5"
 
-    print(" Memuat semua komponen...")
+        if not os.path.exists(model_path):
+            os.makedirs("model/indobert_local/", exist_ok=True)
+            download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
 
-    tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-lite-base-p1")
-    model = TFAutoModel.from_pretrained("indobenchmark/indobert-lite-base-p1")
+        model = tf.keras.models.load_model(model_path)
+        print("Tokenizer dan model berhasil dimuat.")
 
-    index = faiss.read_index("mindfulness_index.faiss")
+    if index is None:
+        print("Memuat FAISS index...")
+        index = faiss.read_index("mindfulness_index.faiss")
+        print("Index FAISS berhasil dimuat.")
 
-    with open("model/corpus_final.json", "r", encoding="utf-8") as f:
-        corpus = json.load(f)
+    if corpus is None:
+        print("Memuat corpus...")
+        with open("model/corpus_final.json", "r", encoding="utf-8") as f:
+            corpus = json.load(f)
+        print("Corpus berhasil dimuat.")
 
-    corpus_embeddings = np.load("context_embeddings.npy")
-
-    initialized = True
-    print(" Semua komponen berhasil dimuat.")
-
+    if corpus_embeddings is None:
+        print("Memuat context_embeddings.npy...")
+        corpus_embeddings = np.load("context_embeddings.npy")
+        print("Embedding corpus berhasil dimuat.")
 
 def get_embedding(text):
     clean_text = preprocess_text_indonesian(text)
     inputs = tokenizer(clean_text, return_tensors="tf", truncation=True, padding=True, max_length=512)
-    outputs = model(inputs)
-    vec = tf.reduce_mean(outputs.last_hidden_state, axis=1)
+    outputs = model(inputs)[0]
+    vec = tf.reduce_mean(outputs, axis=1)
     return vec[0].numpy()
 
 @application.route("/search", methods=["POST"])
 def search():
-    initialize_components()
     overall_start_time = time.time()
     data = request.get_json()
     query = data.get("text", "")
@@ -101,13 +105,10 @@ def search():
                 if "response_to_display" in document_object:
                     results_texts_to_display.append(document_object["response_to_display"])
                 else:
-                    print(f"PERINGATAN: Kunci 'response_to_display' tidak ada di corpus[{i}]")
                     results_texts_to_display.append("Maaf, format data respons tidak sesuai.")
             else:
-                print(f"PERINGATAN: Indeks {i} dari FAISS di luar jangkauan (panjang corpus: {len(corpus)})")
                 results_texts_to_display.append("Maaf, terjadi kesalahan saat mengambil detail dokumen.")
     else:
-        print("[Python /search] FAISS tidak menemukan hasil (indices kosong atau format tidak terduga).")
         results_texts_to_display.append("Maaf, saya tidak menemukan jawaban yang relevan saat ini.")
 
     overall_end_time = time.time()
@@ -126,4 +127,3 @@ def serve_static(path):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     application.run(host="0.0.0.0", port=port)
-
