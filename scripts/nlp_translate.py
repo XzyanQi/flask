@@ -52,17 +52,25 @@ data['processed_response'] = data['translated_response'].apply(preprocess_text)
 data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
 df_terjemahan = data.copy()
 
-# Load tokenizer and model
-model_name = "cahya/distilbert-base-indonesian"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = TFAutoModel.from_pretrained(model_name)
+# Di bagian atas file nlp_translate.py
+tokenizer = None
+model = None
+
+def load_tokenizer_and_model():
+    global tokenizer, model
+    if tokenizer is None or model is None:
+        model_name = "cahya/distilbert-base-indonesian"
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = TFAutoModel.from_pretrained(model_name)
 
 def encode_text(text):
+    load_tokenizer_and_model()
     preprocessed = preprocess_text(text)
     inputs = tokenizer(preprocessed, return_tensors='tf', padding=True, truncation=True, max_length=128)
     outputs = model(inputs)
     embeddings = tf.reduce_mean(outputs.last_hidden_state, axis=1).numpy()
     return embeddings.squeeze()
+
 
 # Create embeddings for corpus
 corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
