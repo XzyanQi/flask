@@ -18,47 +18,64 @@ corpus = None
 corpus_embeddings = None
 
 def download_from_gdrive(file_id, dest_path):
-    print("Mengunduh model dari Google Drive...")
-    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    def get_confirm_token(response):
+        for key, value in response.cookies.items():
+            if key.startswith('download_warning'):
+                return value
+        return None
+
+    print(" Mengunduh model dari Google Drive...")
+    URL = "https://docs.google.com/uc?export=download"
     session = requests.Session()
-    response = session.get(url, stream=True)
+
+    response = session.get(URL, params={'id': file_id}, stream=True)
+    token = get_confirm_token(response)
+
+    if token:
+        response = session.get(URL, params={'id': file_id, 'confirm': token}, stream=True)
+
     with open(dest_path, "wb") as f:
-        for chunk in response.iter_content(chunk_size=8192):
+        for chunk in response.iter_content(32768):
             if chunk:
                 f.write(chunk)
-    print("Unduhan selesai.")
+    print(" Unduhan model selesai.")
 
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
 
     if tokenizer is None:
-        print("Memuat tokenizer dari lokal HuggingFace model...")
+        print(" Memuat tokenizer...")
         tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
 
     if model is None:
-        print("Memuat model TensorFlow dari .h5...")
+        print(" Memuat model .h5...")
         model_path = "model/indobert_local/tf_model.h5"
-        if not os.path.exists(model_path):
+        if not os.path.exists(model_path) or os.path.getsize(model_path) < 100000:
             os.makedirs(os.path.dirname(model_path), exist_ok=True)
             download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
-        model = tf.keras.models.load_model(model_path)
-        print("Model berhasil dimuat.")
+
+        try:
+            model = tf.keras.models.load_model(model_path)
+            print(" Model berhasil dimuat.")
+        except Exception as e:
+            print(" Gagal memuat model:", e)
+            raise RuntimeError("File tf_model.h5 rusak atau tidak kompatibel.")
 
     if index is None:
-        print("Memuat FAISS index...")
+        print(" Memuat FAISS index...")
         index = faiss.read_index("mindfulness_index.faiss")
-        print("Index FAISS berhasil dimuat.")
+        print(" Index FAISS berhasil dimuat.")
 
     if corpus is None:
-        print("Memuat corpus...")
+        print(" Memuat corpus...")
         with open("model/corpus_final.json", "r", encoding="utf-8") as f:
             corpus = json.load(f)
-        print("Corpus berhasil dimuat.")
+        print(" Corpus berhasil dimuat.")
 
     if corpus_embeddings is None:
-        print("Memuat context_embeddings.npy...")
+        print(" Memuat embeddings...")
         corpus_embeddings = np.load("context_embeddings.npy")
-        print("Embedding corpus berhasil dimuat.")
+        print(" Embedding corpus berhasil dimuat.")
 
 def get_embedding(text):
     clean_text = preprocess_text_indonesian(text)
@@ -74,34 +91,31 @@ def search():
     query = data.get("text", "")
     top_k = data.get("top_k", 3)
 
-    print(f"\n[Python /search] Menerima query: '{query}' pukul {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"\n Menerima query: '{query}'")
 
     start_embedding_call = time.time()
     query_vec = get_embedding(query).reshape(1, -1).astype("float32")
     end_embedding_call = time.time()
-    print(f"   [Python /search] Pembuatan query embedding selesai dalam: {(end_embedding_call - start_embedding_call)*1000:.2f} ms")
+    print(f"    Embedding selesai: {(end_embedding_call - start_embedding_call)*1000:.2f} ms")
 
     start_faiss = time.time()
     distances, indices = index.search(query_vec, top_k)
     end_faiss = time.time()
-    print(f"   [Python /search] Pencarian FAISS selesai dalam: {(end_faiss - start_faiss)*1000:.2f} ms")
+    print(f"    FAISS selesai: {(end_faiss - start_faiss)*1000:.2f} ms")
 
     results_texts_to_display = []
     if indices.size > 0 and len(indices[0]) > 0:
         for i in indices[0]:
             if 0 <= i < len(corpus):
-                document_object = corpus[i]
-                if "response_to_display" in document_object:
-                    results_texts_to_display.append(document_object["response_to_display"])
-                else:
-                    results_texts_to_display.append("Maaf, format data respons tidak sesuai.")
+                document = corpus[i]
+                results_texts_to_display.append(document.get("response_to_display", "Format tidak sesuai."))
             else:
-                results_texts_to_display.append("Maaf, terjadi kesalahan saat mengambil detail dokumen.")
+                results_texts_to_display.append("Kesalahan mengambil detail dokumen.")
     else:
-        results_texts_to_display.append("Maaf, saya tidak menemukan jawaban yang relevan saat ini.")
+        results_texts_to_display.append("Tidak ada jawaban relevan ditemukan.")
 
     overall_end_time = time.time()
-    print(f"   [Python /search] Total waktu proses di /search: {(overall_end_time - overall_start_time)*1000:.2f} ms")
+    print(f"    Total waktu: {(overall_end_time - overall_start_time)*1000:.2f} ms")
 
     return jsonify({"query": query, "results": results_texts_to_display})
 
