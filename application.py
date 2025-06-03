@@ -102,6 +102,9 @@ def root():
 def serve_static(path):
     return send_from_directory("static", path)
 
+# Inisialisasi semua komponen sebelum menerima request
+initialize_components()
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     application.run(host="0.0.0.0", port=port)
