@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
-from transformers import AutoTokenizer, TFAutoModel
+from transformers import AutoTokenizer
 import faiss
 import json
 import numpy as np
@@ -7,6 +7,7 @@ import tensorflow as tf
 from scripts.nlp_translate import preprocess_text as preprocess_text_indonesian
 import time
 import os
+import requests
 
 application = Flask(__name__, static_folder="static")
 
@@ -16,30 +17,38 @@ index = None
 corpus = None
 corpus_embeddings = None
 
+def download_tf_model():
+    url = "https://huggingface.co/XzyanQi/flaskpython/resolve/main/tf_model.h5"
+    dest = "model/indobert_local/tf_model.h5"
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    if not os.path.exists(dest) or os.path.getsize(dest) < 100000:
+        print("Mengunduh tf_model.h5 dari Hugging Face...")
+        r = requests.get(url, stream=True)
+        with open(dest, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+        print("Selesai mengunduh tf_model.h5.")
+
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
 
-    if tokenizer is None:
-        print("Memuat tokenizer dari Hugging Face...")
-        tokenizer = AutoTokenizer.from_pretrained("XzyanQi/flaskpython")
+    print("Memuat tokenizer dari Hugging Face...")
+    tokenizer = AutoTokenizer.from_pretrained("XzyanQi/flaskpython")
 
-    if model is None:
-        print("Memuat model dari Hugging Face...")
-        model = TFAutoModel.from_pretrained("XzyanQi/flaskpython")
+    print("Memuat model TensorFlow (.h5)...")
+    model_path = "model/indobert_local/tf_model.h5"
+    download_tf_model()
+    model = tf.keras.models.load_model(model_path)
 
-    if index is None:
-        print("Memuat FAISS index...")
-        index = faiss.read_index("model/mindfulness_index.faiss")
-        print("Index FAISS berhasil dimuat.")
+    print("Memuat FAISS index...")
+    index = faiss.read_index("model/mindfulness_index.faiss")
 
-    if corpus is None:
-        print("Memuat corpus JSON...")
-        with open("model/corpus_final.json", "r", encoding="utf-8") as f:
-            corpus = json.load(f)
+    print("Memuat corpus JSON...")
+    with open("model/corpus_final.json", "r", encoding="utf-8") as f:
+        corpus = json.load(f)
 
-    if corpus_embeddings is None:
-        print("Memuat context_embeddings.npy...")
-        corpus_embeddings = np.load("model/context_embeddings.npy")
+    print("Memuat context_embeddings.npy...")
+    corpus_embeddings = np.load("model/context_embeddings.npy")
 
 def get_embedding(text):
     clean_text = preprocess_text_indonesian(text)
@@ -58,7 +67,6 @@ def search():
     print(f"\nMenerima query: '{query}'")
 
     query_vec = get_embedding(query).reshape(1, -1).astype("float32")
-
     distances, indices = index.search(query_vec, top_k)
 
     results = []
@@ -83,7 +91,6 @@ def root():
 def serve_static(path):
     return send_from_directory("static", path)
 
-# Inisialisasi semua komponen sebelum menerima request
 initialize_components()
 
 if __name__ == "__main__":
