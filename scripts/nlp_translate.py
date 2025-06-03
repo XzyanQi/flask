@@ -1,22 +1,12 @@
-import nltk
 import re
 import string
-import numpy as np
-import tensorflow as tf
-import pandas as pd
-import faiss
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from transformers import AutoTokenizer, TFAutoModel
-from sklearn.metrics.pairwise import cosine_similarity
-import matplotlib.pyplot as plt
+import tensorflow as tf
 
-# Download required NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
-
-# Load and preprocess dataset
-data = pd.read_csv('translated_train.csv')
+tokenizer = None
+model = None
 
 def preprocess_text(text):
     if isinstance(text, str):
@@ -27,16 +17,6 @@ def preprocess_text(text):
         words = word_tokenize(text)
         return ' '.join([word for word in words if word not in stop_words])
     return ''
-
-data['translated_response'].fillna("Sorry, I have no answer for this.", inplace=True)
-data['processed_context'] = data['translated_context'].apply(preprocess_text)
-data['processed_response'] = data['translated_response'].apply(preprocess_text)
-data = data.drop_duplicates(subset=['processed_context', 'processed_response']).reset_index(drop=True)
-df_terjemahan = data.copy()
-
-# Di bagian atas file nlp_translate.py
-tokenizer = None
-model = None
 
 def load_tokenizer_and_model():
     global tokenizer, model
@@ -52,83 +32,3 @@ def encode_text(text):
     outputs = model(inputs)
     embeddings = tf.reduce_mean(outputs.last_hidden_state, axis=1).numpy()
     return embeddings.squeeze()
-
-
-# Create embeddings for corpus
-corpus_embeddings = np.array([encode_text(t) for t in df_terjemahan['processed_context']])
-np.save('corpus_embeddings.npy', corpus_embeddings)
-corpus_embeddings = np.load('corpus_embeddings.npy')
-
-# FAISS index
-index = faiss.IndexFlatL2(corpus_embeddings.shape[1])
-index.add(corpus_embeddings)
-
-# Retrieve and response functions
-def get_query_embedding(query):
-    return encode_text(query).reshape(1, -1)
-
-def get_semantic_chatbot_response_with_fallback(query, df, index, threshold=1.0):
-    query_emb = get_query_embedding(query)
-    distances, indices = index.search(query_emb, k=1)
-    closest_distance = distances[0][0]
-    closest_idx = indices[0][0]
-    if closest_distance <= threshold:
-        return df.iloc[closest_idx]['translated_response']
-    return "Maaf, aku kurang memahami maksudmu. Bisa kamu jelaskan lebih lanjut?"
-
-# Banned words filter
-banned_words = {
-    'kafir', 'bom', 'gay', 'lesbi', 'trans', 'transgender', 'homo', 'dick',
-    'iblis', 'sialan', 'lonte', 'perek', 'agama', 'islam', 'kristen',
-    'buddha', 'hindu', 'konghucu', 'yahudi', 'genoshida'
-}
-
-def is_banned(text):
-    return any(word in text.lower() for word in banned_words)
-
-# Chat loop
-history = []
-
-def mindfulness_chat():
-    print("Mindfulness siap mendengarkan (ketik 'exit' untuk berhenti).")
-    while True:
-        user_input = input("Kamu: ")
-        if user_input.lower() in ['exit', 'quit']:
-            print("Mindfulness: Sampai jumpa lagi, tetap jaga dirimu ya.")
-            break
-        if is_banned(user_input):
-            print("Mindfulness: Maaf, aku tidak bisa menanggapi hal tersebut.")
-            continue
-        recent_context = " ".join(h['user'] for h in history[-3:])
-        combined_query = recent_context + " " + user_input if recent_context else user_input
-        response = get_semantic_chatbot_response_with_fallback(combined_query, df_terjemahan, index, threshold=50.0)
-        print(f"Mindfulness: {response}")
-        history.append({"user": user_input, "bot": response})
-
-# Visualize embedding similarity distances
-dist_list = []
-for q in df_terjemahan['processed_context'].sample(50):
-    q_emb = encode_text(q).reshape(1, -1)
-    d, _ = index.search(q_emb, k=1)
-    dist_list.append(d[0][0])
-
-plt.hist(dist_list, bins=20)
-plt.title("Distribusi Nilai Similarity (Distance) di FAISS")
-plt.xlabel("Jarak")
-plt.ylabel("Jumlah")
-plt.show()
-
-# Test responses
-print("\nUji Coba Mindfulness\n")
-test_queries = [
-    "Saya merasa sangat sedih.",
-    "Butuh bantuan untuk mengatasi kecemasan",
-    "Bagaimana seseorang memulai proses konseling?"
-]
-
-for i, query in enumerate(test_queries, start=1):
-    response = get_semantic_chatbot_response_with_fallback(query, df_terjemahan, index, threshold=50.0)
-    print(f"Query {i}: {query}")
-    print(f"Mindfulness {i}: {response}\n")
-
-print("Uji Coba Mindfulness selesai.")
