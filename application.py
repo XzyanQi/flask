@@ -24,13 +24,7 @@ def initialize_components():
     if tokenizer is None or model is None:
         print("Memuat model dan tokenizer dari lokal...")
         tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
-        model_path = "model/indobert_local/tf_model.h5"
-
-        if not os.path.exists(model_path):
-            os.makedirs("model/indobert_local/", exist_ok=True)
-            download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
-
-        model = tf.keras.models.load_model(model_path)
+        model = TFAutoModel.from_pretrained("model/indobert_local/")
         print("Tokenizer dan model berhasil dimuat.")
 
     if index is None:
