@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
-from transformers import AutoTokenizer, TFAutoModel
+from transformers import AutoTokenizer
 import faiss
 import json
 import numpy as np
@@ -17,15 +17,32 @@ index = None
 corpus = None
 corpus_embeddings = None
 
+def download_from_gdrive(file_id, dest_path):
+    print("Mengunduh model dari Google Drive...")
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    session = requests.Session()
+    response = session.get(url, stream=True)
+    with open(dest_path, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
+    print("Unduhan selesai.")
 
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
 
-    if tokenizer is None or model is None:
-        print("Memuat model dan tokenizer dari lokal...")
+    if tokenizer is None:
+        print("Memuat tokenizer dari lokal HuggingFace model...")
         tokenizer = AutoTokenizer.from_pretrained("model/indobert_local/")
-        model = TFAutoModel.from_pretrained("model/indobert_local/")
-        print("Tokenizer dan model berhasil dimuat.")
+
+    if model is None:
+        print("Memuat model TensorFlow dari .h5...")
+        model_path = "model/indobert_local/tf_model.h5"
+        if not os.path.exists(model_path):
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
+            download_from_gdrive("1wBD7t1mRV8ksDQNnlApFs28fhpCUIhyY", model_path)
+        model = tf.keras.models.load_model(model_path)
+        print("Model berhasil dimuat.")
 
     if index is None:
         print("Memuat FAISS index...")
@@ -96,7 +113,7 @@ def root():
 def serve_static(path):
     return send_from_directory("static", path)
 
-# Inisialisasi semua komponen sebelum menerima request
+# Inisialisasi sebelum menerima request
 initialize_components()
 
 if __name__ == "__main__":
