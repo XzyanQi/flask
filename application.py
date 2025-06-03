@@ -17,28 +17,6 @@ index = None
 corpus = None
 corpus_embeddings = None
 
-def download_from_gdrive(file_id, destination):
-    def get_confirm_token(response):
-        for key, value in response.cookies.items():
-            if key.startswith("download_warning"):
-                return value
-        return None
-
-    print("Mengunduh tf_model.h5 dari Google Drive...")
-    URL = "https://docs.google.com/uc?export=download"
-    session = requests.Session()
-    response = session.get(URL, params={'id': file_id}, stream=True)
-    token = get_confirm_token(response)
-
-    if token:
-        params = {'id': file_id, 'confirm': token}
-        response = session.get(URL, params=params, stream=True)
-
-    with open(destination, 'wb') as f:
-        for chunk in response.iter_content(32768):
-            if chunk:
-                f.write(chunk)
-    print(" tf_model.h5 berhasil diunduh.")
 
 def initialize_components():
     global tokenizer, model, index, corpus, corpus_embeddings
