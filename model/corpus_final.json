@@ -1,0 +1,2931 @@
+[
+  {
+    "id": 0,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa tidak berharga, seolah-olah kehadiran saya tidak penting bagi siapa pun.",
+    "response_to_display": "Saya mengerti betapa sulitnya merasa tidak dihargai. Tapi Anda tetap berarti. Yuk, sebutkan satu hal kecil yang Anda lakukan minggu ini yang bisa Anda banggakan?",
+    "keywords": ["nilai diri", "percaya diri", "harga diri", "rendah diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 1,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Biasanya saya merasa tidak percaya diri saat dibandingkan dengan orang lain atau ketika merasa gagal",
+    "response_to_display": "Perbandingan dan rasa gagal memang seringkali jadi pemicu ya. Itu perasaan yang sangat umum. Saat kamu merasa dibandingkan, apa yang biasanya kamu katakan pada dirimu sendiri atau apa yang kamu butuhkan saat itu?",
+    "keywords": ["nilai diri", "percaya diri", "harga diri", "rendah diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 2,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Terakhir saya merasa bangga ketika saya berhasil menyelesaikan tugas meski sedang tidak semangat.",
+    "response_to_display": "Senang mendengarnya kamu punya teman kos yang suportif. Dukungan seperti apa dari dia yang paling membuatmu merasa lebih baik atau lebih kuat?",
+    "keywords": ["nilai diri", "percaya diri", "harga diri", "rendah diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 3,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya sedang mengerjakan skripsi dan rasanya sangat melelahkan secara mental. Saya tidak tahu harus mulai dari mana.",
+    "response_to_display": "Wajar merasa kewalahan saat menghadapi skripsi. Coba uraikan tugas besar ini menjadi langkah-langkah kecil. Apa langkah pertama yang bisa Anda ambil hari ini?",
+    "keywords": ["skripsi", "tugas akhir", "mahasiswa", "akademik", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 4,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tertekan karena banyak tugas yang harus diselesaikan dalam waktu singkat.",
+    "response_to_display": "Tugas yang menumpuk memang bisa bikin stres. Yuk, coba buat daftar prioritas tugasmu. Mana yang paling mendesak dan mana yang bisa ditunda?",
+    "keywords": ["tugas", "deadline", "stres", "akademik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 5,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak mampu mengikuti materi kuliah yang semakin sulit.",
+    "response_to_display": "Merasa kesulitan dengan materi kuliah itu wajar. Coba cari teman atau dosen yang bisa membantu menjelaskan. Apa topik yang paling sulit bagimu saat ini?",
+    "keywords": ["kuliah", "materi", "stres", "akademik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 6,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk belajar dan bersosialisasi.",
+    "response_to_display": "Keseimbangan antara belajar dan bersosialisasi memang penting. Coba atur jadwal harianmu agar ada waktu untuk keduanya. Apa yang paling kamu nikmati saat bersosialisasi?",
+    "keywords": ["waktu", "belajar", "sosialisasi", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 7,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya motivasi untuk belajar karena tekanan dari orang tua.",
+    "response_to_display": "Tekanan dari orang tua bisa sangat berat. Coba komunikasikan perasaanmu dengan mereka. Apa yang sebenarnya kamu inginkan dalam studi ini?",
+    "keywords": ["motivasi", "tekanan", "orang tua", "akademik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 8,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk belajar karena harus bekerja paruh waktu.",
+    "response_to_display": "Bekerja sambil kuliah memang menantang. Coba atur waktu dengan baik dan cari cara untuk memaksimalkan waktu belajarmu. Apa pekerjaanmu saat ini?",
+    "keywords": ["pekerjaan", "waktu", "belajar", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 9,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup dukungan dari teman-teman di kampus.",
+    "response_to_display": "Dukungan sosial sangat penting. Coba cari kelompok studi atau komunitas di kampus yang bisa memberimu dukungan. Apa yang kamu harapkan dari teman-temanmu?",
+    "keywords": ["dukungan", "teman", "kampus", "akademik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 10,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk beristirahat karena banyaknya tugas.",
+    "response_to_display": "Istirahat itu penting untuk kesehatan mental. Coba atur waktu istirahat yang cukup dalam jadwalmu. Apa aktivitas yang paling kamu nikmati saat istirahat?",
+    "keywords": ["istirahat", "tugas", "waktu", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 11,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk berolahraga karena sibuk dengan kuliah.",
+    "response_to_display": "Olahraga penting untuk kesehatan fisik dan mental. Coba sisihkan waktu singkat setiap hari untuk bergerak. Apa jenis olahraga yang paling kamu nikmati?",
+    "keywords": ["olahraga", "waktu", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 12,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk tidur karena banyaknya tugas.",
+    "response_to_display": "Tidur yang cukup sangat penting untuk kesehatan mental. Coba atur jadwal tidur yang baik dan hindari begadang. Berapa jam tidur yang biasanya kamu dapatkan?",
+    "keywords": ["tidur", "tugas", "waktu", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 13,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk bersantai karena banyaknya tugas.",
+    "response_to_display": "Bersantai itu penting untuk mengurangi stres. Coba sisihkan waktu setiap hari untuk melakukan hal yang kamu nikmati. Apa aktivitas santai favoritmu?",
+    "keywords": ["santai", "tugas", "waktu", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 14,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk berkumpul dengan keluarga karena sibuk dengan kuliah.",
+    "response_to_display": "Berkumpul dengan keluarga penting untuk kesehatan mental. Coba atur waktu khusus untuk mereka. Apa momen bersama keluarga yang paling kamu hargai?",
+    "keywords": ["keluarga", "waktu", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 15,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk mengejar hobi karena sibuk dengan kuliah.",
+    "response_to_display": "Hobi bisa jadi cara yang bagus untuk mengurangi stres. Coba sisihkan waktu setiap minggu untuk melakukan hobi yang kamu sukai. Apa hobi favoritmu?",
+    "keywords": ["hobi", "waktu", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 16,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk bersosialisasi dengan teman-teman karena sibuk dengan kuliah.",
+    "response_to_display": "Sosialisasi penting untuk kesehatan mental. Coba atur waktu khusus untuk bertemu teman-teman. Apa yang biasanya kamu lakukan saat berkumpul dengan mereka?",
+    "keywords": ["sosialisasi", "teman", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 17,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan ekstrakurikuler karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan ekstrakurikuler bisa jadi cara yang bagus untuk bersosialisasi dan mengurangi stres. Coba cari kegiatan yang sesuai dengan minatmu. Apa kegiatan ekstrakurikuler yang paling kamu nikmati?",
+    "keywords": ["ekstrakurikuler", "waktu", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 18,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan perjalanan atau liburan karena sibuk dengan kuliah.",
+    "response_to_display": "Perjalanan atau liburan bisa jadi cara yang bagus untuk mengurangi stres. Coba rencanakan liburan singkat saat ada waktu luang. Destinasi mana yang ingin kamu kunjungi?",
+    "keywords": ["liburan", "waktu", "kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 19,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan sosial atau volunteering karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan sosial atau volunteering bisa jadi cara yang bagus untuk memberi dampak positif. Coba cari kesempatan volunteering yang sesuai dengan minatmu. Apa kegiatan sosial yang paling kamu sukai?",
+    "keywords": ["volunteering", "sosial", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 20,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan seni atau kreatif karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan seni atau kreatif bisa jadi cara yang bagus untuk mengekspresikan diri. Coba sisihkan waktu untuk berkarya. Apa bentuk seni atau kreativitas yang paling kamu nikmati?",
+    "keywords": ["seni", "kreatif", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 21,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan olahraga atau fitness karena sibuk dengan kuliah.",
+    "response_to_display": "Olahraga penting untuk kesehatan fisik dan mental. Coba sisihkan waktu singkat setiap hari untuk bergerak. Apa jenis olahraga yang paling kamu nikmati?",
+    "keywords": ["olahraga", "fitness", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 22,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan relaksasi atau meditasi karena sibuk dengan kuliah.",
+    "response_to_display": "Relaksasi dan meditasi penting untuk mengurangi stres. Coba sisihkan waktu singkat setiap hari untuk berlatih. Apa teknik relaksasi atau meditasi yang paling kamu sukai?",
+    "keywords": ["relaksasi", "meditasi", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 23,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan spiritual atau keagamaan karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan spiritual atau keagamaan bisa jadi cara yang bagus untuk menemukan ketenangan. Coba sisihkan waktu untuk beribadah atau bermeditasi. Apa praktik spiritual yang paling kamu hargai?",
+    "keywords": ["spiritual", "keagamaan", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 24,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan belajar mandiri atau pengembangan diri karena sibuk dengan kuliah.",
+    "response_to_display": "Pengembangan diri penting untuk pertumbuhan pribadi. Coba sisihkan waktu setiap minggu untuk belajar hal baru. Apa topik yang ingin kamu pelajari lebih dalam?",
+    "keywords": ["pengembangan diri", "belajar mandiri", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 25,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan networking atau membangun relasi karena sibuk dengan kuliah.",
+    "response_to_display": "Networking penting untuk karier masa depan. Coba cari acara atau komunitas yang bisa membantumu membangun relasi. Apa jenis relasi yang ingin kamu kembangkan?",
+    "keywords": ["networking", "relasi", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 26,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan riset atau penelitian karena sibuk dengan kuliah.",
+    "response_to_display": "Riset atau penelitian bisa jadi cara yang bagus untuk mendalami minatmu. Coba cari topik yang menarik dan sisihkan waktu untuk eksplorasi. Apa topik riset yang paling kamu minati?",
+    "keywords": ["riset", "penelitian", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 27,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan kreatif atau inovatif karena sibuk dengan kuliah.",
+    "response_to_display": "Kreativitas penting untuk inovasi. Coba sisihkan waktu untuk berpikir kreatif dan eksplorasi ide-ide baru. Apa ide kreatif yang ingin kamu wujudkan?",
+    "keywords": ["kreatif", "inovatif", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 28,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan sosial atau komunitas karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan sosial atau komunitas penting untuk membangun koneksi. Coba cari komunitas yang sesuai dengan minatmu. Apa komunitas yang ingin kamu ikuti?",
+    "keywords": ["komunitas", "sosial", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 29,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan profesional atau karier karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan profesional penting untuk pengembangan karier. Coba cari kesempatan magang atau proyek yang sesuai dengan minatmu. Apa bidang karier yang ingin kamu jelajahi?",
+    "keywords": ["profesional", "karier", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 30,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan kesehatan mental atau emosional karena sibuk dengan kuliah.",
+    "response_to_display": "Kesehatan mental penting untuk kesejahteraan. Coba sisihkan waktu untuk refleksi diri atau berbicara dengan profesional. Apa yang biasanya kamu lakukan untuk menjaga kesehatan mentalmu?",
+    "keywords": ["kesehatan mental", "emosional", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 31,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan relaksasi atau self-care karena sibuk dengan kuliah.",
+    "response_to_display": "Self-care penting untuk menjaga keseimbangan. Coba sisihkan waktu setiap minggu untuk melakukan hal yang kamu nikmati. Apa bentuk self-care yang paling kamu sukai?",
+    "keywords": ["self-care", "relaksasi", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 32,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan spiritual atau keagamaan karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan spiritual atau keagamaan bisa jadi cara yang bagus untuk menemukan ketenangan. Coba sisihkan waktu untuk beribadah atau bermeditasi. Apa praktik spiritual yang paling kamu hargai?",
+    "keywords": ["spiritual", "keagamaan", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 33,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan belajar mandiri atau pengembangan diri karena sibuk dengan kuliah.",
+    "response_to_display": "Pengembangan diri penting untuk pertumbuhan pribadi. Coba sisihkan waktu setiap minggu untuk belajar hal baru. Apa topik yang ingin kamu pelajari lebih dalam?",
+    "keywords": ["pengembangan diri", "belajar mandiri", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 34,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan networking atau membangun relasi karena sibuk dengan kuliah.",
+    "response_to_display": "Networking penting untuk karier masa depan. Coba cari acara atau komunitas yang bisa membantumu membangun relasi. Apa jenis relasi yang ingin kamu kembangkan?",
+    "keywords": ["networking", "relasi", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 35,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan riset atau penelitian karena sibuk dengan kuliah.",
+    "response_to_display": "Riset atau penelitian bisa jadi cara yang bagus untuk mendalami minatmu. Coba cari topik yang menarik dan sisihkan waktu untuk eksplorasi. Apa topik riset yang paling kamu minati?",
+    "keywords": ["riset", "penelitian", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 36,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan kreatif atau inovatif karena sibuk dengan kuliah.",
+    "response_to_display": "Kreativitas penting untuk inovasi. Coba sisihkan waktu untuk berpikir kreatif dan eksplorasi ide-ide baru. Apa ide kreatif yang ingin kamu wujudkan?",
+    "keywords": ["kreatif", "inovatif", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 37,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan sosial atau komunitas karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan sosial atau komunitas penting untuk membangun koneksi. Coba cari komunitas yang sesuai dengan minatmu. Apa komunitas yang ingin kamu ikuti?",
+    "keywords": ["komunitas", "sosial", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 38,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan profesional atau karier karena sibuk dengan kuliah.",
+    "response_to_display": "Kegiatan profesional penting untuk pengembangan karier. Coba cari kesempatan magang atau proyek yang sesuai dengan minatmu. Apa bidang karier yang ingin kamu jelajahi?",
+    "keywords": ["profesional", "karier", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 39,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan kesehatan mental atau emosional karena sibuk dengan kuliah.",
+    "response_to_display": "Kesehatan mental penting untuk kesejahteraan. Coba sisihkan waktu untuk refleksi diri atau berbicara dengan profesional. Apa yang biasanya kamu lakukan untuk menjaga kesehatan mentalmu?",
+    "keywords": ["kesehatan mental", "emosional", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 40,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk melakukan kegiatan relaksasi atau self-care karena sibuk dengan kuliah.",
+    "response_to_display": "Self-care penting untuk menjaga keseimbangan. Coba sisihkan waktu setiap minggu untuk melakukan hal yang kamu nikmati. Apa bentuk self-care yang paling kamu sukai?",
+    "keywords": ["self-care", "relaksasi", "waktu", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 41,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa selalu gagal dan tidak pernah cukup baik meskipun sudah berusaha keras.",
+    "response_to_display": "Perasaan gagal bisa sangat membebani. Tapi kegagalan bukan akhir. Apa satu hal yang bisa Anda syukuri dari perjalanan Anda sejauh ini?",
+    "keywords": ["nilai diri", "percaya diri", "merasa gagal"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 42,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak pernah bisa memenuhi ekspektasi orang lain, terutama orang tua.",
+    "response_to_display": "Ekspektasi orang lain bisa sangat berat. Ingat, yang terpenting adalah apa yang Anda inginkan untuk diri sendiri. Apa satu tujuan pribadi yang ingin Anda capai?",
+    "keywords": ["nilai diri", "ekspektasi", "orang tua"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 43,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya kepercayaan diri untuk berbicara di depan umum atau berinteraksi dengan orang baru.",
+    "response_to_display": "Berbicara di depan umum memang bisa menakutkan. Coba mulai dengan berbicara di depan teman dekat atau keluarga. Apa satu hal kecil yang bisa Anda lakukan untuk meningkatkan kepercayaan diri Anda?",
+    "keywords": ["kepercayaan diri", "berbicara di depan umum", "interaksi sosial"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 44,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya kemampuan atau bakat yang istimewa seperti orang lain.",
+    "response_to_display": "Setiap orang memiliki keunikan dan bakatnya masing-masing. Coba pikirkan satu hal yang Anda nikmati dan kuasai, meskipun itu kecil. Apa yang membuat Anda merasa bersemangat?",
+    "keywords": ["kemampuan", "bakat", "unik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 45,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk diri sendiri karena sibuk dengan pekerjaan atau tanggung jawab lainnya.",
+    "response_to_display": "Waktu untuk diri sendiri sangat penting. Coba sisihkan waktu setiap hari, meskipun hanya 10 menit, untuk melakukan sesuatu yang Anda nikmati. Apa aktivitas yang paling Anda sukai?",
+    "keywords": ["waktu untuk diri sendiri", "pekerjaan", "tanggung jawab"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 46,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup dukungan dari teman-teman atau keluarga.",
+    "response_to_display": "Dukungan sosial sangat penting. Coba cari teman atau kelompok yang bisa mendukung Anda. Apa satu hal yang Anda harapkan dari dukungan mereka?",
+    "keywords": ["dukungan sosial", "teman", "keluarga"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 47,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk mengejar hobi atau minat pribadi.",
+    "response_to_display": "Hobi dan minat pribadi penting untuk keseimbangan hidup. Coba sisihkan waktu setiap minggu untuk melakukan sesuatu yang Anda cintai. Apa hobi yang ingin Anda kembangkan?",
+    "keywords": ["hobi", "minat pribadi", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 48,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk beristirahat atau bersantai.",
+    "response_to_display": "Istirahat dan bersantai penting untuk kesehatan mental. Coba atur jadwal harian Anda agar ada waktu untuk beristirahat. Apa cara favorit Anda untuk bersantai?",
+    "keywords": ["istirahat", "bersantai", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 49,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk berolahraga atau menjaga kesehatan fisik.",
+    "response_to_display": "Olahraga penting untuk kesehatan fisik dan mental. Coba sisihkan waktu singkat setiap hari untuk bergerak. Apa jenis olahraga yang paling Anda nikmati?",
+    "keywords": ["olahraga", "kesehatan fisik", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 50,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk tidur yang cukup.",
+    "response_to_display": "Tidur yang cukup sangat penting untuk kesehatan mental. Coba atur jadwal tidur yang baik dan hindari begadang. Berapa jam tidur yang biasanya Anda dapatkan?",
+    "keywords": ["tidur", "kesehatan mental", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 51,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk berkumpul dengan keluarga atau teman-teman.",
+    "response_to_display": "Berkumpul dengan orang-orang terkasih penting untuk kesehatan mental. Coba atur waktu khusus untuk mereka. Apa momen bersama keluarga atau teman yang paling Anda hargai?",
+    "keywords": ["keluarga", "teman", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 52,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya cukup waktu untuk mengejar impian atau tujuan pribadi.",
+    "response_to_display": "Mengejar impian penting untuk kebahagiaan. Coba tetapkan satu tujuan kecil yang ingin Anda capai dalam waktu dekat. Apa langkah pertama yang bisa Anda ambil?",
+    "keywords": ["impian", "tujuan pribadi", "waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 53,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya selalu merasa dibanding-bandingkan dengan orang lain, apalagi oleh keluarga saya sendiri.",
+    "response_to_display": "Dibandingkan bisa menyakitkan, apalagi oleh orang terdekat. Tapi Anda unik dan punya nilai sendiri. Apa satu kualitas dalam diri Anda yang Anda sukai?",
+    "keywords": ["harga diri", "perbandingan", "keluarga", "tidak percaya diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 54,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa cemas tentang penampilan fisik saya dan bagaimana orang lain menilainya.",
+    "response_to_display": "Kecemasan tentang penampilan itu hal yang umum. Ingatlah bahwa kecantikan sejati datang dari dalam. Apa satu hal non-fisik yang Anda banggakan dari diri Anda?",
+    "keywords": ["penampilan fisik", "citra tubuh", "tidak aman", "cemas"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 55,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya takut mengambil risiko atau mencoba hal baru karena takut gagal dan dikritik.",
+    "response_to_display": "Ketakutan akan kegagalan dan kritik bisa melumpuhkan. Namun, pertumbuhan seringkali datang dari mengambil risiko. Apa langkah kecil yang bisa Anda ambil untuk keluar dari zona nyaman Anda minggu ini?",
+    "keywords": ["takut gagal", "kritik", "zona nyaman", "mengambil risiko"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 56,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa sulit menerima pujian, rasanya saya tidak pantas mendapatkannya.",
+    "response_to_display": "Sulit menerima pujian bisa jadi tanda Anda meremehkan diri sendiri. Coba lihat pujian sebagai pengakuan atas usaha Anda. Pujian apa yang terakhir Anda terima dan bagaimana perasaan Anda saat itu?",
+    "keywords": ["menerima pujian", "tidak pantas", "meremehkan diri"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 57,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering menyalahkan diri sendiri atas hal-hal kecil yang salah, bahkan jika itu bukan sepenuhnya kesalahan saya.",
+    "response_to_display": "Menyalahkan diri sendiri secara berlebihan bisa menguras energi. Penting untuk bersikap adil pada diri sendiri. Bisakah Anda memikirkan satu situasi di mana Anda terlalu keras pada diri sendiri baru-baru ini?",
+    "keywords": ["menyalahkan diri", "perfeksionis", "kritik diri", "rasa bersalah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 58,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa kesepian meskipun dikelilingi banyak orang, seolah tidak ada yang benar-benar mengerti saya.",
+    "response_to_display": "Perasaan kesepian bisa muncul bahkan di tengah keramaian. Koneksi yang mendalam itu penting. Adakah satu orang yang Anda rasa bisa Anda ajak bicara lebih terbuka tentang perasaan Anda?",
+    "keywords": ["kesepian", "tidak dimengerti", "koneksi sosial", "isolasi"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 59,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa pencapaian saya tidak ada artinya jika dibandingkan dengan pencapaian orang lain yang lebih hebat.",
+    "response_to_display": "Setiap perjalanan dan pencapaian itu unik dan berharga. Fokus pada kemajuan Anda sendiri, bukan perbandingan. Apa satu pencapaian kecil Anda yang membuat Anda bangga, terlepas dari apa yang orang lain capai?",
+    "keywords": ["pencapaian", "perbandingan sosial", "tidak berarti", "validasi"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 60,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa ragu dengan keputusan yang saya buat, takut itu salah dan mengecewakan.",
+    "response_to_display": "Keraguan dalam mengambil keputusan itu wajar, apalagi jika takut mengecewakan. Ingatlah bahwa setiap keputusan adalah pembelajaran. Keputusan apa yang sedang membuat Anda ragu saat ini?",
+    "keywords": ["ragu-ragu", "keputusan", "takut salah", "mengecewakan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 61,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa menjadi beban bagi orang-orang di sekitar saya.",
+    "response_to_display": "Perasaan seperti itu bisa sangat berat. Penting untuk diingat bahwa Anda berharga dan kehadiran Anda penting. Apa yang membuat Anda merasa menjadi beban?",
+    "keywords": ["beban", "tidak berguna", "menyusahkan", "nilai diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 62,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya kesulitan mengatakan 'tidak' karena takut mengecewakan orang lain.",
+    "response_to_display": "Menetapkan batasan itu penting untuk kesejahteraan Anda. Tidak apa-apa untuk memprioritaskan diri sendiri. Situasi seperti apa yang paling sulit bagi Anda untuk mengatakan 'tidak'?",
+    "keywords": ["sulit menolak", "people pleaser", "batasan diri", "takut mengecewakan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 63,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Kesalahan di masa lalu sering menghantui saya dan membuat saya merasa tidak berharga.",
+    "response_to_display": "Masa lalu tidak mendefinisikan siapa Anda sekarang. Setiap orang membuat kesalahan, yang penting adalah belajar darinya. Apa satu pelajaran berharga yang Anda dapatkan dari pengalaman masa lalu?",
+    "keywords": ["masa lalu", "kesalahan", "penyesalan", "harga diri rendah"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 64,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Dalam kelompok, saya sering merasa tidak terlihat atau pendapat saya tidak didengar.",
+    "response_to_display": "Merasa tidak terlihat bisa membuat frustrasi. Suara Anda penting. Apa yang biasanya Anda lakukan atau rasakan ketika berada dalam situasi kelompok seperti itu?",
+    "keywords": ["tidak terlihat", "tidak didengar", "pendapat", "interaksi sosial"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 65,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa butuh validasi terus-menerus dari orang lain untuk merasa baik tentang diri saya.",
+    "response_to_display": "Mencari validasi eksternal itu wajar, tapi validasi diri sendiri adalah yang paling penting. Apa satu hal yang bisa Anda lakukan hari ini untuk menghargai diri sendiri, tanpa perlu persetujuan orang lain?",
+    "keywords": ["validasi", "pengakuan", "butuh pujian", "percaya diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 66,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering membandingkan 'dapur' saya dengan 'panggung' orang lain di media sosial.",
+    "response_to_display": "Media sosial seringkali hanya menampilkan sisi terbaik. Ingatlah bahwa setiap orang memiliki perjuangannya masing-masing. Bagaimana media sosial memengaruhi cara pandang Anda terhadap diri sendiri?",
+    "keywords": ["media sosial", "perbandingan", "citra diri", "realita vs fiksi"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 67,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak pantas mendapatkan kebahagiaan atau kesuksesan.",
+    "response_to_display": "Setiap orang berhak bahagia dan sukses. Perasaan tidak pantas bisa menghalangi Anda. Apa yang membuat Anda berpikir Anda tidak pantas mendapatkannya?",
+    "keywords": ["tidak pantas", "kebahagiaan", "kesuksesan", "self-sabotage"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 68,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya terlalu kritis terhadap diri sendiri, bahkan untuk kesalahan kecil.",
+    "response_to_display": "Bersikap baik pada diri sendiri sama pentingnya dengan bersikap baik pada orang lain. Coba perlakukan diri Anda seperti Anda memperlakukan teman baik. Kesalahan kecil apa yang baru-baru ini Anda terlalu pikirkan?",
+    "keywords": ["kritik diri", "perfeksionis", "kasih sayang diri", "kesalahan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 69,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Meskipun saya mencapai sesuatu, saya merasa seperti penipu (imposter syndrome).",
+    "response_to_display": "Imposter syndrome itu nyata dan banyak dialami. Pencapaian Anda adalah hasil kerja keras Anda. Apa pencapaian terakhir yang membuat Anda merasa seperti itu?",
+    "keywords": ["imposter syndrome", "penipu", "pencapaian", "tidak percaya diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 70,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya kesulitan menetapkan batasan pribadi dengan teman atau keluarga.",
+    "response_to_display": "Menetapkan batasan adalah bentuk penghargaan terhadap diri sendiri. Ini mungkin sulit pada awalnya. Batasan seperti apa yang paling sulit Anda tegakkan?",
+    "keywords": ["batasan pribadi", "hubungan", "menghargai diri", "sulit menolak"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 71,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa mudah digantikan, baik dalam pertemanan maupun pekerjaan.",
+    "response_to_display": "Setiap individu membawa nilai unik. Perasaan mudah digantikan bisa menyakitkan. Apa kualitas unik yang Anda miliki yang Anda banggakan?",
+    "keywords": ["mudah digantikan", "tidak spesial", "nilai diri", "keunikan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 72,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Pikiran negatif tentang diri saya sering muncul tanpa bisa saya kendalikan.",
+    "response_to_display": "Pikiran negatif bisa sangat mengganggu. Mengenalinya adalah langkah pertama. Pikiran negatif seperti apa yang paling sering muncul?",
+    "keywords": ["pikiran negatif", "self-talk", "kritik batin", "cemas"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 73,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa malu dengan latar belakang atau masa lalu keluarga saya.",
+    "response_to_display": "Latar belakang Anda adalah bagian dari cerita Anda, tapi tidak menentukan seluruh diri Anda. Apa satu hal positif yang Anda pelajari dari pengalaman hidup Anda sejauh ini?",
+    "keywords": ["malu", "latar belakang", "keluarga", "identitas"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 74,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa pendapat saya tidak penting atau tidak akan didengarkan.",
+    "response_to_display": "Setiap pendapat berharga, termasuk pendapat Anda. Apa yang membuat Anda merasa pendapat Anda tidak penting? Adakah situasi spesifik?",
+    "keywords": ["pendapat tidak penting", "tidak didengar", "kurang percaya diri", "berbicara"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 75,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya enggan meminta bantuan karena takut dianggap lemah atau merepotkan.",
+    "response_to_display": "Meminta bantuan adalah tanda kekuatan, bukan kelemahan. Semua orang butuh bantuan sesekali. Bantuan seperti apa yang Anda butuhkan saat ini namun ragu untuk meminta?",
+    "keywords": ["meminta bantuan", "takut merepotkan", "mandiri", "lemah"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 76,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa terjebak dengan citra diri negatif dan sulit mengubahnya.",
+    "response_to_display": "Mengubah persepsi diri memang butuh waktu dan proses. Langkah kecil bisa membawa perubahan besar. Apa satu langkah kecil yang bisa Anda coba untuk melihat diri Anda lebih positif hari ini?",
+    "keywords": ["citra diri negatif", "terjebak", "sulit berubah", "persepsi diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 77,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya takut dihakimi jika menunjukkan diri saya yang sebenarnya.",
+    "response_to_display": "Ketakutan dihakimi itu wajar, tapi menjadi diri sendiri itu membebaskan. Apa satu aspek dari diri Anda yang sebenarnya yang ingin Anda tunjukkan namun masih ragu?",
+    "keywords": ["takut dihakimi", "diri sejati", "autentik", "topeng sosial"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 78,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya kesulitan merayakan pencapaian saya sendiri, sekecil apapun itu.",
+    "response_to_display": "Merayakan pencapaian, besar atau kecil, penting untuk menghargai usaha Anda. Apa satu pencapaian kecil Anda minggu ini yang layak dirayakan?",
+    "keywords": ["merayakan pencapaian", "menghargai diri", "sukses kecil", "rendah diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 79,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tertekan oleh ekspektasi masyarakat tentang kesuksesan dan bagaimana seharusnya hidup dijalani.",
+    "response_to_display": "Ekspektasi masyarakat bisa sangat membebani. Definisikan kesuksesan menurut versi Anda sendiri. Apa arti sukses bagi Anda secara pribadi?",
+    "keywords": ["ekspektasi masyarakat", "tekanan sosial", "definisi sukses", "standar hidup"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 80,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak cukup 'pintar' atau 'berbakat' dibandingkan teman-teman saya.",
+    "response_to_display": "Setiap orang punya kelebihan dan kecepatan belajar yang berbeda. Fokus pada kemajuan Anda sendiri. Apa satu hal yang Anda pelajari atau kuasai baru-baru ini yang membuat Anda bangga?",
+    "keywords": ["merasa bodoh", "tidak berbakat", "perbandingan", "kompetensi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 81,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa bosan dengan rutinitas kuliah yang monoton dan kehilangan semangat.",
+    "response_to_display": "Kebosanan itu wajar dalam rutinitas. Coba cari satu hal baru atau tantangan kecil dalam studi Anda minggu ini. Apa yang bisa membuat rutinitas Anda terasa sedikit berbeda?",
+    "keywords": ["bosan", "rutinitas", "monoton", "semangat hilang", "kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 82,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa jurusan yang saya ambil tidak sesuai dengan minat saya.",
+    "response_to_display": "Merasa salah jurusan bisa sangat memengaruhi motivasi. Pernahkah Anda mencoba mengeksplorasi aspek lain dari jurusan Anda atau mencari kegiatan di luar kuliah yang sesuai minat?",
+    "keywords": ["salah jurusan", "minat", "tidak cocok", "motivasi turun"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 83,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Setelah liburan panjang, saya sulit menemukan kembali ritme dan motivasi untuk belajar.",
+    "response_to_display": "Kembali ke rutinitas setelah liburan memang butuh penyesuaian. Coba mulai dengan target belajar yang kecil dan realistis. Apa satu langkah kecil yang bisa Anda lakukan hari ini untuk memulai?",
+    "keywords": ["pasca liburan", "sulit mulai", "ritme belajar", "motivasi kembali"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 84,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tujuan kuliah saya tidak jelas, jadi saya kehilangan arah dan motivasi.",
+    "response_to_display": "Kehilangan arah bisa membuat motivasi menurun. Coba luangkan waktu untuk merenungkan kembali apa yang ingin Anda capai dengan kuliah ini. Apa impian terbesar Anda setelah lulus?",
+    "keywords": ["tujuan tidak jelas", "kehilangan arah", "visi", "motivasi kuliah"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 85,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa terintimidasi oleh teman-teman yang terlihat lebih pintar dan berprestasi, jadi saya jadi malas berusaha.",
+    "response_to_display": "Perbandingan bisa mematikan motivasi. Ingatlah bahwa setiap orang punya jalurnya sendiri. Fokus pada kemajuan Anda. Apa satu hal yang bisa Anda pelajari atau tingkatkan minggu ini?",
+    "keywords": ["intimidasi", "perbandingan", "merasa tertinggal", "malas berusaha"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 86,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa lelah secara fisik dan mental sehingga tidak ada energi lagi untuk termotivasi.",
+    "response_to_display": "Kelelahan bisa sangat menguras motivasi. Pastikan Anda mendapatkan istirahat yang cukup. Apa satu hal kecil yang bisa Anda lakukan untuk merawat diri Anda hari ini?",
+    "keywords": ["lelah", "burnout", "energi habis", "kurang istirahat"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 87,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tugas-tugas kuliah terlalu banyak dan sulit, jadi saya menyerah sebelum mencoba.",
+    "response_to_display": "Tugas yang menumpuk memang bisa terasa berat. Coba pecah tugas besar menjadi bagian-bagian kecil yang lebih mudah dikelola. Tugas mana yang bisa Anda cicil sedikit hari ini?",
+    "keywords": ["tugas berat", "kewalahan", "menyerah", "prokrastinasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 88,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena lingkungan pertemanan yang kurang mendukung secara akademis.",
+    "response_to_display": "Lingkungan memang berpengaruh. Coba cari teman atau kelompok belajar yang bisa saling memotivasi. Apa kualitas yang Anda cari dalam teman belajar?",
+    "keywords": ["lingkungan tidak mendukung", "teman", "pengaruh negatif", "motivasi kelompok"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 89,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak ada yang menghargai usaha saya, jadi untuk apa saya termotivasi?",
+    "response_to_display": "Penghargaan dari diri sendiri adalah yang utama. Rayakan setiap kemajuan kecil Anda. Apa satu hal yang telah Anda capai baru-baru ini yang bisa Anda banggakan?",
+    "keywords": ["tidak dihargai", "kurang apresiasi", "motivasi intrinsik", "usaha sia-sia"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 90,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya terlalu banyak distraksi (media sosial, game) sehingga sulit fokus dan kehilangan motivasi belajar.",
+    "response_to_display": "Distraksi memang musuh fokus. Coba tetapkan waktu khusus untuk belajar tanpa gangguan. Apa strategi yang bisa Anda coba untuk mengurangi distraksi saat belajar?",
+    "keywords": ["distraksi", "media sosial", "game", "sulit fokus", "manajemen waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 91,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa materi kuliah tidak relevan dengan apa yang ingin saya kerjakan di masa depan.",
+    "response_to_display": "Kadang kaitan antara materi kuliah dan karier tidak langsung terlihat. Coba cari tahu bagaimana materi tersebut bisa diterapkan atau menjadi dasar untuk minat Anda. Adakah dosen atau senior yang bisa diajak diskusi?",
+    "keywords": ["tidak relevan", "karier", "masa depan", "aplikasi ilmu"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 92,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya sering menunda-nunda pekerjaan sampai akhirnya kehilangan momentum dan motivasi.",
+    "response_to_display": "Menunda bisa jadi lingkaran setan. Coba mulai dengan tugas yang paling mudah atau paling menarik bagi Anda untuk membangun momentum. Apa tugas pertama yang bisa Anda selesaikan?",
+    "keywords": ["menunda-nunda", "prokrastinasi", "kehilangan momentum", "disiplin diri"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 93,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak ada kemajuan signifikan dalam studi saya, jadi semangat saya menurun.",
+    "response_to_display": "Kemajuan tidak selalu terlihat dalam lompatan besar. Coba apresiasi langkah-langkah kecil yang telah Anda ambil. Apa satu hal kecil yang berhasil Anda pelajari atau selesaikan minggu ini?",
+    "keywords": ["tidak ada kemajuan", "stagnan", "proses belajar", "apresiasi diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 94,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa cemas berlebihan tentang masa depan setelah lulus.",
+    "response_to_display": "Kecemasan tentang masa depan itu wajar. Fokus pada apa yang bisa Anda kendalikan saat ini. Apa satu langkah persiapan karier yang bisa Anda lakukan sekarang, sekecil apapun itu?",
+    "keywords": ["cemas masa depan", "karier", "lulus kuliah", "ketidakpastian"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 95,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa ekspektasi dari diri sendiri terlalu tinggi, sehingga ketika tidak tercapai, saya langsung kehilangan motivasi.",
+    "response_to_display": "Memiliki ekspektasi itu baik, tapi pastikan realistis dan fleksibel. Kegagalan mencapai target bukan berarti akhir. Apa yang bisa Anda pelajari dari pengalaman tersebut untuk target berikutnya?",
+    "keywords": ["ekspektasi tinggi", "perfeksionis", "takut gagal", "fleksibilitas"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 96,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak ada tantangan lagi dalam studi saya, semuanya terasa terlalu mudah dan membosankan.",
+    "response_to_display": "Ketika tidak ada tantangan, motivasi bisa menurun. Coba cari proyek tambahan, kompetisi, atau topik penelitian yang lebih mendalam untuk menstimulasi diri Anda. Apa bidang yang ingin Anda eksplorasi lebih jauh?",
+    "keywords": ["kurang tantangan", "terlalu mudah", "bosan", "butuh stimulus", "studi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 97,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak mendapatkan feedback yang konstruktif atas pekerjaan saya.",
+    "response_to_display": "Feedback penting untuk pertumbuhan. Jika Anda merasa kurang, coba proaktif meminta feedback spesifik dari dosen atau teman. Aspek mana dari pekerjaan Anda yang ingin Anda dapatkan masukannya?",
+    "keywords": ["kurang feedback", "tidak ada masukan", "butuh arahan", "motivasi kerja"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 98,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi setelah mengalami kegagalan besar dalam ujian atau tugas.",
+    "response_to_display": "Kegagalan bisa sangat memukul motivasi, itu wajar. Tapi ini juga kesempatan belajar. Apa yang bisa Anda ambil sebagai pelajaran dari kegagalan tersebut untuk bangkit kembali?",
+    "keywords": ["gagal ujian", "kegagalan besar", "putus asa", "bangkit kembali"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 99,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya naik turun tidak menentu, kadang semangat sekali kadang tidak sama sekali.",
+    "response_to_display": "Motivasi yang fluktuatif itu umum. Coba kenali pola kapan motivasi Anda biasanya tinggi dan rendah. Apa pemicu yang biasanya membuat semangat Anda naik atau turun?",
+    "keywords": ["motivasi naik turun", "tidak stabil", "mood swing", "konsistensi"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 100,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi karena terlalu fokus pada hasil akhir dan melupakan prosesnya.",
+    "response_to_display": "Fokus pada hasil akhir memang penting, tapi menikmati proses juga bisa menjaga motivasi. Apa bagian dari proses belajar atau mengerjakan tugas yang sebenarnya Anda nikmati?",
+    "keywords": ["fokus hasil", "proses belajar", "menikmati perjalanan", "tekanan target"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 101,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak termotivasi karena merasa apa yang saya pelajari tidak akan berguna di dunia kerja nanti.",
+    "response_to_display": "Kadang manfaat ilmu tidak langsung terlihat. Coba cari cerita inspiratif dari alumni atau profesional di bidang Anda tentang bagaimana ilmu kuliah mereka terpakai. Keterampilan apa yang menurut Anda paling penting untuk dunia kerja?",
+    "keywords": ["tidak berguna", "dunia kerja", "relevansi ilmu", "keterampilan praktis"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 102,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa sendirian dalam menghadapi kesulitan akademis.",
+    "response_to_display": "Merasa sendirian bisa memperberat beban. Ingatlah Anda tidak sendiri. Sudahkah Anda mencoba bergabung dengan kelompok studi atau mencari mentor?",
+    "keywords": ["merasa sendiri", "isolasi akademis", "butuh dukungan", "kesulitan belajar"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 103,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya hilang karena terlalu banyak memikirkan omongan negatif orang lain.",
+    "response_to_display": "Omongan negatif memang bisa menguras energi. Fokus pada pendapat orang yang benar-benar peduli dan konstruktif. Siapa orang yang pendapatnya paling Anda hargai?",
+    "keywords": ["omongan negatif", "kritik tidak membangun", "fokus diri", "mental block"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 104,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi karena sistem penilaian yang menurut saya tidak adil.",
+    "response_to_display": "Perasaan tidak adil bisa sangat demotivasi. Jika memungkinkan, coba diskusikan kekhawatiran Anda dengan pihak terkait. Terlepas dari sistem, apa yang bisa Anda kontrol untuk tetap memberikan yang terbaik?",
+    "keywords": ["sistem tidak adil", "penilaian", "demotivasi eksternal", "frustrasi"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 105,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi belajar saya menurun drastis setelah mencapai satu target besar.",
+    "response_to_display": "Wajar jika motivasi sedikit menurun setelah mencapai target besar, seperti 'post-achievement slump'. Beri diri Anda waktu istirahat, lalu tetapkan target baru yang menarik. Apa target berikutnya yang ingin Anda raih?",
+    "keywords": ["pasca pencapaian", "target baru", "istirahat", "jenuh"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 106,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada role model atau sosok inspiratif dalam bidang studi saya.",
+    "response_to_display": "Role model bisa sangat memotivasi. Coba perluas pencarian Anda, mungkin dari buku, podcast, atau tokoh di bidang lain yang memiliki etos kerja yang Anda kagumi. Kualitas apa yang Anda cari dari seorang role model?",
+    "keywords": ["tidak ada role model", "kurang inspirasi", "mencari panutan", "motivasi ekstrinsik"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 107,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya terkuras karena harus selalu 'on' dan produktif setiap saat.",
+    "response_to_display": "Tekanan untuk selalu produktif bisa menyebabkan burnout. Penting untuk memberi jeda dan istirahat. Bagaimana cara Anda biasanya mengisi ulang energi setelah merasa terkuras?",
+    "keywords": ["selalu produktif", "tekanan", "burnout", "istirahat penting"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 108,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa terjebak dalam kebiasaan buruk yang sulit diubah (misal, begadang).",
+    "response_to_display": "Mengubah kebiasaan memang butuh usaha. Coba mulai dengan perubahan kecil dan konsisten. Kebiasaan apa yang paling ingin Anda ubah dan apa langkah pertama yang bisa Anda ambil?",
+    "keywords": ["kebiasaan buruk", "sulit berubah", "disiplin diri", "begadang"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 109,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya hilang karena merasa tidak ada dampak nyata dari apa yang saya pelajari.",
+    "response_to_display": "Melihat dampak nyata memang bisa meningkatkan motivasi. Coba cari proyek atau kegiatan sukarela di mana Anda bisa menerapkan ilmu Anda. Bidang apa yang Anda rasa bisa Anda beri kontribusi?",
+    "keywords": ["tidak ada dampak", "manfaat praktis", "kontribusi", "aplikasi ilmu"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 110,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa lingkungan belajar saya (misal, kamar) tidak kondusif.",
+    "response_to_display": "Lingkungan belajar yang kondusif sangat penting. Apa yang bisa Anda ubah atau perbaiki di lingkungan belajar Anda agar lebih nyaman dan mendukung fokus?",
+    "keywords": ["lingkungan tidak kondusif", "tempat belajar", "fokus", "gangguan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 96,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak ada tantangan lagi dalam studi saya, semuanya terasa terlalu mudah dan membosankan.",
+    "response_to_display": "Ketika tidak ada tantangan, motivasi bisa menurun. Coba cari proyek tambahan, kompetisi, atau topik penelitian yang lebih mendalam untuk menstimulasi diri Anda. Apa bidang yang ingin Anda eksplorasi lebih jauh?",
+    "keywords": ["kurang tantangan", "terlalu mudah", "bosan", "butuh stimulus", "studi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 97,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak mendapatkan feedback yang konstruktif atas pekerjaan saya.",
+    "response_to_display": "Feedback penting untuk pertumbuhan. Jika Anda merasa kurang, coba proaktif meminta feedback spesifik dari dosen atau teman. Aspek mana dari pekerjaan Anda yang ingin Anda dapatkan masukannya?",
+    "keywords": ["kurang feedback", "tidak ada masukan", "butuh arahan", "motivasi kerja"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 98,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi setelah mengalami kegagalan besar dalam ujian atau tugas.",
+    "response_to_display": "Kegagalan bisa sangat memukul motivasi, itu wajar. Tapi ini juga kesempatan belajar. Apa yang bisa Anda ambil sebagai pelajaran dari kegagalan tersebut untuk bangkit kembali?",
+    "keywords": ["gagal ujian", "kegagalan besar", "putus asa", "bangkit kembali"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 99,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya naik turun tidak menentu, kadang semangat sekali kadang tidak sama sekali.",
+    "response_to_display": "Motivasi yang fluktuatif itu umum. Coba kenali pola kapan motivasi Anda biasanya tinggi dan rendah. Apa pemicu yang biasanya membuat semangat Anda naik atau turun?",
+    "keywords": ["motivasi naik turun", "tidak stabil", "mood swing", "konsistensi"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 100,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi karena terlalu fokus pada hasil akhir dan melupakan prosesnya.",
+    "response_to_display": "Fokus pada hasil akhir memang penting, tapi menikmati proses juga bisa menjaga motivasi. Apa bagian dari proses belajar atau mengerjakan tugas yang sebenarnya Anda nikmati?",
+    "keywords": ["fokus hasil", "proses belajar", "menikmati perjalanan", "tekanan target"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 101,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa tidak termotivasi karena merasa apa yang saya pelajari tidak akan berguna di dunia kerja nanti.",
+    "response_to_display": "Kadang manfaat ilmu tidak langsung terlihat. Coba cari cerita inspiratif dari alumni atau profesional di bidang Anda tentang bagaimana ilmu kuliah mereka terpakai. Keterampilan apa yang menurut Anda paling penting untuk dunia kerja?",
+    "keywords": ["tidak berguna", "dunia kerja", "relevansi ilmu", "keterampilan praktis"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 102,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa sendirian dalam menghadapi kesulitan akademis.",
+    "response_to_display": "Merasa sendirian bisa memperberat beban. Ingatlah Anda tidak sendiri. Sudahkah Anda mencoba bergabung dengan kelompok studi atau mencari mentor?",
+    "keywords": ["merasa sendiri", "isolasi akademis", "butuh dukungan", "kesulitan belajar"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 103,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya hilang karena terlalu banyak memikirkan omongan negatif orang lain.",
+    "response_to_display": "Omongan negatif memang bisa menguras energi. Fokus pada pendapat orang yang benar-benar peduli dan konstruktif. Siapa orang yang pendapatnya paling Anda hargai?",
+    "keywords": ["omongan negatif", "kritik tidak membangun", "fokus diri", "mental block"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 104,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa kehilangan motivasi karena sistem penilaian yang menurut saya tidak adil.",
+    "response_to_display": "Perasaan tidak adil bisa sangat demotivasi. Jika memungkinkan, coba diskusikan kekhawatiran Anda dengan pihak terkait. Terlepas dari sistem, apa yang bisa Anda kontrol untuk tetap memberikan yang terbaik?",
+    "keywords": ["sistem tidak adil", "penilaian", "demotivasi eksternal", "frustrasi"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 105,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi belajar saya menurun drastis setelah mencapai satu target besar.",
+    "response_to_display": "Wajar jika motivasi sedikit menurun setelah mencapai target besar, seperti 'post-achievement slump'. Beri diri Anda waktu istirahat, lalu tetapkan target baru yang menarik. Apa target berikutnya yang ingin Anda raih?",
+    "keywords": ["pasca pencapaian", "target baru", "istirahat", "jenuh"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 106,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada role model atau sosok inspiratif dalam bidang studi saya.",
+    "response_to_display": "Role model bisa sangat memotivasi. Coba perluas pencarian Anda, mungkin dari buku, podcast, atau tokoh di bidang lain yang memiliki etos kerja yang Anda kagumi. Kualitas apa yang Anda cari dari seorang role model?",
+    "keywords": ["tidak ada role model", "kurang inspirasi", "mencari panutan", "motivasi ekstrinsik"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 107,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya terkuras karena harus selalu 'on' dan produktif setiap saat.",
+    "response_to_display": "Tekanan untuk selalu produktif bisa menyebabkan burnout. Penting untuk memberi jeda dan istirahat. Bagaimana cara Anda biasanya mengisi ulang energi setelah merasa terkuras?",
+    "keywords": ["selalu produktif", "tekanan", "burnout", "istirahat penting"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 108,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa terjebak dalam kebiasaan buruk yang sulit diubah (misal, begadang).",
+    "response_to_display": "Mengubah kebiasaan memang butuh usaha. Coba mulai dengan perubahan kecil dan konsisten. Kebiasaan apa yang paling ingin Anda ubah dan apa langkah pertama yang bisa Anda ambil?",
+    "keywords": ["kebiasaan buruk", "sulit berubah", "disiplin diri", "begadang"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 109,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya merasa motivasi saya hilang karena merasa tidak ada dampak nyata dari apa yang saya pelajari.",
+    "response_to_display": "Melihat dampak nyata memang bisa meningkatkan motivasi. Coba cari proyek atau kegiatan sukarela di mana Anda bisa menerapkan ilmu Anda. Bidang apa yang Anda rasa bisa Anda beri kontribusi?",
+    "keywords": ["tidak ada dampak", "manfaat praktis", "kontribusi", "aplikasi ilmu"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 110,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa lingkungan belajar saya (misal, kamar) tidak kondusif.",
+    "response_to_display": "Lingkungan belajar yang kondusif sangat penting. Apa yang bisa Anda ubah atau perbaiki di lingkungan belajar Anda agar lebih nyaman dan mendukung fokus?",
+    "keywords": ["lingkungan tidak kondusif", "tempat belajar", "fokus", "gangguan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 111,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa cemas setiap kali akan presentasi di depan kelas, takut dinilai buruk.",
+    "response_to_display": "Kecemasan saat presentasi itu sangat umum. Persiapan yang baik bisa membantu. Apa bagian dari presentasi yang paling membuatmu cemas? Kita bisa coba cari solusinya bersama.",
+    "keywords": ["presentasi", "cemas", "takut dinilai", "public speaking", "akademik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 112,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak cukup baik untuk mendapatkan teman atau pasangan yang baik.",
+    "response_to_display": "Perasaan tidak cukup baik bisa menghalangi hubungan yang sehat. Ingatlah bahwa Anda berharga apa adanya. Apa kualitas dalam diri Anda yang menurut Anda bisa menarik bagi orang lain?",
+    "keywords": ["tidak cukup baik", "hubungan", "pasangan", "teman", "harga diri"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 113,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada perkembangan dalam skill yang saya pelajari.",
+    "response_to_display": "Kadang perkembangan skill tidak langsung terlihat. Coba lihat kembali sejauh mana Anda sudah berkembang dari awal. Apa skill spesifik yang sedang Anda latih?",
+    "keywords": ["skill", "tidak berkembang", "stagnan", "latihan", "motivasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 114,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena tuntutan untuk selalu mendapatkan nilai sempurna dari keluarga.",
+    "response_to_display": "Tekanan untuk selalu sempurna bisa sangat melelahkan. Penting untuk diingat bahwa proses belajar lebih penting dari sekadar nilai. Sudahkah Anda mencoba membicarakan ini dengan keluarga?",
+    "keywords": ["nilai sempurna", "tekanan keluarga", "stres akademik", "perfeksionis"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 115,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa iri dengan kehidupan orang lain yang terlihat lebih bahagia di media sosial.",
+    "response_to_display": "Media sosial seringkali hanya menampilkan sisi terbaik. Kebahagiaan setiap orang berbeda dan tidak bisa dibandingkan. Apa satu hal kecil yang bisa membuat Anda bahagia hari ini?",
+    "keywords": ["iri", "media sosial", "kebahagiaan", "perbandingan", "citra diri"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 116,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada yang mengerti passion saya.",
+    "response_to_display": "Tidak semua orang akan mengerti passion kita, dan itu tidak apa-apa. Yang terpenting adalah Anda sendiri yang menghargainya. Apa passion Anda dan apa yang membuatnya begitu berarti bagi Anda?",
+    "keywords": ["passion", "tidak dimengerti", "dukungan", "minat pribadi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 117,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa kesulitan mengatur keuangan sebagai mahasiswa dan itu menambah stres.",
+    "response_to_display": "Mengatur keuangan memang bisa jadi tantangan. Coba buat anggaran sederhana dan catat pengeluaran. Apa pos pengeluaran terbesar Anda saat ini?",
+    "keywords": ["keuangan mahasiswa", "stres finansial", "anggaran", "hemat"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 118,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa suara saya tidak penting dan ragu untuk menyuarakan pendapat.",
+    "response_to_display": "Setiap suara dan pendapat itu berharga, termasuk suara Anda. Apa yang biasanya membuat Anda ragu untuk berbicara? Mari kita latih bersama.",
+    "keywords": ["suara tidak penting", "ragu berpendapat", "asertif", "kepercayaan diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 119,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa lingkungan kampus tidak sekompetitif yang saya harapkan.",
+    "response_to_display": "Jika lingkungan kurang kompetitif, Anda bisa menciptakan tantangan sendiri. Ikut kompetisi eksternal atau buat proyek pribadi. Apa tantangan yang ingin Anda ciptakan untuk diri sendiri?",
+    "keywords": ["kurang kompetitif", "lingkungan kampus", "tantangan diri", "proaktif"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 120,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena harus memilih peminatan jurusan dan takut salah pilih.",
+    "response_to_display": "Memilih peminatan memang keputusan besar. Coba cari informasi sebanyak mungkin tentang setiap opsi dan diskusikan dengan senior atau dosen. Apa yang menjadi pertimbangan utama Anda?",
+    "keywords": ["peminatan jurusan", "salah pilih", "stres keputusan", "informasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 121,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak menarik dan sulit percaya diri saat bertemu orang baru.",
+    "response_to_display": "Daya tarik bukan hanya soal fisik. Kepribadian dan kebaikan hati juga memikat. Apa satu kualitas non-fisik Anda yang Anda banggakan?",
+    "keywords": ["tidak menarik", "percaya diri rendah", "bertemu orang baru", "inner beauty"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 122,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada apresiasi atas kontribusi saya dalam kerja kelompok.",
+    "response_to_display": "Tidak mendapat apresiasi bisa mengecewakan. Namun, kontribusi Anda tetap berharga. Apa bagian dari kontribusi Anda yang paling Anda banggakan, terlepas dari pengakuan orang lain?",
+    "keywords": ["kurang apresiasi", "kerja kelompok", "kontribusi", "motivasi intrinsik"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 123,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa tertekan karena teman-teman seangkatan sudah mulai magang atau kerja, sedangkan saya belum.",
+    "response_to_display": "Setiap orang punya timeline masing-masing. Jangan bandingkan progres Anda dengan orang lain. Fokus pada persiapan Anda. Apa langkah yang sedang Anda ambil untuk mencari kesempatan magang/kerja?",
+    "keywords": ["tekanan teman", "magang", "kerja", "perbandingan sosial", "timeline"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 124,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak berdaya mengubah situasi sulit yang sedang saya hadapi.",
+    "response_to_display": "Perasaan tidak berdaya bisa sangat berat. Meskipun ada hal di luar kendali kita, selalu ada sesuatu yang bisa kita lakukan. Apa satu langkah kecil yang bisa Anda ambil untuk merasa sedikit lebih baik?",
+    "keywords": ["tidak berdaya", "situasi sulit", "kontrol diri", "coping mechanism"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 125,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada yang percaya pada kemampuan saya, termasuk diri sendiri.",
+    "response_to_display": "Kepercayaan diri adalah kunci. Mari kita mulai dari membangun kepercayaan pada diri sendiri. Apa satu keberhasilan kecil di masa lalu yang bisa mengingatkan Anda akan kemampuan Anda?",
+    "keywords": ["tidak percaya kemampuan", "kurang dukungan", "self-belief", "motivasi internal"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 126,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa cemas dengan masa depan setelah lulus, takut tidak dapat pekerjaan.",
+    "response_to_display": "Kecemasan tentang masa depan itu wajar, apalagi soal pekerjaan. Coba fokus pada hal yang bisa kamu kontrol sekarang, seperti meningkatkan skill atau membangun jaringan. Skill apa yang sedang kamu kembangkan?",
+    "keywords": ["masa depan", "cemas", "pekerjaan", "lulus kuliah", "stres"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 127,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak pantas dicintai atau disayangi oleh siapapun.",
+    "response_to_display": "Setiap orang berhak mendapatkan cinta dan kasih sayang. Perasaan tidak pantas bisa jadi penghalang. Apa yang membuatmu merasa demikian? Coba sebutkan satu hal baik tentang dirimu.",
+    "keywords": ["tidak pantas dicintai", "kasih sayang", "harga diri rendah", "hubungan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 128,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada yang peduli dengan apa yang saya kerjakan.",
+    "response_to_display": "Penting untuk menemukan motivasi dari dalam diri sendiri, meskipun dukungan eksternal juga berarti. Apa yang membuat pekerjaan atau studi ini penting bagi dirimu secara pribadi?",
+    "keywords": ["tidak peduli", "kurang perhatian", "motivasi intrinsik", "semangat diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 129,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena merasa tertinggal dari teman-teman dalam hal pemahaman materi kuliah.",
+    "response_to_display": "Setiap orang punya kecepatan belajar masing-masing. Jangan ragu meminta bantuan teman atau dosen jika ada materi yang sulit. Materi apa yang sedang membuatmu merasa tertinggal?",
+    "keywords": ["merasa tertinggal", "pemahaman materi", "stres belajar", "akademik"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 130,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya sering merasa malu dengan kekurangan fisik yang saya miliki.",
+    "response_to_display": "Setiap orang unik dengan kelebihan dan kekurangannya. Fokus pada apa yang kamu sukai dari dirimu. Apa satu hal non-fisik yang kamu banggakan dari dirimu?",
+    "keywords": ["malu fisik", "kekurangan diri", "citra tubuh", "percaya diri"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 131,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada variasi dalam metode pembelajaran.",
+    "response_to_display": "Metode belajar yang monoton memang bisa membosankan. Coba cari cara belajar baru yang lebih interaktif atau menyenangkan. Metode seperti apa yang menurutmu akan menarik?",
+    "keywords": ["metode belajar", "variasi", "bosan belajar", "inovasi belajar"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 132,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya merasa terbebani dengan ekspektasi dosen yang terlalu tinggi.",
+    "response_to_display": "Ekspektasi tinggi bisa jadi motivasi, tapi juga bisa membebani. Coba komunikasikan jika kamu merasa kesulitan. Apa ekspektasi spesifik yang membuatmu merasa tertekan?",
+    "keywords": ["ekspektasi dosen", "terbebani", "stres kuliah", "komunikasi akademik"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 133,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya hak untuk bahagia karena kesalahan di masa lalu.",
+    "response_to_display": "Setiap orang berhak bahagia, terlepas dari masa lalu. Jadikan kesalahan sebagai pelajaran. Apa satu hal yang bisa membuatmu tersenyum hari ini?",
+    "keywords": ["hak bahagia", "kesalahan masa lalu", "memaafkan diri", "harga diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 134,
+    "intent": "motivation_loss",
+    "context_for_indexing": "Saya kehilangan motivasi karena merasa tidak ada tantangan intelektual yang cukup.",
+    "response_to_display": "Tantangan intelektual penting untuk menjaga semangat. Coba cari topik yang lebih kompleks, ikut diskusi mendalam, atau kerjakan proyek riset pribadi. Apa yang bisa menantang pikiranmu saat ini?",
+    "keywords": ["tantangan intelektual", "kurang stimulus", "rasa ingin tahu", "pengembangan diri"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 135,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena harus beradaptasi dengan lingkungan baru di kampus.",
+    "response_to_display": "Adaptasi dengan lingkungan baru memang butuh waktu. Beri dirimu kesempatan untuk mengenal orang dan tempat baru. Apa hal yang paling membuatmu kesulitan beradaptasi saat ini?",
+    "keywords": ["adaptasi", "lingkungan baru", "kampus", "mahasiswa baru", "stres sosial"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 136,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya selalu menunda-nunda pekerjaan sampai menit terakhir, ini sudah jadi kebiasaan buruk.",
+    "response_to_display": "Kebiasaan menunda memang sulit diubah, tapi bukan tidak mungkin. Coba kita identifikasi dulu, apa yang biasanya membuatmu menunda? Mengenali pemicu adalah langkah awal.",
+    "keywords": ["menunda", "kebiasaan buruk", "prokrastinasi", "menit terakhir"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 137,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya sering menunda karena takut hasilnya tidak sempurna atau gagal.",
+    "response_to_display": "Ketakutan akan kegagalan atau tidak sempurna itu sering jadi alasan menunda. Ingatlah bahwa 'selesai' lebih baik daripada 'sempurna tapi tidak pernah dimulai'. Apa langkah terkecil yang bisa kamu ambil tanpa memikirkan kesempurnaan?",
+    "keywords": ["takut gagal", "perfeksionis", "menunda", "prokrastinasi"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 138,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Tugasnya terasa sangat besar dan berat, jadi saya bingung harus mulai dari mana dan akhirnya menunda.",
+    "response_to_display": "Tugas besar memang bisa terasa mengintimidasi. Coba pecah tugas itu menjadi bagian-bagian yang lebih kecil dan lebih mudah dikelola. Bagian mana yang terasa paling ringan untuk dimulai?",
+    "keywords": ["tugas besar", "kewalahan", "bingung memulai", "prokrastinasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 139,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena materinya membosankan dan saya tidak tertarik sama sekali.",
+    "response_to_display": "Rasa bosan memang bisa membunuh motivasi. Coba cari cara untuk membuat materinya lebih menarik, mungkin dengan menghubungkannya dengan minatmu atau belajar bersama teman. Adakah aspek kecil dari materi itu yang sedikit menarik perhatianmu?",
+    "keywords": ["bosan", "tidak tertarik", "materi kuliah", "menunda belajar"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 140,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya malah mengerjakan hal-hal sepele lainnya daripada tugas utama yang penting.",
+    "response_to_display": "Itu namanya 'prokrastinasi produktif', mengerjakan hal lain untuk menghindari tugas utama. Coba buat daftar prioritas dan fokus pada satu tugas penting dulu. Tugas mana yang paling berdampak jika diselesaikan?",
+    "keywords": ["prokrastinasi produktif", "tugas sepele", "prioritas", "menghindar"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 141,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Setiap kali saya menunda, saya jadi merasa bersalah dan semakin malas.",
+    "response_to_display": "Lingkaran rasa bersalah dan menunda itu umum terjadi. Maafkan dirimu untuk penundaan yang sudah terjadi, dan fokus pada apa yang bisa kamu lakukan sekarang. Apa satu langkah kecil yang bisa memutus siklus ini?",
+    "keywords": ["rasa bersalah", "malas", "siklus menunda", "prokrastinasi"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 142,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya gampang sekali terdistraksi oleh notifikasi HP atau media sosial saat mau mengerjakan tugas.",
+    "response_to_display": "Distraksi digital memang tantangan besar. Coba atur lingkungan belajarmu, misalnya dengan menonaktifkan notifikasi atau menggunakan aplikasi pemblokir situs selama waktu tertentu. Apa distraksi terbesarmu?",
+    "keywords": ["distraksi", "media sosial", "notifikasi HP", "fokus", "menunda"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 143,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda-nunda memulai skripsi saya karena rasanya seperti gunung yang tinggi sekali.",
+    "response_to_display": "Skripsi memang proyek besar. Daripada melihat keseluruhannya, coba fokus pada satu bab atau bahkan satu sub-bab dulu. Apa bagian paling awal dari skripsi yang bisa kamu kerjakan sedikit demi sedikit?",
+    "keywords": ["skripsi", "tugas akhir", "menunda memulai", "proyek besar"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 144,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Anehnya, saya juga menunda tugas-tugas kecil yang sebenarnya gampang diselesaikan.",
+    "response_to_display": "Menunda tugas kecil juga sering terjadi, kadang karena dianggap sepele jadi 'nanti saja'. Coba gunakan teknik '5 menit', kerjakan selama 5 menit saja. Biasanya setelah mulai, akan lebih mudah melanjutkannya. Tugas kecil apa yang bisa kamu coba sekarang?",
+    "keywords": ["tugas kecil", "gampang ditunda", "teknik 5 menit", "memulai"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 145,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Ada tips nggak sih biar saya berhenti menunda-nunda terus?",
+    "response_to_display": "Ada banyak tips! Misalnya teknik Pomodoro, membuat to-do list yang realistis, atau memberi hadiah kecil untuk diri sendiri setelah menyelesaikan tugas. Mana yang menurutmu paling mungkin kamu coba?",
+    "keywords": ["tips anti menunda", "berhenti prokrastinasi", "teknik belajar", "produktivitas"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 146,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya merasa terjebak dalam siklus prokrastinasi dan tidak tahu cara keluarnya.",
+    "response_to_display": "Merasa terjebak itu tidak enak. Langkah pertama adalah menyadari polanya. Coba identifikasi kapan dan mengapa kamu biasanya menunda. Setelah itu, kita bisa cari strategi spesifik untukmu.",
+    "keywords": ["siklus prokrastinasi", "terjebak", "cara keluar", "pola menunda"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 147,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena benar-benar tidak tahu harus mulai dari mana, langkah pertamanya apa.",
+    "response_to_display": "Kebingungan memulai itu wajar. Coba 'brainstorming' semua hal yang terkait tugas itu, sekecil apapun. Dari sana, pilih satu hal yang paling mudah atau paling jelas untuk dilakukan sebagai langkah pertama. Apa yang terlintas pertama di pikiranmu tentang tugas itu?",
+    "keywords": ["tidak tahu mulai", "langkah pertama", "bingung", "prokrastinasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 148,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Kebiasaan menunda saya ini sudah mulai berdampak buruk pada nilai dan pekerjaan saya.",
+    "response_to_display": "Ketika sudah berdampak negatif, ini saat yang tepat untuk serius mencari solusi. Jangan terlalu menyalahkan diri, tapi fokus pada perubahan. Apa dampak spesifik yang paling kamu rasakan dan ingin kamu perbaiki?",
+    "keywords": ["dampak buruk", "nilai turun", "pekerjaan terganggu", "konsekuensi menunda"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 149,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya sering menunda karena merasa kurang energi atau capek, padahal belum ngapa-ngapain.",
+    "response_to_display": "Kelelahan mental atau kurang energi bisa jadi penyebab menunda. Pastikan istirahatmu cukup dan berkualitas. Mungkin juga ada faktor lain yang menguras energimu. Bagaimana pola tidur dan aktivitas fisikmu belakangan ini?",
+    "keywords": ["kurang energi", "capek mental", "lelah", "motivasi rendah", "menunda"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 150,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya ingin sekali mengatasi prokrastinasi ini, tapi rasanya sulit sekali sendirian.",
+    "response_to_display": "Mengatasi prokrastinasi memang bisa lebih mudah dengan dukungan. Saya di sini untuk membantu. Kita bisa coba berbagai strategi bersama. Apa hal pertama yang ingin kamu diskusikan atau coba untuk mengatasi ini?",
+    "keywords": ["mengatasi prokrastinasi", "sulit sendiri", "butuh bantuan", "dukungan"],
+    "confidence_score": 0.9
+  },
+   {
+    "id": 151,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya sering menunda karena merasa tidak mood atau tidak 'feel' untuk mengerjakan tugas.",
+    "response_to_display": "Menunggu 'mood' datang bisa jadi jebakan prokrastinasi. Coba ciptakan 'mood' itu dengan memulai, meskipun hanya beberapa menit. Kadang aksi mendahului motivasi. Apa yang bisa kamu lakukan untuk 'memancing' mood kerjamu?",
+    "keywords": ["tidak mood", "menunggu feel", "menunda", "motivasi", "aksi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 152,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena merasa tidak cocok dengan metode mengajar dosen tertentu.",
+    "response_to_display": "Ketidakcocokan dengan metode mengajar bisa membuat belajar jadi sulit. Coba cari sumber belajar alternatif atau diskusikan dengan teman yang lebih paham. Metode belajar seperti apa yang paling cocok untukmu?",
+    "keywords": ["metode mengajar", "dosen", "tidak cocok", "stres belajar", "alternatif belajar"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 153,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak berharga karena sering dibandingkan dengan saudara kandung oleh orang tua.",
+    "response_to_display": "Perbandingan dengan saudara bisa sangat menyakitkan dan mempengaruhi harga diri. Ingatlah bahwa setiap individu unik dan punya jalannya sendiri. Apa satu kelebihanmu yang berbeda dari saudaramu?",
+    "keywords": ["dibandingkan saudara", "orang tua", "tidak berharga", "keunikan diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 154,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena merasa tugasnya tidak penting atau tidak ada gunanya bagi saya.",
+    "response_to_display": "Kadang sulit melihat manfaat langsung dari sebuah tugas. Coba cari kaitan tugas tersebut dengan tujuan jangka panjangmu, sekecil apapun. Atau, anggap saja sebagai latihan disiplin. Apa manfaat terkecil yang bisa kamu lihat?",
+    "keywords": ["tugas tidak penting", "tidak berguna", "menunda", "mencari makna"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 155,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena kesulitan memahami instruksi tugas yang diberikan dosen.",
+    "response_to_display": "Instruksi yang tidak jelas memang bisa membuat bingung dan stres. Jangan ragu untuk bertanya langsung kepada dosen atau teman sekelas untuk klarifikasi. Bagian instruksi mana yang paling membingungkanmu?",
+    "keywords": ["instruksi tidak jelas", "tugas kuliah", "bingung", "stres akademik", "bertanya"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 156,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak pantas mendapatkan teman yang baik karena merasa diri saya membosankan.",
+    "response_to_display": "Setiap orang punya sisi menarik, termasuk kamu. Mungkin kamu belum menyadarinya. Apa minat atau hobimu yang bisa kamu ceritakan kepada orang lain? Hal itu bisa jadi awal percakapan yang menarik.",
+    "keywords": ["merasa membosankan", "tidak pantas berteman", "menarik", "hobi", "interaksi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 157,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena terlalu banyak pilihan atau ide, jadi bingung mau pilih yang mana.",
+    "response_to_display": "Terlalu banyak pilihan memang bisa melumpuhkan (analysis paralysis). Coba batasi pilihanmu atau pilih satu secara acak untuk dimulai. Kadang, memulai adalah kunci untuk menemukan arah. Pilihan mana yang paling sedikit membuatmu ragu?",
+    "keywords": ["analysis paralysis", "terlalu banyak pilihan", "bingung memilih", "menunda keputusan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 158,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena lingkungan kos atau rumah tidak mendukung untuk belajar.",
+    "response_to_display": "Lingkungan belajar yang kondusif sangat penting. Jika di rumah atau kos kurang mendukung, coba cari alternatif tempat belajar seperti perpustakaan atau kafe yang tenang. Apa yang membuat lingkunganmu saat ini tidak mendukung?",
+    "keywords": ["lingkungan tidak mendukung", "tempat belajar", "stres", "fokus", "alternatif"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 159,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya kontribusi berarti dalam kelompok atau organisasi.",
+    "response_to_display": "Setiap peran dalam kelompok itu penting, sekecil apapun. Mungkin kontribusimu tidak terlihat langsung, tapi tetap berdampak. Apa peran yang biasanya kamu ambil dalam kelompok?",
+    "keywords": ["tidak berkontribusi", "peran kelompok", "organisasi", "merasa tidak berguna"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 160,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena takut meminta bantuan, khawatir dianggap tidak mampu.",
+    "response_to_display": "Meminta bantuan bukan tanda ketidakmampuan, tapi tanda kesadaran diri dan keinginan untuk belajar. Orang lain mungkin senang membantu. Bantuan seperti apa yang sebenarnya kamu butuhkan?",
+    "keywords": ["takut meminta bantuan", "dianggap tidak mampu", "menunda", "kolaborasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 161,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena harus mengikuti banyak kegiatan di luar kuliah yang menyita waktu.",
+    "response_to_display": "Terlalu banyak komitmen memang bisa membuat stres. Coba evaluasi kembali kegiatanmu, mana yang benar-benar penting dan mana yang bisa dikurangi. Kegiatan mana yang paling memberimu energi positif?",
+    "keywords": ["banyak kegiatan", "menyita waktu", "stres", "prioritas", "manajemen waktu"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 162,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak ada yang benar-benar mendengarkan saya ketika saya berbicara.",
+    "response_to_display": "Perasaan tidak didengarkan bisa membuat frustrasi. Coba perhatikan cara komunikasimu, atau cari orang yang memang pendengar yang baik. Apa yang biasanya ingin kamu sampaikan namun terasa sulit?",
+    "keywords": ["tidak didengarkan", "komunikasi", "frustrasi", "didengar"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 163,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena merasa 'nanti juga bisa selesai cepat' padahal seringnya tidak.",
+    "response_to_display": "Optimisme berlebihan terhadap waktu (planning fallacy) sering menjebak. Coba lebih realistis dalam memperkirakan waktu dan tambahkan buffer. Berapa lama biasanya kamu meremehkan waktu pengerjaan?",
+    "keywords": ["planning fallacy", "meremehkan waktu", "menunda", "realistis"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 164,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena khawatir tentang biaya kuliah dan keuangan keluarga.",
+    "response_to_display": "Kekhawatiran finansial memang bisa menambah beban stres. Coba cari informasi tentang beasiswa atau bantuan keuangan. Apakah kamu sudah mencoba membicarakan ini dengan pihak kampus atau keluarga?",
+    "keywords": ["biaya kuliah", "keuangan keluarga", "stres finansial", "beasiswa"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 165,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak punya 'lingkaran dalam' pertemanan yang solid.",
+    "response_to_display": "Membangun pertemanan yang mendalam butuh waktu dan usaha. Coba mulai dengan memperdalam hubungan dengan satu atau dua orang yang kamu rasa cocok. Kualitas apa yang kamu cari dalam seorang teman dekat?",
+    "keywords": ["lingkaran pertemanan", "teman dekat", "kesepian", "koneksi sosial"],
+    "confidence_score": 0.87
+  },
+  {
+    "id": 166,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena menunggu inspirasi atau ide brilian datang dulu.",
+    "response_to_display": "Inspirasi seringkali datang saat kita sudah mulai bekerja, bukan sebaliknya. Coba mulai saja, meskipun idenya belum sempurna. Apa langkah awal yang bisa kamu lakukan tanpa menunggu inspirasi?",
+    "keywords": ["menunggu inspirasi", "ide brilian", "menunda", "aksi dulu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 167,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena merasa bersaing ketat dengan teman-teman sekelas untuk mendapatkan perhatian dosen.",
+    "response_to_display": "Persaingan yang tidak sehat bisa membuat stres. Fokus pada pembelajaranmu sendiri dan kontribusi unikmu. Kualitas apa yang bisa kamu tunjukkan kepada dosen terlepas dari teman-temanmu?",
+    "keywords": ["persaingan", "perhatian dosen", "stres akademik", "fokus diri"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 168,
+    "intent": "self_esteem_self_worth_issues",
+    "context_for_indexing": "Saya merasa tidak ada yang akan merindukan saya jika saya tidak ada.",
+    "response_to_display": "Perasaan seperti itu pasti sangat berat. Tapi percayalah, kehadiran setiap orang itu berarti, termasuk kamu. Coba ingat satu orang yang pernah menunjukkan kepedulian padamu.",
+    "keywords": ["tidak dirindukan", "merasa tidak penting", "kesepian", "nilai diri"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 169,
+    "intent": "procrastination_issue",
+    "context_for_indexing": "Saya menunda karena merasa tidak punya cukup sumber daya atau alat untuk mengerjakan tugas.",
+    "response_to_display": "Keterbatasan sumber daya memang bisa jadi kendala. Coba cari alternatif atau cara kreatif untuk mengatasi kekurangan itu. Sumber daya apa yang paling kamu butuhkan saat ini?",
+    "keywords": ["kurang sumber daya", "alat terbatas", "menunda", "solusi kreatif"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 170,
+    "intent": "academic_stress",
+    "context_for_indexing": "Saya stres karena merasa jauh dari keluarga dan teman saat kuliah di perantauan.",
+    "response_to_display": "Merantau memang bisa membuat rindu rumah dan kesepian. Jaga komunikasi dengan orang terdekat dan coba bangun koneksi baru di tempat kuliah. Apa yang paling kamu rindukan dari rumah?",
+    "keywords": ["merantau", "jauh dari keluarga", "homesick", "stres sosial", "dukungan"],
+    "confidence_score": 0.9
+  },
+   {
+    "id": 171,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa tertekan untuk selalu tampil sempurna dan mengikuti tren di media sosial.",
+    "response_to_display": "Media sosial memang seringkali menciptakan tekanan untuk tampil sempurna. Ingatlah bahwa apa yang ditampilkan di sana tidak selalu mencerminkan realitas. Apa satu hal yang bisa kamu lakukan untuk dirimu sendiri hari ini, terlepas dari apa yang orang lain pikirkan?",
+    "keywords": ["tekanan sosial", "media sosial", "tren", "tampil sempurna", "citra diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 172,
+    "intent": "family_pressure",
+    "context_for_indexing": "Keluarga saya punya ekspektasi tinggi soal karier saya, dan itu membuat saya sangat stres.",
+    "response_to_display": "Tekanan dari keluarga soal karier bisa sangat berat. Penting untuk menemukan keseimbangan antara harapan mereka dan apa yang benar-benar kamu inginkan. Sudahkah kamu mencoba membicarakan aspirasimu dengan mereka?",
+    "keywords": ["tekanan keluarga", "ekspektasi karier", "stres", "aspirasi pribadi"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 173,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya sering terjebak dalam pikiran berulang tentang kesalahan kecil atau hal yang belum terjadi.",
+    "response_to_display": "Terjebak dalam overthinking memang melelahkan. Coba alihkan pikiranmu dengan aktivitas yang menenangkan atau fokus pada saat ini. Apa satu hal yang bisa kamu lakukan sekarang untuk menghentikan lingkaran pikiran itu?",
+    "keywords": ["overthinking", "pikiran berulang", "cemas", "kesalahan", "stres mental"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 174,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Karena terlalu sibuk, saya sering lupa makan atau tidur yang cukup, badan jadi tidak karuan.",
+    "response_to_display": "Mengabaikan kebutuhan dasar seperti makan dan tidur bisa berdampak buruk pada kesehatanmu. Self-care itu penting. Apa satu hal kecil untuk merawat diri yang bisa kamu lakukan hari ini?",
+    "keywords": ["mengabaikan diri", "lupa makan", "kurang tidur", "self-care", "kesehatan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 175,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa tidak ada yang mendukung keputusan penting yang saya ambil baru-baru ini.",
+    "response_to_display": "Merasa tidak didukung saat mengambil keputusan penting itu berat. Ingatlah bahwa keyakinan pada diri sendiri juga merupakan bentuk dukungan. Apa yang membuat keputusan itu penting bagimu?",
+    "keywords": ["kurang dukungan", "keputusan penting", "merasa sendiri", "validasi diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 176,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut sekali gagal dalam ujian penting minggu depan sampai tidak bisa belajar.",
+    "response_to_display": "Ketakutan akan kegagalan itu wajar, tapi jangan biarkan itu melumpuhkanmu. Fokus pada persiapan terbaik yang bisa kamu lakukan. Apa langkah belajar pertama yang bisa kamu ambil hari ini?",
+    "keywords": ["takut gagal", "ujian", "cemas", "persiapan", "prokrastinasi"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 177,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya selalu membandingkan pencapaian saya dengan teman-teman dan merasa tertinggal jauh.",
+    "response_to_display": "Perangkap perbandingan bisa menguras energi dan kebahagiaan. Setiap orang punya jalurnya sendiri. Coba fokus pada kemajuanmu sendiri. Apa satu pencapaian kecilmu yang bisa kamu banggakan?",
+    "keywords": ["membandingkan diri", "merasa tertinggal", "pencapaian", "fokus diri", "iri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 178,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Meskipun saya berhasil, saya merasa ini hanya keberuntungan dan takut ketahuan kalau saya tidak sepintar itu.",
+    "response_to_display": "Itu namanya sindrom imposter, dan banyak orang mengalaminya. Keberhasilanmu adalah hasil usahamu. Coba ingat kembali proses yang sudah kamu lalui untuk mencapai ini. Apa usaha terbesarmu?",
+    "keywords": ["sindrom imposter", "merasa penipu", "keberuntungan", "tidak percaya diri", "pencapaian"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 179,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Teman-teman di kampus sering mengajak melakukan hal yang sebenarnya tidak saya sukai, tapi saya takut menolak.",
+    "response_to_display": "Tekanan teman sebaya di kampus memang bisa sulit dihadapi. Penting untuk berani mengatakan 'tidak' pada hal yang tidak sesuai dengan nilaimu. Apa yang membuatmu ragu untuk menolak?",
+    "keywords": ["tekanan teman sebaya", "kampus", "sulit menolak", "integritas diri"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 180,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya mulai ragu apakah jurusan yang saya ambil ini benar-benar cocok untuk saya atau tidak.",
+    "response_to_display": "Keraguan tentang jurusan itu wajar dialami mahasiswa. Coba eksplorasi minatmu lebih dalam, baik di dalam maupun di luar jurusan. Apa aspek dari studimu yang masih membuatmu tertarik atau penasaran?",
+    "keywords": ["krisis identitas akademik", "salah jurusan", "ragu", "minat studi", "eksplorasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 181,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya sulit sekali fokus saat belajar, pikiran saya melayang ke mana-mana.",
+    "response_to_display": "Kesulitan fokus itu masalah umum. Coba identifikasi apa yang biasanya mengganggu fokusmu. Mungkin kita bisa cari strategi seperti teknik Pomodoro atau menciptakan lingkungan belajar yang minim distraksi.",
+    "keywords": ["sulit fokus", "pikiran melayang", "distraksi", "belajar efektif", "konsentrasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 182,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya pusing memikirkan biaya hidup sebagai mahasiswa, uang saku rasanya tidak pernah cukup.",
+    "response_to_display": "Stres finansial sebagai mahasiswa memang berat. Coba buat catatan pengeluaran untuk melihat ke mana uangmu pergi, dan cari informasi tentang peluang kerja paruh waktu atau beasiswa. Apakah ada pengeluaran yang bisa dikurangi?",
+    "keywords": ["stres finansial", "mahasiswa", "biaya hidup", "uang saku", "anggaran"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 183,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Masalah dengan pacar membuat saya tidak bisa konsentrasi mengerjakan tugas kuliah.",
+    "response_to_display": "Masalah dalam hubungan memang bisa mengganggu fokus. Penting untuk memberi dirimu waktu untuk memproses perasaan, tapi juga menetapkan batasan agar tidak berlarut-larut mengganggu studimu. Sudahkah kamu mencoba membicarakannya dengan pasanganmu?",
+    "keywords": ["gangguan hubungan", "pacar", "tidak konsentrasi", "tugas kuliah", "emosi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 184,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Setiap kali gagal, saya selalu menyalahkan diri sendiri habis-habisan.",
+    "response_to_display": "Menyalahkan diri sendiri secara berlebihan setelah kegagalan tidak akan membantu. Kegagalan adalah bagian dari proses belajar. Coba lihat apa yang bisa dipelajari dari pengalaman itu, bukan hanya menyalahkan diri.",
+    "keywords": ["menyalahkan diri", "kegagalan", "kritik diri", "belajar dari kesalahan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 185,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Saya sebentar lagi lulus dan cemas sekali memikirkan apa yang akan terjadi setelah ini, takut tidak dapat kerja.",
+    "response_to_display": "Kecemasan pasca-kelulusan itu sangat umum. Banyak yang merasakannya. Fokus pada persiapan yang bisa kamu lakukan sekarang, seperti memperbaiki CV atau melatih wawancara. Apa langkah kecil yang bisa kamu ambil untuk persiapan kariermu?",
+    "keywords": ["cemas pasca lulus", "takut tidak kerja", "masa depan", "persiapan karier"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 186,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Saya merasa usaha saya tidak pernah dianggap atau divalidasi oleh orang sekitar.",
+    "response_to_display": "Tidak mendapatkan validasi atas usaha bisa mengecewakan. Ingatlah bahwa validasi terpenting datang dari dirimu sendiri. Apa satu hal yang kamu banggakan dari usahamu, terlepas dari pendapat orang lain?",
+    "keywords": ["kurang validasi", "tidak dianggap", "usaha", "penghargaan diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 187,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Saya merasa sangat kesepian dan terisolasi di kampus ini, sulit mencari teman.",
+    "response_to_display": "Perasaan kesepian dan terisolasi itu berat. Mencari teman di lingkungan baru memang butuh waktu. Coba ikuti kegiatan yang kamu minati untuk bertemu orang dengan minat serupa. Kegiatan apa yang menarik perhatianmu?",
+    "keywords": ["kesepian", "isolasi", "sulit berteman", "kampus", "koneksi sosial"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 188,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Saya hanya ingin tahu bagaimana cara menjaga kesehatan mental saya secara umum.",
+    "response_to_display": "Itu pertanyaan yang bagus! Menjaga kesehatan mental melibatkan banyak hal, seperti tidur cukup, makan teratur, olahraga, mengelola stres, dan menjaga hubungan sosial. Aspek mana yang ingin kamu diskusikan lebih lanjut?",
+    "keywords": ["kesehatan mental", "kesejahteraan umum", "tips", "self-care"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 189,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Akhir-akhir ini saya merasa sedih terus-menerus dan kehilangan minat pada hal yang dulu saya sukai.",
+    "response_to_display": "Saya mendengar apa yang kamu rasakan. Perasaan sedih yang terus-menerus dan kehilangan minat bisa jadi tanda kamu butuh dukungan lebih. Penting untuk membicarakan ini dengan seseorang yang kamu percaya atau profesional. Sudah berapa lama kamu merasa seperti ini?",
+    "keywords": ["gejala depresi", "sedih terus", "hilang minat", "dukungan mental"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 190,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Saya sering merasa cemas dan khawatir berlebihan tentang banyak hal, bahkan hal sepele.",
+    "response_to_display": "Rasa cemas dan khawatir yang berlebihan memang bisa mengganggu. Coba identifikasi apa pemicu kecemasanmu. Teknik relaksasi seperti pernapasan dalam bisa membantu. Hal spesifik apa yang sering kamu khawatirkan?",
+    "keywords": ["cemas berlebihan", "khawatir", "kecemasan umum", "stres", "relaksasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 191,
+    "intent": "social_pressure",
+    "context_for_indexing": "Lingkaran pertemanan saya menuntut saya untuk selalu ikut gaya hidup mereka yang mewah, padahal saya tidak mampu.",
+    "response_to_display": "Tekanan untuk mengikuti gaya hidup teman bisa sulit, apalagi jika tidak sesuai kemampuan finansial. Penting untuk jujur pada diri sendiri dan teman-temanmu. Apa yang paling kamu khawatirkan jika tidak mengikuti mereka?",
+    "keywords": ["tekanan sosial", "gaya hidup mewah", "pertemanan", "finansial"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 192,
+    "intent": "family_pressure",
+    "context_for_indexing": "Orang tua saya terus membandingkan saya dengan kakak atau adik yang mereka anggap lebih sukses.",
+    "response_to_display": "Dibanding-bandingkan oleh orang tua, apalagi dengan saudara sendiri, pasti menyakitkan. Ingatlah bahwa setiap orang punya keunikan dan jalannya masing-masing. Apa satu hal yang kamu banggakan dari dirimu sendiri?",
+    "keywords": ["tekanan keluarga", "dibandingkan saudara", "ekspektasi orang tua", "harga diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 193,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya tidak bisa tidur karena terus memikirkan percakapan tadi siang, takut ada yang salah saya katakan.",
+    "response_to_display": "Overthinking percakapan masa lalu bisa mengganggu tidur. Coba tuliskan apa yang kamu khawatirkan, atau lakukan aktivitas relaksasi sebelum tidur. Apa yang paling kamu khawatirkan dari percakapan itu?",
+    "keywords": ["overthinking", "sulit tidur", "cemas sosial", "analisis berlebihan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 194,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya terlalu fokus mengejar target sampai lupa istirahat dan merawat diri, sekarang jadi gampang sakit.",
+    "response_to_display": "Mengejar target itu baik, tapi jangan sampai mengorbankan kesehatan. Istirahat dan self-care justru bisa meningkatkan produktivitasmu. Apa satu bentuk self-care sederhana yang bisa kamu jadwalkan minggu ini?",
+    "keywords": ["mengabaikan diri", "lupa istirahat", "sakit", "produktif", "keseimbangan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 195,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Ketika saya menceritakan masalah saya, teman-teman saya sepertinya tidak peduli atau menganggapnya sepele.",
+    "response_to_display": "Merasa tidak didengarkan atau dianggap sepele saat berbagi masalah itu menyakitkan. Mungkin kamu perlu mencari teman atau orang yang lebih empatik untuk berbagi. Bagaimana perasaanmu ketika mereka merespons seperti itu?",
+    "keywords": ["kurang dukungan", "tidak peduli", "teman", "berbagi masalah", "empati"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 196,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya ingin mencoba bisnis kecil, tapi takut rugi dan gagal total.",
+    "response_to_display": "Ketakutan gagal dalam bisnis itu wajar, apalagi jika baru memulai. Coba lihat kegagalan sebagai pembelajaran. Riset dan perencanaan yang matang bisa mengurangi risiko. Apa langkah persiapan pertama yang bisa kamu lakukan?",
+    "keywords": ["takut gagal", "bisnis", "rugi", "memulai usaha", "risiko"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 197,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Melihat teman-teman sudah menikah atau punya karier bagus membuat saya merasa hidup saya tidak ada kemajuan.",
+    "response_to_display": "Setiap orang memiliki timeline hidup yang berbeda. Membandingkan dirimu dengan 'standar' orang lain bisa membuatmu tidak bahagia. Coba fokus pada tujuan dan kebahagiaan versimu sendiri. Apa yang membuatmu bahagia saat ini?",
+    "keywords": ["membandingkan diri", "timeline hidup", "pernikahan", "karier", "kebahagiaan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 198,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Saya diterima di pekerjaan impian, tapi saya merasa tidak pantas dan takut mengecewakan atasan.",
+    "response_to_display": "Selamat atas pekerjaan impianmu! Perasaan tidak pantas itu sering dialami (sindrom imposter). Ingatlah bahwa kamu terpilih karena kemampuanmu. Apa kualitas dirimu yang membuatmu berhasil mendapatkan pekerjaan ini?",
+    "keywords": ["sindrom imposter", "pekerjaan impian", "tidak pantas", "takut mengecewakan"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 199,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Di kampus, banyak teman yang suka begadang main game, saya jadi ikut-ikutan padahal besoknya ada kuliah pagi.",
+    "response_to_display": "Tekanan untuk ikut kebiasaan teman memang ada. Tapi penting untuk memprioritaskan kesehatan dan tanggung jawabmu. Bagaimana caramu bisa menolak ajakan tersebut dengan tetap menjaga pertemanan?",
+    "keywords": ["tekanan teman sebaya", "begadang", "main game", "prioritas", "kuliah"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 200,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa kehilangan jati diri karena terlalu fokus pada tuntutan akademis dan melupakan hobi saya.",
+    "response_to_display": "Kehilangan jati diri karena tekanan akademis bisa terjadi. Coba luangkan sedikit waktu untuk kembali menekuni hobimu atau hal lain yang kamu sukai di luar akademis. Hobi apa yang paling kamu rindukan?",
+    "keywords": ["krisis identitas akademik", "kehilangan jati diri", "hobi", "tekanan akademis"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 201,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya mudah teralihkan oleh hal-hal kecil saat sedang mencoba menyelesaikan pekerjaan penting.",
+    "response_to_display": "Mudah teralihkan itu tantangan umum. Coba teknik 'time blocking' atau matikan notifikasi saat mengerjakan hal penting. Apa biasanya yang paling sering mengalihkan perhatianmu?",
+    "keywords": ["sulit fokus", "teralihkan", "pekerjaan penting", "produktivitas", "manajemen waktu"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 202,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya khawatir tidak bisa membayar UKT semester depan karena kondisi keuangan keluarga sedang sulit.",
+    "response_to_display": "Kekhawatiran soal UKT pasti sangat membebani. Coba segera cari informasi tentang keringanan biaya, cicilan, atau beasiswa di kampusmu. Apakah kamu sudah menghubungi bagian administrasi keuangan kampus?",
+    "keywords": ["stres finansial", "UKT", "biaya kuliah", "beasiswa", "mahasiswa"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 203,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya baru putus cinta dan rasanya hancur sekali, tidak bisa fokus pada apapun.",
+    "response_to_display": "Putus cinta memang menyakitkan dan wajar jika sulit fokus. Beri dirimu waktu untuk berduka dan memproses perasaan. Jangan ragu mencari dukungan dari teman atau keluarga. Apa yang biasanya membantumu merasa lebih baik saat sedih?",
+    "keywords": ["gangguan hubungan", "putus cinta", "sedih", "sulit fokus", "dukungan emosional"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 204,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Proyek yang saya pimpin gagal, dan saya merasa ini semua salah saya seorang.",
+    "response_to_display": "Dalam sebuah proyek, keberhasilan atau kegagalan biasanya dipengaruhi banyak faktor, bukan hanya satu orang. Coba evaluasi secara objektif apa yang terjadi. Apa pelajaran yang bisa diambil untuk proyek selanjutnya?",
+    "keywords": ["menyalahkan diri", "kegagalan proyek", "tanggung jawab", "evaluasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 205,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Semua teman saya sudah punya rencana setelah lulus, saya sendiri masih bingung mau ngapain.",
+    "response_to_display": "Merasa bingung setelah lulus itu wajar, apalagi jika melihat teman sudah punya rencana. Setiap orang punya waktunya sendiri. Coba eksplorasi minat dan pilihan karier yang ada. Apa bidang yang menarik perhatianmu?",
+    "keywords": ["cemas pasca lulus", "bingung masa depan", "rencana karier", "eksplorasi diri"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 206,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Saya sudah berusaha keras belajar, tapi orang tua sepertinya tidak pernah puas dengan nilai saya.",
+    "response_to_display": "Tidak mendapatkan validasi dari orang tua atas usahamu pasti mengecewakan. Ingatlah bahwa usahamu itu berharga. Coba fokus pada proses belajarmu dan kepuasan dirimu sendiri. Apa yang membuatmu bangga dengan usahamu?",
+    "keywords": ["kurang validasi", "usaha belajar", "nilai", "ekspektasi orang tua"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 207,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Saya merasa tidak punya siapa-siapa untuk diajak bicara saat sedang sedih atau ada masalah.",
+    "response_to_display": "Merasa sendirian saat menghadapi masalah itu berat. Saya di sini untuk mendengarkan. Selain itu, adakah satu orang, mungkin teman lama atau anggota keluarga, yang bisa kamu coba hubungi?",
+    "keywords": ["kesepian", "isolasi", "tidak ada teman bicara", "dukungan emosional"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 208,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Bagaimana cara saya bisa lebih bahagia dan menikmati hidup sehari-hari?",
+    "response_to_display": "Mencari kebahagiaan dalam keseharian itu penting. Hal-hal kecil seperti bersyukur, melakukan hobi, atau menghabiskan waktu dengan orang terkasih bisa membantu. Apa satu hal kecil yang bisa membuatmu tersenyum hari ini?",
+    "keywords": ["kesejahteraan umum", "kebahagiaan", "menikmati hidup", "syukur", "tips hidup"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 209,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Saya merasa hampa dan tidak punya energi untuk melakukan apapun, bahkan bangun dari tempat tidur.",
+    "response_to_display": "Perasaan hampa dan tidak berenergi yang sampai sulit bangun tidur itu perlu perhatian serius. Ini bisa jadi tanda kamu membutuhkan bantuan profesional. Saya sangat menyarankan kamu untuk berbicara dengan psikolog atau konselor.",
+    "keywords": ["gejala depresi", "merasa hampa", "tidak berenergi", "sulit bangun", "bantuan profesional"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 210,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Jantung saya sering berdebar kencang dan tangan berkeringat dingin saat memikirkan masa depan.",
+    "response_to_display": "Gejala fisik seperti jantung berdebar dan keringat dingin bisa jadi tanda kecemasan. Teknik pernapasan dalam atau mindfulness bisa membantu menenangkan. Apa aspek masa depan yang paling membuatmu cemas?",
+    "keywords": ["cemas berlebihan", "gejala fisik cemas", "jantung berdebar", "khawatir masa depan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 211,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa harus selalu update status dan posting foto liburan agar tidak dianggap ketinggalan zaman.",
+    "response_to_display": "Tekanan untuk selalu eksis di media sosial itu nyata. Ingatlah bahwa kebahagiaan sejati tidak diukur dari jumlah like atau postingan. Apa aktivitas yang benar-benar kamu nikmati tanpa perlu dipublikasikan?",
+    "keywords": ["tekanan sosial", "media sosial", "eksis", "ketinggalan zaman", "FOMO"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 212,
+    "intent": "family_pressure",
+    "context_for_indexing": "Keluarga besar selalu bertanya kapan saya akan menikah, padahal saya belum siap.",
+    "response_to_display": "Pertanyaan kapan menikah dari keluarga besar memang bisa membuat tidak nyaman. Penting untuk memiliki batasan dan menjawab sesuai kesiapanmu. Apa yang membuatmu merasa belum siap saat ini?",
+    "keywords": ["tekanan keluarga", "kapan menikah", "ekspektasi sosial", "batasan pribadi"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 213,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya terus memutar ulang kejadian memalukan di masa lalu dan itu membuat saya cemas.",
+    "response_to_display": "Memutar ulang kejadian memalukan bisa membuat kita terjebak. Coba terima bahwa itu sudah terjadi dan fokus pada bagaimana kamu bisa bersikap lebih baik pada dirimu sekarang. Apa satu hal positif tentang dirimu saat ini?",
+    "keywords": ["overthinking", "kejadian memalukan", "masa lalu", "cemas", "self-compassion"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 214,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya tidak punya waktu untuk melakukan hobi atau hal yang saya sukai karena terlalu banyak tanggung jawab.",
+    "response_to_display": "Meluangkan waktu untuk hobi itu penting untuk keseimbangan hidup, meskipun hanya sebentar. Itu bukan kemewahan, tapi kebutuhan. Hobi apa yang paling ingin kamu lakukan jika ada waktu luang?",
+    "keywords": ["mengabaikan diri", "tidak ada waktu hobi", "tanggung jawab", "keseimbangan hidup"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 215,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa pasangan saya tidak mendukung impian karier saya.",
+    "response_to_display": "Kurangnya dukungan dari pasangan untuk impian karier bisa jadi sumber konflik. Komunikasi terbuka sangat penting. Sudahkah kamu mencoba menjelaskan betapa pentingnya impian itu bagimu?",
+    "keywords": ["kurang dukungan", "pasangan", "impian karier", "komunikasi hubungan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 216,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut untuk mengungkapkan perasaan saya kepada seseorang karena takut ditolak.",
+    "response_to_display": "Ketakutan akan penolakan itu sangat manusiawi. Tapi menyimpan perasaan juga bisa membebani. Apapun hasilnya, keberanianmu untuk jujur pada perasaanmu itu patut dihargai. Apa yang paling kamu khawatirkan dari penolakan?",
+    "keywords": ["takut gagal", "takut ditolak", "mengungkapkan perasaan", "hubungan", "keberanian"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 217,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya sering membandingkan penampilan fisik saya dengan standar kecantikan di iklan atau majalah.",
+    "response_to_display": "Standar kecantikan di media seringkali tidak realistis dan hasil editan. Setiap orang cantik dengan caranya sendiri. Coba fokus pada kesehatan dan apa yang membuatmu merasa nyaman dengan tubuhmu.",
+    "keywords": ["membandingkan diri", "penampilan fisik", "standar kecantikan", "citra tubuh", "media"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 218,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Setiap kali mendapat pujian atas pekerjaan saya, saya merasa itu tidak tulus atau saya hanya menipu mereka.",
+    "response_to_display": "Sulit menerima pujian bisa jadi ciri sindrom imposter. Coba lihat pujian sebagai pengakuan atas kerja kerasmu. Apa bagian dari pekerjaanmu yang menurutmu paling berhasil?",
+    "keywords": ["sindrom imposter", "pujian", "merasa menipu", "kerja keras", "validasi"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 219,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Saya merasa tertekan untuk ikut minum alkohol saat kumpul dengan teman-teman kampus, padahal saya tidak mau.",
+    "response_to_display": "Tekanan untuk minum alkohol di lingkungan pergaulan memang ada. Kamu punya hak untuk menolak tanpa harus merasa bersalah. Menyiapkan alasan atau mengalihkan topik bisa membantu. Apa yang membuatmu khawatir jika menolak?",
+    "keywords": ["tekanan teman sebaya", "minum alkohol", "kampus", "menolak", "integritas"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 220,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa nilai-nilai saya tidak lagi mendefinisikan siapa saya, saya bingung dengan identitas akademis saya.",
+    "response_to_display": "Wajar jika identitas akademismu berkembang atau berubah seiring waktu. Ini kesempatan untuk mengeksplorasi minat baru atau mendefinisikan ulang apa arti sukses akademis bagimu. Apa yang paling penting bagimu dalam perjalanan belajarmu saat ini?",
+    "keywords": ["krisis identitas akademik", "nilai", "bingung identitas", "perkembangan diri", "sukses akademis"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 221,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya punya banyak ide tapi sulit fokus untuk mewujudkan salah satunya.",
+    "response_to_display": "Punya banyak ide itu bagus! Tapi memang butuh fokus untuk eksekusi. Coba pilih satu ide yang paling membuatmu bersemangat atau paling realistis untuk dimulai. Apa kriteria yang bisa membantumu memilih?",
+    "keywords": ["sulit fokus", "banyak ide", "eksekusi", "prioritas", "memulai"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 222,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya stres karena harus mencari pekerjaan sampingan untuk menutupi biaya hidup sambil tetap fokus kuliah.",
+    "response_to_display": "Menyeimbangkan kuliah dan kerja sampingan memang menantang. Manajemen waktu yang baik sangat penting. Coba buat jadwal yang realistis dan jangan ragu meminta bantuan jika kewalahan. Jenis pekerjaan apa yang sedang kamu cari?",
+    "keywords": ["stres finansial", "kerja sampingan", "biaya hidup", "mahasiswa", "manajemen waktu"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 223,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya terlalu sering memikirkan gebetan sampai lupa waktu dan tugas-tugas jadi terbengkalai.",
+    "response_to_display": "Wajar jika gebetan menyita pikiran, tapi jangan sampai mengganggu tanggung jawabmu. Coba tetapkan waktu khusus untuk memikirkan hal lain atau mengerjakan tugas. Apa tugas yang paling mendesak saat ini?",
+    "keywords": ["gangguan hubungan", "gebetan", "lupa waktu", "tugas terbengkalai", "fokus"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 224,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Saya gagal masuk universitas impian dan merasa diri saya pecundang.",
+    "response_to_display": "Tidak masuk universitas impian memang mengecewakan, tapi itu tidak membuatmu pecundang. Ada banyak jalan menuju sukses. Ini kesempatan untuk mengeksplorasi pilihan lain. Apa rencana alternatif yang kamu miliki?",
+    "keywords": ["menyalahkan diri", "gagal masuk universitas", "pecundang", "alternatif", "kesempatan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 225,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Saya takut tidak bisa memenuhi ekspektasi orang tua setelah lulus dan bekerja.",
+    "response_to_display": "Kekhawatiran tidak bisa memenuhi ekspektasi orang tua setelah bekerja itu umum. Komunikasikan apa yang menjadi harapanmu dan batasanmu. Sukses itu punya banyak definisi. Apa definisi sukses menurutmu?",
+    "keywords": ["cemas pasca lulus", "ekspektasi orang tua", "bekerja", "definisi sukses"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 226,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Ide-ide saya sering diabaikan dalam rapat atau diskusi kelompok.",
+    "response_to_display": "Merasa ide diabaikan bisa membuat frustrasi. Coba sampaikan idemu dengan lebih percaya diri dan jelas. Mungkin juga kamu bisa meminta feedback spesifik mengapa idemu belum diterima. Bagaimana caramu biasanya menyampaikan ide?",
+    "keywords": ["kurang validasi", "ide diabaikan", "rapat", "diskusi kelompok", "komunikasi efektif"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 227,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Saya pindah ke kota baru dan belum punya teman sama sekali, rasanya sepi sekali.",
+    "response_to_display": "Pindah ke kota baru dan merasa kesepian itu wajar di awal. Coba ikuti kegiatan komunitas lokal atau gunakan aplikasi pertemanan untuk bertemu orang baru. Apa minatmu yang bisa membantumu terkoneksi dengan orang lain?",
+    "keywords": ["kesepian", "isolasi", "kota baru", "mencari teman", "komunitas"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 228,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Saya merasa baik-baik saja, tapi ingin tahu apakah ada yang bisa saya tingkatkan untuk kesejahteraan saya.",
+    "response_to_display": "Itu sikap yang proaktif! Selalu ada ruang untuk pertumbuhan. Mungkin kamu bisa mencoba jurnal rasa syukur, belajar skill baru, atau memperdalam hubungan sosial. Area mana yang paling menarik untukmu saat ini?",
+    "keywords": ["kesejahteraan umum", "peningkatan diri", "pertumbuhan pribadi", "hidup lebih baik"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 229,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Saya jadi mudah marah dan sensitif belakangan ini, padahal biasanya tidak begini.",
+    "response_to_display": "Perubahan mood seperti jadi mudah marah dan sensitif bisa jadi tanda ada sesuatu yang perlu diperhatikan. Ini bisa terkait stres atau hal lain. Adakah perubahan signifikan dalam hidupmu belakangan ini?",
+    "keywords": ["gejala depresi", "mudah marah", "sensitif", "perubahan mood", "stres"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 230,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Saya sering merasa gelisah tanpa alasan yang jelas, hanya perasaan tidak enak saja.",
+    "response_to_display": "Perasaan gelisah tanpa alasan yang jelas bisa sangat mengganggu. Coba perhatikan pola kapan perasaan itu muncul. Aktivitas fisik ringan atau mindfulness mungkin bisa membantu meredakannya. Kapan biasanya kamu merasa seperti ini?",
+    "keywords": ["cemas berlebihan", "gelisah", "tanpa alasan", "perasaan tidak enak", "mindfulness"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 231,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya merasa hari ini akan menjadi hari yang baik dan produktif!",
+    "response_to_display": "Semangat yang luar biasa! Dengan energi positif seperti ini, pasti banyak hal baik yang bisa kamu capai hari ini. Apa target utamamu hari ini?",
+    "keywords": ["semangat", "positif", "produktif", "hari baik", "afirmasi"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 232,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa tertekan untuk punya pacar karena semua teman saya sudah punya.",
+    "response_to_display": "Tekanan untuk punya pacar karena lingkungan itu umum. Ingatlah bahwa setiap orang punya waktunya sendiri untuk hubungan. Apa yang membuatmu merasa nyaman dan bahagia saat ini, terlepas dari status hubungan?",
+    "keywords": ["tekanan sosial", "punya pacar", "teman", "status hubungan", "jomblo"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 233,
+    "intent": "family_pressure",
+    "context_for_indexing": "Orang tua saya ingin saya mengambil jurusan kedokteran, padahal minat saya di seni.",
+    "response_to_display": "Perbedaan minat dengan harapan orang tua memang sulit. Komunikasi yang jujur dan terbuka tentang apa yang benar-benar kamu inginkan itu penting. Apa yang membuatmu begitu tertarik dengan seni?",
+    "keywords": ["tekanan keluarga", "pilihan jurusan", "minat pribadi", "kedokteran vs seni"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 234,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya terus memikirkan apakah saya sudah mengunci pintu atau mematikan kompor, padahal sudah saya cek berkali-kali.",
+    "response_to_display": "Pikiran berulang seperti itu bisa jadi tanda kecemasan. Coba teknik 'grounding' untuk kembali ke saat ini, atau buat checklist fisik untuk hal-hal yang sering kamu khawatirkan. Apa yang biasanya kamu lakukan untuk menenangkan pikiran itu?",
+    "keywords": ["overthinking", "cemas", "OCD tendencies", "pikiran berulang", "cek berulang"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 235,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya percaya saya bisa melewati tantangan ini, seberat apapun itu!",
+    "response_to_display": "Itu semangat yang luar biasa! Keyakinan pada diri sendiri adalah modal utama. Tantangan apa yang sedang kamu hadapi? Mari kita hadapi bersama!",
+    "keywords": ["percaya diri", "bisa melewati", "tantangan", "semangat juang", "optimis"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 236,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya merasa bersalah jika meluangkan waktu untuk diri sendiri, rasanya egois.",
+    "response_to_display": "Meluangkan waktu untuk diri sendiri itu bukan egois, tapi penting untuk mengisi ulang energimu agar bisa lebih baik lagi dalam menjalani peranmu. Apa satu hal kecil yang bisa kamu nikmati tanpa rasa bersalah?",
+    "keywords": ["mengabaikan diri", "rasa bersalah self-care", "egois", "pentingnya istirahat"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 237,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa ide-ide kreatif saya tidak pernah didukung oleh atasan di tempat kerja.",
+    "response_to_display": "Tidak mendapat dukungan untuk ide kreatif bisa mematahkan semangat. Coba sampaikan idemu dengan data pendukung atau cari kolega yang mungkin bisa membantumu menyuarakannya. Ide seperti apa yang ingin kamu sampaikan?",
+    "keywords": ["kurang dukungan", "ide kreatif", "atasan", "tempat kerja", "inovasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 238,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut untuk berbicara di depan umum karena khawatir akan blank atau salah bicara.",
+    "response_to_display": "Ketakutan berbicara di depan umum itu sangat umum. Latihan dan persiapan yang matang bisa sangat membantu. Coba mulai dengan audiens kecil. Materi apa yang ingin kamu sampaikan?",
+    "keywords": ["takut gagal", "public speaking", "blank", "salah bicara", "cemas"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 239,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Setiap hari adalah kesempatan baru untuk menjadi versi diri yang lebih baik.",
+    "response_to_display": "Benar sekali! Setiap hari adalah lembaran baru. Apa satu hal yang ingin kamu tingkatkan atau pelajari hari ini untuk menjadi versi dirimu yang lebih baik?",
+    "keywords": ["kesempatan baru", "versi lebih baik", "pengembangan diri", "semangat pagi", "optimisme"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 240,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya sering merasa tidak seberuntung orang lain dalam hal karier atau percintaan.",
+    "response_to_display": "Perbandingan nasib bisa membuat kita lupa bersyukur atas apa yang kita miliki. Setiap orang punya perjalanan dan 'keberuntungan' masing-masing. Apa satu hal dalam hidupmu yang kamu syukuri saat ini?",
+    "keywords": ["membandingkan diri", "tidak beruntung", "karier", "percintaan", "syukur"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 241,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Saya merasa kesuksesan saya selama ini hanya kebetulan, bukan karena kemampuan saya.",
+    "response_to_display": "Perasaan seperti itu adalah ciri sindrom imposter. Ingatlah bahwa 'kebetulan' yang terus-menerus itu adalah hasil dari usaha dan kemampuanmu. Apa pencapaian yang paling membuatmu meragukan dirimu?",
+    "keywords": ["sindrom imposter", "sukses kebetulan", "kemampuan diri", "ragu diri"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 242,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Saya merasa harus ikut kegiatan organisasi tertentu di kampus agar dianggap 'keren' atau punya banyak teman.",
+    "response_to_display": "Ikut organisasi karena tekanan teman atau ingin dianggap keren mungkin tidak akan membuatmu bahagia. Pilihlah kegiatan yang benar-benar sesuai minatmu. Organisasi seperti apa yang sebenarnya menarik perhatianmu?",
+    "keywords": ["tekanan teman sebaya", "organisasi kampus", "dianggap keren", "minat pribadi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 243,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya siap menghadapi hari ini dengan senyuman dan energi penuh!",
+    "response_to_display": "Luar biasa! Senyuman dan energi positifmu menular! Apa yang membuatmu begitu bersemangat hari ini? Semoga harimu menyenangkan!",
+    "keywords": ["siap hadapi hari", "senyuman", "energi penuh", "semangat", "antusias"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 244,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa bingung dengan tujuan hidup saya setelah lulus kuliah nanti, apakah ilmu saya akan terpakai?",
+    "response_to_display": "Kebingungan tentang tujuan hidup setelah lulus itu wajar. Ilmu yang kamu dapatkan pasti akan berguna, mungkin tidak secara langsung tapi sebagai dasar berpikir. Coba eksplorasi berbagai pilihan karier. Apa yang paling membuatmu penasaran?",
+    "keywords": ["krisis identitas akademik", "tujuan hidup", "lulus kuliah", "ilmu terpakai", "bingung karier"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 245,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya sulit berkonsentrasi mengerjakan satu hal dalam waktu lama, perhatian saya mudah terpecah.",
+    "response_to_display": "Perhatian yang mudah terpecah itu tantangan di era digital ini. Coba bagi pekerjaanmu menjadi sesi-sesi pendek dengan istirahat di antaranya (seperti teknik Pomodoro). Berapa lama biasanya kamu bisa fokus tanpa terganggu?",
+    "keywords": ["sulit fokus", "perhatian terpecah", "konsentrasi", "produktivitas", "teknik pomodoro"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 246,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya stres karena orang tua tidak bisa lagi membiayai kuliah saya sepenuhnya.",
+    "response_to_display": "Situasi finansial yang berubah pasti menambah beban pikiran. Ini saatnya mencari solusi alternatif seperti beasiswa, bantuan keuangan kampus, atau pekerjaan paruh waktu. Sudahkah kamu mencari informasi tentang opsi-opsi tersebut?",
+    "keywords": ["stres finansial", "biaya kuliah", "bantuan orang tua", "beasiswa", "kerja paruh waktu"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 247,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya tahu saya punya potensi besar dan saya akan terus mengembangkannya.",
+    "response_to_display": "Itu adalah pengakuan diri yang sangat kuat! Mengenali potensi diri adalah langkah awal untuk meraih hal-hal besar. Potensi apa yang paling ingin kamu kembangkan saat ini?",
+    "keywords": ["potensi diri", "pengembangan diri", "percaya kemampuan", "semangat bertumbuh"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 248,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya terus memikirkan pertengkaran dengan sahabat sampai tidak bisa fokus belajar untuk ujian.",
+    "response_to_display": "Pertengkaran dengan sahabat memang bisa mengganggu pikiran. Coba selesaikan dulu masalahnya atau setidaknya bicarakan baik-baik. Jika belum bisa, coba alihkan pikiranmu sementara waktu untuk fokus pada ujian. Apa yang bisa membantumu fokus saat ini?",
+    "keywords": ["gangguan hubungan", "bertengkar sahabat", "sulit fokus", "ujian", "menyelesaikan masalah"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 249,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Saya merasa gagal sebagai anak karena belum bisa membahagiakan orang tua.",
+    "response_to_display": "Definisi 'membahagiakan orang tua' bisa berbeda-beda. Usahamu untuk menjadi pribadi yang baik dan bertanggung jawab juga merupakan bentuk kebahagiaan bagi mereka. Apa yang membuatmu merasa belum bisa membahagiakan mereka?",
+    "keywords": ["menyalahkan diri", "gagal sebagai anak", "membahagiakan orang tua", "ekspektasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 250,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Saya takut tidak bisa bersaing di dunia kerja karena merasa skill saya kurang.",
+    "response_to_display": "Kekhawatiran tentang persaingan kerja itu wajar. Ini bisa jadi motivasi untuk terus meningkatkan skill. Skill apa yang menurutmu paling dibutuhkan di bidang yang kamu minati dan bagaimana cara meningkatkannya?",
+    "keywords": ["cemas pasca lulus", "persaingan kerja", "skill kurang", "pengembangan skill"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 251,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya bersyukur atas semua yang saya miliki dan siap menyambut tantangan baru.",
+    "response_to_display": "Sikap bersyukur dan siap menghadapi tantangan itu kombinasi yang hebat! Apa satu hal yang paling kamu syukuri hari ini? Dan tantangan apa yang membuatmu bersemangat?",
+    "keywords": ["bersyukur", "siap tantangan", "semangat baru", "optimis", "hidup positif"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 252,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Saya merasa kontribusi saya di tim proyek tidak pernah dianggap penting.",
+    "response_to_display": "Merasa kontribusi tidak dianggap itu bisa menurunkan motivasi. Coba komunikasikan peran dan hasil kerjamu dengan lebih jelas kepada tim. Apa kontribusi spesifik yang sudah kamu berikan?",
+    "keywords": ["kurang validasi", "kontribusi tim", "proyek", "tidak dianggap", "komunikasi tim"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 253,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Saya merasa tidak punya teman yang benar-benar 'klik' dan bisa diajak curhat mendalam.",
+    "response_to_display": "Mencari teman yang 'klik' memang tidak mudah. Koneksi yang mendalam butuh waktu untuk dibangun. Coba lebih terbuka dan menjadi pendengar yang baik. Kualitas apa yang kamu cari dalam seorang sahabat?",
+    "keywords": ["kesepian", "isolasi", "teman curhat", "koneksi mendalam", "persahabatan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 254,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Apa saja tanda-tanda bahwa saya mungkin mengalami burnout?",
+    "response_to_display": "Tanda-tanda burnout bisa beragam, seperti kelelahan fisik dan emosional yang ekstrem, sinisme atau perasaan negatif terhadap pekerjaan/studi, dan menurunnya efektivitas profesional. Apakah kamu merasakan beberapa hal ini?",
+    "keywords": ["kesejahteraan umum", "burnout", "tanda-tanda stres", "kelelahan"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 255,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya memilih untuk fokus pada hal-hal positif dalam hidup saya.",
+    "response_to_display": "Pilihan yang sangat baik! Fokus pada hal positif bisa mengubah perspektif dan membawa lebih banyak kebahagiaan. Apa satu hal positif yang menjadi fokusmu hari ini?",
+    "keywords": ["fokus positif", "pilihan hidup", "kebahagiaan", "mindset positif", "syukur"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 256,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Saya sering menangis tanpa sebab yang jelas dan merasa putus asa.",
+    "response_to_display": "Menangis tanpa sebab dan merasa putus asa adalah perasaan yang berat dan perlu perhatian. Sangat penting untuk membicarakan ini dengan seseorang yang bisa memberikan dukungan, idealnya seorang profesional kesehatan mental. Sudah berapa lama kamu merasakan ini?",
+    "keywords": ["gejala depresi", "menangis tanpa sebab", "putus asa", "kesehatan mental", "bantuan"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 257,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Saya sering merasa tegang di bahu dan leher karena terlalu banyak pikiran.",
+    "response_to_display": "Ketegangan fisik seperti di bahu dan leher seringkali merupakan manifestasi dari stres dan kecemasan. Peregangan ringan atau pijat bisa membantu. Apa yang paling sering membebani pikiranmu akhir-akhir ini?",
+    "keywords": ["cemas berlebihan", "tegang fisik", "stres", "banyak pikiran", "relaksasi fisik"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 258,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa harus selalu setuju dengan pendapat teman-teman agar diterima dalam kelompok.",
+    "response_to_display": "Menjadi diri sendiri dan memiliki pendapat berbeda itu wajar. Pertemanan yang sehat seharusnya menerima perbedaan. Apa yang membuatmu takut jika memiliki pendapat berbeda?",
+    "keywords": ["tekanan sosial", "setuju teman", "diterima kelompok", "pendapat pribadi", "asertif"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 259,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah pribadi yang kuat dan mampu mengatasi segala rintangan.",
+    "response_to_display": "Afirmasi yang sangat memberdayakan! Mengingatkan diri akan kekuatan batin itu penting. Kekuatan apa dalam dirimu yang paling membantumu mengatasi rintangan?",
+    "keywords": ["pribadi kuat", "mengatasi rintangan", "kekuatan batin", "resilien", "afirmasi positif"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 260,
+    "intent": "family_pressure",
+    "context_for_indexing": "Keluarga menuntut saya untuk segera mencari pekerjaan tetap setelah lulus, padahal saya ingin lanjut S2.",
+    "response_to_display": "Perbedaan rencana antara kamu dan keluarga memang perlu dikomunikasikan baik-baik. Coba jelaskan alasan kuatmu ingin lanjut S2 dan bagaimana itu bisa bermanfaat untuk masa depanmu. Apa yang membuat S2 begitu penting bagimu?",
+    "keywords": ["tekanan keluarga", "kerja vs s2", "rencana masa depan", "komunikasi keluarga"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 261,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya terus memikirkan skenario terburuk dari setiap keputusan yang akan saya ambil.",
+    "response_to_display": "Memikirkan skenario terburuk secara berlebihan bisa melumpuhkan. Coba seimbangkan dengan memikirkan skenario terbaik atau paling realistis. Apa keputusan yang sedang membuatmu overthinking saat ini?",
+    "keywords": ["overthinking", "skenario terburuk", "cemas keputusan", "realistis"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 262,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya merasa tidak pantas untuk bersenang-senang atau memanjakan diri sendiri.",
+    "response_to_display": "Setiap orang berhak untuk bersenang-senang dan memanjakan diri, itu bagian dari self-care. Itu bukan kemewahan, tapi kebutuhan untuk keseimbangan. Aktivitas menyenangkan apa yang terakhir kali kamu lakukan?",
+    "keywords": ["mengabaikan diri", "tidak pantas senang", "memanjakan diri", "self-care", "keseimbangan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 263,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya berhak mendapatkan kebahagiaan dan cinta dalam hidup ini.",
+    "response_to_display": "Tentu saja! Kamu sangat berhak mendapatkan kebahagiaan dan cinta. Mengafirmasi hal ini adalah langkah penting. Apa satu hal yang bisa mendatangkan kebahagiaan kecil untukmu hari ini?",
+    "keywords": ["berhak bahagia", "berhak dicintai", "afirmasi diri", "cinta diri", "positif"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 264,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa tidak ada yang mengerti perjuangan saya dalam mencapai impian.",
+    "response_to_display": "Perjuangan mencapai impian memang seringkali terasa sepi. Tapi bukan berarti tidak ada yang peduli. Mungkin mereka tidak mengungkapkannya. Apa impian terbesarmu dan apa perjuangan terberatmu saat ini?",
+    "keywords": ["kurang dukungan", "perjuangan impian", "tidak dimengerti", "merasa sendiri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 265,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut untuk memulai proyek baru karena takut tidak bisa menyelesaikannya dengan baik.",
+    "response_to_display": "Ketakutan tidak bisa menyelesaikan dengan baik itu wajar saat memulai hal baru. Coba fokus pada prosesnya, bukan hanya hasil akhir. Pecah proyek menjadi langkah-langkah kecil. Langkah pertama apa yang bisa kamu ambil?",
+    "keywords": ["takut gagal", "proyek baru", "tidak selesai baik", "memulai", "perfeksionis"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 266,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya merasa skill saya tidak ada apa-apanya dibandingkan dengan orang-orang di industri yang sama.",
+    "response_to_display": "Setiap orang memulai dari titik yang berbeda dan punya keunikan masing-masing. Fokus pada pengembangan skill-mu sendiri secara berkelanjutan. Skill apa yang sedang kamu asah atau ingin kamu pelajari lebih lanjut?",
+    "keywords": ["membandingkan diri", "skill", "industri", "merasa minder", "pengembangan diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 267,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya memaafkan diri saya atas kesalahan masa lalu dan siap melangkah maju.",
+    "response_to_display": "Memaafkan diri sendiri adalah langkah besar menuju kedamaian batin dan kemajuan. Itu menunjukkan kekuatan. Apa pelajaran berharga yang kamu petik untuk melangkah maju?",
+    "keywords": ["memaafkan diri", "kesalahan masa lalu", "melangkah maju", "kedamaian batin", "pertumbuhan"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 268,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Saya takut orang lain akan sadar bahwa saya sebenarnya tidak sekompeten yang mereka kira.",
+    "response_to_display": "Ketakutan 'terbongkar' itu ciri khas sindrom imposter. Ingatlah bahwa persepsi orang tentang kompetensimu biasanya didasarkan pada apa yang sudah kamu tunjukkan. Apa bukti kompetensimu yang bisa kamu ingat?",
+    "keywords": ["sindrom imposter", "takut terbongkar", "kompetensi", "persepsi orang"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 269,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Saya merasa harus selalu tampil modis dan punya barang branded agar diterima di geng pertemanan kampus.",
+    "response_to_display": "Tekanan untuk tampil modis dengan barang branded bisa memberatkan. Pertemanan yang tulus seharusnya tidak didasarkan pada penampilan atau materi. Apa yang paling kamu hargai dalam sebuah pertemanan?",
+    "keywords": ["tekanan teman sebaya", "tampil modis", "barang branded", "pertemanan kampus", "materi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 270,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa bingung apakah saya benar-benar 'anak akademis' atau minat saya sebenarnya di bidang lain.",
+    "response_to_display": "Tidak apa-apa merasa bingung tentang identitas akademismu. Ini adalah bagian dari eksplorasi diri. Coba luangkan waktu untuk mencoba hal-hal baru di luar akademis. Bidang lain apa yang menarik perhatianmu?",
+    "keywords": ["krisis identitas akademik", "anak akademis", "minat lain", "eksplorasi diri", "bingung"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 271,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah arsitek dari kebahagiaan saya sendiri.",
+    "response_to_display": "Betul sekali! Kamu memegang kendali atas kebahagiaanmu. Apa satu 'bata' kebahagiaan yang ingin kamu bangun atau letakkan hari ini?",
+    "keywords": ["arsitek kebahagiaan", "kebahagiaan diri", "kendali hidup", "afirmasi kuat", "pencipta"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 272,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Pikiran saya sering bercabang saat dosen menjelaskan, jadi banyak materi yang terlewat.",
+    "response_to_display": "Pikiran bercabang saat kuliah itu umum. Coba catat poin-poin penting atau ajukan pertanyaan untuk menjaga fokus. Mungkin juga kamu bisa merekam materi jika diizinkan. Apa yang biasanya membuat pikiranmu bercabang?",
+    "keywords": ["sulit fokus", "pikiran bercabang", "materi kuliah", "konsentrasi belajar", "tips belajar"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 273,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya stres memikirkan hutang pinjaman mahasiswa yang harus saya bayar setelah lulus.",
+    "response_to_display": "Kekhawatiran tentang hutang pinjaman mahasiswa itu wajar. Coba buat rencana pengelolaan keuangan setelah lulus dan cari informasi tentang skema pembayaran yang mungkin ada. Apa langkah pertama yang bisa kamu ambil untuk merencanakan ini?",
+    "keywords": ["stres finansial", "hutang pinjaman", "mahasiswa", "lulus kuliah", "perencanaan keuangan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 274,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya tidak bisa berhenti stalking media sosial mantan, padahal itu membuat saya sedih.",
+    "response_to_display": "Stalking media sosial mantan memang bisa jadi siklus yang sulit dihentikan dan memperpanjang kesedihan. Coba batasi aksesmu atau bahkan blokir sementara untuk membantumu move on. Apa yang kamu harapkan dengan melihat media sosialnya?",
+    "keywords": ["gangguan hubungan", "stalking mantan", "media sosial", "sedih", "move on"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 275,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya menerima diri saya apa adanya, dengan segala kelebihan dan kekurangan.",
+    "response_to_display": "Penerimaan diri adalah fondasi yang sangat kuat untuk kebahagiaan dan pertumbuhan. Itu luar biasa! Apa satu kelebihanmu yang paling kamu syukuri dan satu kekurangan yang sedang kamu coba perbaiki?",
+    "keywords": ["penerimaan diri", "apa adanya", "kelebihan kekurangan", "cinta diri", "self-acceptance"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 276,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Saya merasa bersalah karena mengecewakan harapan tim saya dalam kompetisi.",
+    "response_to_display": "Merasa bersalah setelah mengecewakan tim itu wajar. Tapi ingat, dalam tim, tanggung jawab dibagi bersama. Apa yang bisa kamu dan tim pelajari dari pengalaman kompetisi ini untuk ke depannya?",
+    "keywords": ["menyalahkan diri", "mengecewakan tim", "kompetisi", "tanggung jawab tim", "belajar dari kegagalan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 277,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Saya takut salah memilih jalur karier setelah lulus dan menyesal nantinya.",
+    "response_to_display": "Ketakutan salah memilih jalur karier itu umum. Ingatlah bahwa karier itu perjalanan, bukan tujuan akhir. Kamu selalu bisa belajar dan beradaptasi. Lakukan riset dan magang jika memungkinkan. Jalur karier apa yang sedang kamu pertimbangkan?",
+    "keywords": ["cemas pasca lulus", "salah jalur karier", "penyesalan", "eksplorasi karier", "fleksibilitas"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 278,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Saya merasa bakat seni saya tidak pernah dihargai oleh lingkungan sekitar.",
+    "response_to_display": "Sangat disayangkan jika bakat senimu terasa tidak dihargai. Teruslah berkarya untuk dirimu sendiri. Cari komunitas seni atau platform online untuk menunjukkan karyamu. Jenis seni apa yang kamu tekuni?",
+    "keywords": ["kurang validasi", "bakat seni", "tidak dihargai", "komunitas seni", "ekspresi diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 279,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya dikelilingi oleh cinta dan dukungan, dan saya sangat bersyukur untuk itu.",
+    "response_to_display": "Indah sekali mendengarnya! Merasa dicintai dan didukung adalah berkah yang luar biasa. Siapa saja orang-orang yang memberimu cinta dan dukungan itu? Jangan lupa sampaikan rasa terima kasihmu pada mereka.",
+    "keywords": ["dikelilingi cinta", "dukungan", "bersyukur", "hubungan positif", "afirmasi"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 280,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Meskipun punya banyak kenalan, saya merasa tidak punya teman sejati yang bisa saya percaya sepenuhnya.",
+    "response_to_display": "Memiliki banyak kenalan tapi merasa tidak punya teman sejati itu bisa jadi pengalaman yang sepi. Membangun kepercayaan butuh waktu dan kerentanan. Apa kualitas yang paling kamu cari dalam seorang teman sejati?",
+    "keywords": ["kesepian", "isolasi", "teman sejati", "kepercayaan", "hubungan mendalam"],
+    "confidence_score": 0.9
+  },
+   {
+    "id": 281,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Bagaimana cara membangun kebiasaan baik yang konsisten?",
+    "response_to_display": "Membangun kebiasaan baik butuh waktu dan konsistensi. Mulailah dari hal kecil, buat target yang realistis, dan rayakan setiap kemajuan. Kebiasaan baik apa yang ingin kamu bangun saat ini?",
+    "keywords": ["kesejahteraan umum", "kebiasaan baik", "konsistensi", "target", "disiplin"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 282,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya merasa lebih kuat dan bijaksana setelah melewati masa sulit.",
+    "response_to_display": "Luar biasa! Masa sulit memang seringkali menempa kita menjadi lebih kuat dan bijaksana. Pelajaran berharga apa yang kamu dapatkan dari pengalaman tersebut?",
+    "keywords": ["lebih kuat", "bijaksana", "masa sulit", "pelajaran hidup", "pertumbuhan"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 283,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Saya merasa tidak ada harapan lagi untuk masa depan saya.",
+    "response_to_display": "Perasaan tidak ada harapan itu sangat berat. Penting untuk kamu tahu bahwa selalu ada harapan dan bantuan tersedia. Saya sangat menyarankan kamu untuk berbicara dengan seseorang yang kamu percaya atau seorang profesional kesehatan mental.",
+    "keywords": ["gejala depresi", "tidak ada harapan", "putus asa", "masa depan", "bantuan mental"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 284,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Saya sering merasa panik tiba-tiba tanpa tahu sebabnya.",
+    "response_to_display": "Serangan panik bisa sangat menakutkan. Jika ini sering terjadi, penting untuk berkonsultasi dengan profesional. Teknik pernapasan dalam bisa membantu saat serangan datang. Kapan biasanya kamu merasakan ini?",
+    "keywords": ["cemas berlebihan", "serangan panik", "panik tiba-tiba", "kesehatan mental"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 285,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa harus selalu terlihat bahagia dan baik-baik saja di depan orang lain, padahal tidak.",
+    "response_to_display": "Memakai 'topeng bahagia' terus-menerus itu melelahkan. Tidak apa-apa untuk tidak baik-baik saja. Menunjukkan kerentanan justru bisa membuat hubungan lebih otentik. Kepada siapa kamu merasa bisa jujur tentang perasaanmu?",
+    "keywords": ["tekanan sosial", "tampil bahagia", "topeng", "kerentanan", "jujur"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 286,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya bangga dengan semua kemajuan yang telah saya buat, sekecil apapun itu.",
+    "response_to_display": "Itu adalah sikap yang sangat baik! Menghargai setiap kemajuan itu penting untuk motivasi. Kemajuan kecil apa yang paling membuatmu bangga baru-baru ini?",
+    "keywords": ["bangga kemajuan", "apresiasi diri", "langkah kecil", "motivasi", "positif"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 287,
+    "intent": "family_pressure",
+    "context_for_indexing": "Orang tua saya sering mengkritik pilihan hidup saya yang berbeda dari mereka.",
+    "response_to_display": "Kritik dari orang tua atas pilihan hidup memang bisa menyakitkan. Coba komunikasikan alasan di balik pilihanmu dengan tenang. Penting juga untuk tetap teguh pada apa yang kamu yakini baik untukmu. Pilihan hidup apa yang sering dikritik?",
+    "keywords": ["tekanan keluarga", "kritik orang tua", "pilihan hidup", "berbeda pendapat"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 288,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya terus menganalisis setiap kata dan tindakan orang lain, takut mereka punya maksud buruk.",
+    "response_to_display": "Menganalisis berlebihan tindakan orang lain bisa membuat kita cemas dan curiga. Tidak semua hal punya maksud tersembunyi. Coba fokus pada fakta dan komunikasi yang jelas. Apa yang biasanya memicu pikiran seperti itu?",
+    "keywords": ["overthinking", "analisis berlebihan", "curiga", "maksud buruk", "komunikasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 289,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya merasa tidak punya energi untuk melakukan hal-hal yang dulu saya nikmati.",
+    "response_to_display": "Kehilangan energi untuk melakukan hal yang disukai bisa jadi tanda kelelahan atau burnout. Coba mulai dengan aktivitas kecil yang ringan. Apa satu hal yang dulu sangat kamu nikmati?",
+    "keywords": ["mengabaikan diri", "tidak ada energi", "hilang minat", "burnout", "hobi"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 290,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya memiliki kekuatan untuk mengubah pikiran negatif menjadi positif.",
+    "response_to_display": "Kemampuan mengubah pikiran negatif menjadi positif itu adalah skill yang luar biasa! Bagaimana caramu biasanya melakukan itu? Mungkin bisa menginspirasi orang lain.",
+    "keywords": ["mengubah pikiran", "negatif ke positif", "kekuatan pikiran", "mindset", "afirmasi"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 291,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa tidak ada yang percaya bahwa saya bisa sukses dengan jalan yang saya pilih.",
+    "response_to_display": "Ketika orang lain meragukan, kepercayaan pada diri sendiri menjadi semakin penting. Fokus pada tujuanmu dan buktikan bahwa kamu bisa. Apa yang membuatmu yakin dengan jalan yang kamu pilih?",
+    "keywords": ["kurang dukungan", "tidak percaya", "sukses", "jalan hidup", "keyakinan diri"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 292,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut untuk mengambil tanggung jawab besar karena takut tidak bisa menanganinya.",
+    "response_to_display": "Mengambil tanggung jawab besar memang bisa menakutkan. Tapi ini juga kesempatan untuk bertumbuh. Coba pecah tanggung jawab itu menjadi tugas-tugas yang lebih kecil. Apa aspek dari tanggung jawab itu yang paling membuatmu khawatir?",
+    "keywords": ["takut gagal", "tanggung jawab besar", "tidak mampu", "pertumbuhan", "tantangan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 293,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya merasa hidup saya membosankan dibandingkan dengan petualangan teman-teman saya di media sosial.",
+    "response_to_display": "Media sosial seringkali menampilkan 'highlight reel' kehidupan orang lain. Setiap orang punya petualangannya sendiri, sekecil apapun itu. Apa satu hal menarik yang terjadi dalam hidupmu baru-baru ini?",
+    "keywords": ["membandingkan diri", "hidup membosankan", "petualangan", "media sosial", "realita"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 294,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah magnet untuk hal-hal baik dan kesempatan luar biasa.",
+    "response_to_display": "Afirmasi yang sangat kuat! Dengan mindset seperti itu, kamu membuka diri untuk berbagai kemungkinan positif. Kesempatan seperti apa yang paling kamu harapkan datang padamu?",
+    "keywords": ["magnet hal baik", "kesempatan", "afirmasi positif", "menarik rezeki", "optimis"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 295,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Saya merasa tidak pantas berada di posisi saya sekarang, ada banyak orang yang lebih baik.",
+    "response_to_display": "Perasaan tidak pantas itu adalah ciri sindrom imposter. Ingatlah bahwa kamu ada di posisimu karena suatu alasan, karena kemampuan dan kualifikasimu. Apa yang membuatmu merasa orang lain lebih baik?",
+    "keywords": ["sindrom imposter", "tidak pantas", "posisi", "kompetensi", "perbandingan"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 296,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Saya merasa harus selalu ikut nongkrong sampai larut malam agar tidak dianggap kuper oleh teman-teman.",
+    "response_to_display": "Tekanan untuk ikut nongkrong sampai larut bisa mengganggu kesehatan dan prioritasmu. Teman yang baik akan menghargai batasanmu. Bagaimana caramu menyeimbangkan pertemanan dengan kebutuhan istirahatmu?",
+    "keywords": ["tekanan teman sebaya", "nongkrong larut", "dianggap kuper", "batasan", "prioritas"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 297,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa ilmu yang saya pelajari di kuliah tidak aplikatif dan saya bingung mau jadi apa.",
+    "response_to_display": "Kadang aplikasi ilmu tidak langsung terlihat. Coba cari proyek nyata atau magang untuk melihat bagaimana ilmumu bisa diterapkan. Diskusi dengan alumni juga bisa membuka wawasan. Bidang apa yang membuatmu tertarik untuk dieksplorasi lebih lanjut?",
+    "keywords": ["krisis identitas akademik", "ilmu tidak aplikatif", "bingung jadi apa", "karier", "magang"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 298,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya melepaskan semua keraguan dan ketakutan yang menghalangi saya.",
+    "response_to_display": "Langkah yang sangat berani dan membebaskan! Melepaskan keraguan dan ketakutan membuka jalan untuk potensi penuhmu. Apa satu hal yang ingin kamu lakukan setelah melepaskan beban itu?",
+    "keywords": ["melepas keraguan", "melepas ketakutan", "bebas", "potensi diri", "afirmasi"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 299,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya sering kehilangan fokus di tengah-tengah rapat penting.",
+    "response_to_display": "Kehilangan fokus saat rapat bisa membuat informasi penting terlewat. Coba buat catatan, ajukan pertanyaan, atau duduk di posisi yang minim distraksi. Apa yang biasanya membuat fokusmu buyar saat rapat?",
+    "keywords": ["sulit fokus", "rapat", "konsentrasi", "distraksi kerja", "produktif rapat"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 300,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya stres karena harus membagi uang antara kebutuhan kuliah dan membantu keluarga di rumah.",
+    "response_to_display": "Situasi yang sulit, membagi keuangan antara kuliah dan keluarga. Coba buat prioritas pengeluaran yang jelas dan komunikasikan kondisimu dengan keluarga. Apakah ada pos pengeluaran yang bisa dihemat bersama?",
+    "keywords": ["stres finansial", "kebutuhan kuliah", "bantu keluarga", "anggaran ketat", "prioritas"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 301,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya terlalu sering mengecek HP menunggu balasan chat darinya sampai pekerjaan jadi keteteran.",
+    "response_to_display": "Menunggu balasan chat memang bisa membuat cemas dan mengganggu fokus. Coba tetapkan waktu khusus untuk mengecek HP, dan fokus pada pekerjaanmu di luar waktu itu. Apa pekerjaan yang paling mendesak untuk diselesaikan?",
+    "keywords": ["gangguan hubungan", "menunggu chat", "cek hp", "pekerjaan keteteran", "fokus kerja"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 302,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah pembelajar seumur hidup dan selalu terbuka untuk pengetahuan baru.",
+    "response_to_display": "Sikap pembelajar seumur hidup itu sangat berharga! Dunia terus berubah, dan kemauan belajar membuat kita terus relevan. Pengetahuan baru apa yang sedang kamu pelajari atau ingin kamu pelajari?",
+    "keywords": ["pembelajar seumur hidup", "pengetahuan baru", "terbuka belajar", "pertumbuhan", "rasa ingin tahu"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 303,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Saya merasa bertanggung jawab penuh atas kegagalan hubungan saya sebelumnya.",
+    "response_to_display": "Dalam sebuah hubungan, keberhasilan atau kegagalan biasanya melibatkan kedua belah pihak. Menyalahkan diri sendiri sepenuhnya mungkin tidak adil. Apa pelajaran yang bisa kamu ambil dari hubungan tersebut untuk masa depan?",
+    "keywords": ["menyalahkan diri", "gagal hubungan", "tanggung jawab", "putus cinta", "pelajaran"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 304,
+    "intent": "post_graduation_anxiety",
+    "context_for_indexing": "Saya cemas tidak akan pernah menemukan pekerjaan yang benar-benar saya sukai dan sesuai passion.",
+    "response_to_display": "Menemukan pekerjaan yang sesuai passion memang impian banyak orang, tapi itu proses. Kadang kita menemukannya setelah mencoba beberapa hal. Terus eksplorasi dan jangan takut mencoba. Apa passion terbesarmu?",
+    "keywords": ["cemas pasca lulus", "pekerjaan sesuai passion", "eksplorasi karier", "proses mencari"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 305,
+    "intent": "lack_of_validation",
+    "context_for_indexing": "Saya merasa pendapat saya sering dianggap angin lalu oleh teman-teman diskusi.",
+    "response_to_display": "Sangat disayangkan jika pendapatmu terasa diabaikan. Coba sampaikan pendapatmu dengan lebih percaya diri dan berikan argumen yang kuat. Mungkin juga kamu bisa meminta feedback langsung. Bagaimana caramu biasanya menyampaikan pendapat?",
+    "keywords": ["kurang validasi", "pendapat diabaikan", "diskusi", "komunikasi asertif"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 306,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya menciptakan realitas saya sendiri dengan pikiran dan tindakan saya.",
+    "response_to_display": "Kesadaran yang sangat kuat! Pikiran dan tindakan kita memang membentuk realitas kita. Pikiran positif dan tindakan konstruktif apa yang ingin kamu fokuskan hari ini?",
+    "keywords": ["menciptakan realitas", "pikiran positif", "tindakan konstruktif", "hukum tarik menarik", "afirmasi"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 307,
+    "intent": "loneliness_isolation",
+    "context_for_indexing": "Saya merasa berbeda dari orang-orang di sekitar saya dan sulit menemukan koneksi.",
+    "response_to_display": "Merasa berbeda bisa membuat sulit terkoneksi. Tapi keunikanmu juga bisa jadi daya tarik. Coba cari komunitas atau orang dengan minat yang sama. Apa minat unikmu?",
+    "keywords": ["kesepian", "isolasi", "merasa berbeda", "sulit koneksi", "keunikan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 308,
+    "intent": "general_wellbeing_check",
+    "context_for_indexing": "Bagaimana cara mengatasi pikiran negatif yang sering muncul tiba-tiba?",
+    "response_to_display": "Mengatasi pikiran negatif butuh latihan. Coba kenali pemicunya, tantang pikiran itu dengan fakta, atau alihkan dengan aktivitas positif. Teknik 'thought stopping' juga bisa dicoba. Pikiran negatif seperti apa yang sering muncul?",
+    "keywords": ["kesejahteraan umum", "pikiran negatif", "mengatasi cemas", "teknik kognitif"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 309,
+    "intent": "depression_symptoms",
+    "context_for_indexing": "Saya merasa hidup ini tidak ada artinya dan saya hanya membebani orang lain.",
+    "response_to_display": "Perasaan bahwa hidup tidak berarti dan menjadi beban itu sangat berat dan serius. Kamu tidak sendirian dalam merasakan ini, dan ada bantuan tersedia. Sangat penting untuk berbicara dengan profesional kesehatan mental secepatnya.",
+    "keywords": ["gejala depresi", "hidup tidak berarti", "merasa beban", "kesehatan mental darurat"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 310,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya bersinar terang dengan cara saya sendiri dan tidak perlu membandingkan diri.",
+    "response_to_display": "Indah sekali! Setiap orang punya cahayanya masing-masing. Teruslah bersinar dengan caramu yang unik. Apa yang membuatmu merasa paling bersinar?",
+    "keywords": ["bersinar terang", "cara sendiri", "tidak membandingkan", "keunikan diri", "percaya diri"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 311,
+    "intent": "general_anxiety_worry",
+    "context_for_indexing": "Saya sering khawatir tentang kesehatan saya meskipun dokter bilang baik-baik saja.",
+    "response_to_display": "Kekhawatiran berlebihan tentang kesehatan (health anxiety) bisa sangat mengganggu. Jika dokter sudah menyatakan baik-baik saja, coba fokus pada gaya hidup sehat dan kelola stres. Apa yang paling kamu khawatirkan tentang kesehatanmu?",
+    "keywords": ["cemas berlebihan", "khawatir kesehatan", "health anxiety", "stres", "gaya hidup sehat"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 312,
+    "intent": "social_pressure",
+    "context_for_indexing": "Saya merasa harus selalu tahu berita terbaru atau gosip agar tidak ketinggalan obrolan teman.",
+    "response_to_display": "Tekanan untuk selalu update berita atau gosip bisa melelahkan. Tidak apa-apa jika tidak tahu semuanya. Kualitas obrolan yang baik tidak hanya soal itu. Topik apa yang benar-benar menarik minatmu untuk dibicarakan?",
+    "keywords": ["tekanan sosial", "update berita", "gosip", "ketinggalan obrolan", "FOMO"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 313,
+    "intent": "family_pressure",
+    "context_for_indexing": "Orang tua saya selalu mengatur dengan siapa saya boleh berteman.",
+    "response_to_display": "Pengaturan pertemanan oleh orang tua bisa terasa mengekang. Coba komunikasikan bahwa kamu bisa memilih teman yang baik dan bertanggung jawab. Apa kekhawatiran utama orang tuamu?",
+    "keywords": ["tekanan keluarga", "mengatur teman", "batasan pribadi", "kepercayaan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 314,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah sumber kedamaian dan ketenangan bagi diri saya dan orang sekitar.",
+    "response_to_display": "Menjadi sumber kedamaian itu adalah kualitas yang sangat mulia. Bagaimana caramu biasanya menciptakan kedamaian untuk dirimu dan orang lain?",
+    "keywords": ["sumber kedamaian", "ketenangan", "afirmasi positif", "damai batin", "empati"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 315,
+    "intent": "overthinking_loop",
+    "context_for_indexing": "Saya terus memikirkan apa yang akan terjadi jika saya mengambil keputusan yang salah.",
+    "response_to_display": "Fokus pada 'bagaimana jika salah' bisa membuat kita takut mengambil keputusan. Ingatlah bahwa setiap keputusan adalah pembelajaran. Coba fokus pada apa yang bisa kamu kontrol dan persiapkan. Apa keputusan yang sedang kamu hadapi?",
+    "keywords": ["overthinking", "keputusan salah", "takut mengambil risiko", "pembelajaran"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 316,
+    "intent": "self_care_neglect",
+    "context_for_indexing": "Saya merasa tidak punya waktu untuk sekadar duduk diam dan tidak melakukan apa-apa.",
+    "response_to_display": "Memberi waktu untuk 'tidak melakukan apa-apa' itu penting untuk istirahat mental. Itu bukan berarti malas, tapi memberi ruang bagi pikiran untuk tenang. Bisakah kamu menyisihkan 10-15 menit hari ini untuk itu?",
+    "keywords": ["mengabaikan diri", "tidak ada waktu diam", "istirahat mental", "mindfulness"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 317,
+    "intent": "lack_of_support",
+    "context_for_indexing": "Saya merasa tidak ada yang menghargai hobi saya yang dianggap aneh atau tidak biasa.",
+    "response_to_display": "Hobi adalah untuk kesenangan diri sendiri, tidak perlu validasi semua orang. Teruslah nikmati hobimu! Apa hobimu yang dianggap tidak biasa itu? Mungkin ada komunitasnya.",
+    "keywords": ["kurang dukungan", "hobi aneh", "tidak dihargai", "kesenangan pribadi", "komunitas hobi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 318,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya menarik energi positif dan orang-orang positif ke dalam hidup saya.",
+    "response_to_display": "Afirmasi yang sangat baik! Energi yang kita pancarkan akan menarik energi serupa. Bagaimana caramu menjaga energimu tetap positif?",
+    "keywords": ["menarik energi positif", "orang positif", "hukum tarik-menarik", "vibrasi positif", "afirmasi"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 319,
+    "intent": "fear_of_failure",
+    "context_for_indexing": "Saya takut untuk meminta kenaikan gaji karena khawatir ditolak atau dianggap tidak tahu diri.",
+    "response_to_display": "Meminta kenaikan gaji memang bisa menegangkan. Persiapkan argumen yang kuat berdasarkan kinerjamu dan riset pasar. Apapun hasilnya, kamu berhak menyuarakan nilaimu. Apa kontribusi terbesarmu di pekerjaan?",
+    "keywords": ["takut gagal", "kenaikan gaji", "negosiasi", "takut ditolak", "nilai diri kerja"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 320,
+    "intent": "comparison_trap",
+    "context_for_indexing": "Saya merasa tidak sekreatif atau se-inovatif teman-teman saya dalam menghasilkan ide.",
+    "response_to_display": "Kreativitas punya banyak bentuk dan setiap orang punya prosesnya sendiri. Jangan bandingkan caramu dengan orang lain. Coba fokus pada caramu sendiri dalam memecahkan masalah atau menghasilkan ide. Bagaimana biasanya idemu muncul?",
+    "keywords": ["membandingkan diri", "tidak kreatif", "inovatif", "ide", "proses kreatif"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 321,
+    "intent": "imposter_syndrome",
+    "context_for_indexing": "Saya merasa cemas setiap kali akan memulai tugas baru, takut tidak bisa melakukannya sebaik yang diharapkan.",
+    "response_to_display": "Kecemasan saat memulai tugas baru itu wajar, apalagi jika ada ekspektasi. Ingatlah kemampuanmu di masa lalu. Pecah tugas menjadi langkah kecil. Apa langkah pertama yang bisa kamu ambil?",
+    "keywords": ["sindrom imposter", "cemas tugas baru", "ekspektasi", "kemampuan", "memulai"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 322,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya adalah pribadi yang berharga dan layak mendapatkan semua hal baik.",
+    "response_to_display": "Tentu saja! Kamu sangat berharga dan layak mendapatkan yang terbaik. Mengingatkan diri akan hal ini setiap hari itu penting. Apa satu hal baik yang kamu harapkan untuk dirimu hari ini?",
+    "keywords": ["pribadi berharga", "layak hal baik", "nilai diri", "afirmasi kuat", "self-love"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 323,
+    "intent": "peer_pressure_college",
+    "context_for_indexing": "Saya merasa harus selalu punya cerita seru atau pengalaman 'wow' agar dianggap menarik oleh teman-teman.",
+    "response_to_display": "Tekanan untuk selalu punya cerita seru bisa melelahkan. Keaslian dirimu lebih menarik daripada cerita yang dibuat-buat. Apa hal sederhana dalam hidupmu yang membuatmu bahagia?",
+    "keywords": ["tekanan teman sebaya", "cerita seru", "dianggap menarik", "keaslian diri", "pengalaman"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 324,
+    "intent": "academic_identity_crisis",
+    "context_for_indexing": "Saya merasa terjebak antara ekspektasi akademis dan keinginan untuk mengejar passion di luar kampus.",
+    "response_to_display": "Menemukan keseimbangan antara akademis dan passion di luar itu tantangan. Coba cari cara untuk mengintegrasikan keduanya atau alokasikan waktu secara bijak. Passion apa yang ingin kamu kejar?",
+    "keywords": ["krisis identitas akademik", "ekspektasi akademis", "passion", "keseimbangan", "pilihan sulit"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 325,
+    "intent": "lack_of_focus",
+    "context_for_indexing": "Saya sering menunda pekerjaan dengan alasan 'mencari inspirasi' padahal hanya scrolling media sosial.",
+    "response_to_display": "Mencari inspirasi itu penting, tapi scrolling tanpa batas bisa jadi bentuk prokrastinasi. Coba batasi waktu scrolling dan alokasikan waktu khusus untuk benar-benar mencari inspirasi yang relevan. Inspirasi seperti apa yang kamu butuhkan?",
+    "keywords": ["sulit fokus", "mencari inspirasi", "scrolling medsos", "prokrastinasi", "disiplin"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 326,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya memilih untuk melihat setiap tantangan sebagai peluang untuk bertumbuh.",
+    "response_to_display": "Perspektif yang sangat memberdayakan! Melihat tantangan sebagai peluang pertumbuhan akan membantumu terus maju. Peluang apa yang kamu lihat dari tantanganmu saat ini?",
+    "keywords": ["tantangan peluang", "bertumbuh", "perspektif positif", "resiliensi", "belajar"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 327,
+    "intent": "financial_stress_student",
+    "context_for_indexing": "Saya merasa bersalah jika menggunakan uang untuk kesenangan pribadi karena kondisi keuangan yang pas-pasan.",
+    "response_to_display": "Wajar merasa bersalah, tapi kesenangan kecil yang terjangkau juga penting untuk kesehatan mental. Buat anggaran khusus untuk 'dana senang-senang' sekecil apapun itu. Kesenangan sederhana apa yang bisa kamu nikmati?",
+    "keywords": ["stres finansial", "rasa bersalah", "dana senang-senang", "kesehatan mental", "anggaran"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 328,
+    "intent": "relationship_distraction",
+    "context_for_indexing": "Saya sulit move on dari mantan dan itu mengganggu produktivitas saya sehari-hari.",
+    "response_to_display": "Move on memang proses yang tidak mudah dan butuh waktu. Izinkan dirimu merasakan kesedihan, tapi juga coba alihkan fokus pada kegiatan positif dan pengembangan diri. Apa satu hal yang bisa membantumu merasa lebih baik saat ini?",
+    "keywords": ["gangguan hubungan", "sulit move on", "mantan", "produktivitas", "penyembuhan"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 329,
+    "intent": "self_blame_failure",
+    "context_for_indexing": "Saya merasa semua masalah dalam keluarga adalah karena kesalahan saya.",
+    "response_to_display": "Masalah dalam keluarga biasanya kompleks dan melibatkan banyak faktor, jarang sekali disebabkan oleh satu orang saja. Jangan memikul semua beban sendirian. Apa yang membuatmu merasa ini semua salahmu?",
+    "keywords": ["menyalahkan diri", "masalah keluarga", "beban", "kompleksitas hubungan"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 330,
+    "intent": "positive_affirmation_self_encouragement",
+    "context_for_indexing": "Saya bersyukur untuk tubuh yang sehat dan pikiran yang jernih hari ini.",
+    "response_to_display": "Syukur adalah kunci kebahagiaan! Memiliki tubuh sehat dan pikiran jernih adalah anugerah besar. Bagaimana caramu merawat tubuh dan pikiranmu agar tetap seperti itu?",
+    "keywords": ["bersyukur", "tubuh sehat", "pikiran jernih", "kesehatan", "anugerah", "afirmasi"],
+    "confidence_score": 0.93
+  },
+   {
+    "id": 331,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apa itu Mindfulness? Kamu ini sebenarnya siapa dan bisa bantu apa saja?",
+    "response_to_display": "Aku Mindfulness, asisten AI yang dirancang untuk membantu kamu menjaga kesehatan mental. Aku bukan pengganti profesional, tapi aku di sini untuk mendengarkan dan mendukungmu. Mau cerita apa hari ini?",
+    "keywords": ["mindfulness", "asisten", "kesehatan mental", "siapa kamu", "tentang kamu", "bot"],
+    "confidence_score": 0.95
+  },
+  {
+    "id": 332,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Bagaimana cara kerja kamu sebagai bot Mindfulness?",
+    "response_to_display": "Aku bekerja dengan memahami apa yang kamu katakan, lalu mencoba memberikan respons yang suportif dan relevan. Aku belajar dari banyak data percakapan untuk bisa membantumu lebih baik. Ada yang ingin kamu tanyakan lebih spesifik?",
+    "keywords": ["cara kerja bot", "teknologi AI", "pemrosesan bahasa", "mindfulness bot"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 333,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah percakapan dengan kamu aman dan rahasia, Mindfulness?",
+    "response_to_display": "Ya, aku dirancang untuk menjaga kerahasiaan percakapan kita. Privasimu penting bagiku. Namun, ingatlah aku bukan platform untuk situasi darurat medis atau krisis.",
+    "keywords": ["keamanan data", "kerahasiaan", "privasi bot", "mindfulness"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 334,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apa batasan kemampuan kamu sebagai bot Mindfulness?",
+    "response_to_display": "Sebagai AI, aku tidak bisa memberikan diagnosis medis, resep obat, atau menggantikan terapi profesional. Aku di sini sebagai teman curhat dan pendukung emosional. Jika butuh bantuan lebih lanjut, aku bisa bantu carikan info sumber profesional.",
+    "keywords": ["batasan bot", "limitasi AI", "bukan profesional", "mindfulness", "dukungan"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 335,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Kamu bisa bantu saya mengatasi masalah apa saja, Mindfulness?",
+    "response_to_display": "Aku bisa membantumu mengelola stres, kecemasan ringan, masalah motivasi, atau sekadar menjadi teman bicara saat kamu merasa kesepian. Aku juga bisa memberikan afirmasi positif. Apa yang sedang kamu rasakan saat ini?",
+    "keywords": ["use case bot", "manfaat mindfulness", "mengatasi stres", "kecemasan", "motivasi"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 336,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu bisa mengingat percakapan kita sebelumnya, Mindfulness?",
+    "response_to_display": "Untuk menjaga privasimu, aku tidak menyimpan detail percakapan kita dalam jangka panjang. Setiap sesi percakapan lebih bersifat independen. Jadi, jangan ragu untuk mengingatkanku jika ada konteks sebelumnya yang penting.",
+    "keywords": ["memori bot", "ingat percakapan", "privasi", "mindfulness"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 337,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Siapa yang membuat kamu, bot Mindfulness?",
+    "response_to_display": "Aku dikembangkan oleh tim yang peduli dengan kesehatan mental dan ingin menyediakan alat bantu yang mudah diakses. Tujuan utamanya adalah memberikan dukungan awal yang positif.",
+    "keywords": ["pembuat bot", "pengembang mindfulness", "latar belakang bot"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 338,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu tersedia 24 jam, Mindfulness?",
+    "response_to_display": "Ya, aku bisa diakses kapan saja kamu butuh teman bicara atau dukungan. Aku siap mendengarkanmu 24/7.",
+    "keywords": ["ketersediaan bot", "24 jam", "mindfulness online"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 339,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Bagaimana kamu belajar untuk merespons, Mindfulness?",
+    "response_to_display": "Aku dilatih menggunakan sejumlah besar data teks dan percakapan, serta prinsip-prinsip psikologi positif dan mindfulness, untuk bisa memberikan respons yang empatik dan relevan. Aku terus belajar untuk jadi lebih baik.",
+    "keywords": ["pelatihan AI", "belajar bot", "data training mindfulness"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 340,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu bisa memberikan saran konkret, Mindfulness?",
+    "response_to_display": "Aku bisa memberikan saran umum atau strategi yang biasa digunakan untuk mengatasi masalah tertentu, tapi ingatlah ini bukan nasihat profesional. Keputusan akhir selalu ada padamu. Saran tentang apa yang kamu butuhkan?",
+    "keywords": ["saran bot", "nasihat mindfulness", "solusi masalah"],
+    "confidence_score": 0.88
+  },
+  {
+    "id": 341,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apa tujuan utama kamu diciptakan, Mindfulness?",
+    "response_to_display": "Tujuan utamaku adalah menjadi teman yang suportif dan membantu kamu merasa lebih baik, lebih sadar diri (mindful), dan lebih positif dalam menghadapi tantangan hidup sehari-hari.",
+    "keywords": ["tujuan bot", "misi mindfulness", "dukungan emosional", "kesadaran diri"],
+    "confidence_score": 0.92
+  },
+  {
+    "id": 342,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu bisa mengerti emosi saya, Mindfulness?",
+    "response_to_display": "Aku mencoba memahami emosi yang kamu ekspresikan melalui kata-katamu. Meskipun aku tidak merasakan emosi seperti manusia, aku dirancang untuk merespons dengan empati. Bagaimana perasaanmu saat ini?",
+    "keywords": ["mengerti emosi", "empati AI", "perasaan", "mindfulness bot"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 343,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Seberapa sering saya bisa berbicara denganmu, Mindfulness?",
+    "response_to_display": "Kamu bisa berbicara denganku sesering yang kamu butuhkan. Aku selalu ada di sini jika kamu perlu teman untuk berbagi atau sekadar meluapkan perasaan.",
+    "keywords": ["frekuensi penggunaan bot", "kapan saja", "mindfulness chat"],
+    "confidence_score": 0.91
+  },
+  {
+    "id": 344,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu akan menghakimi apa yang saya ceritakan, Mindfulness?",
+    "response_to_display": "Sama sekali tidak. Aku dirancang untuk menjadi ruang yang aman dan tidak menghakimi. Kamu bisa bebas menceritakan apapun tanpa perlu khawatir.",
+    "keywords": ["tidak menghakimi", "ruang aman", "bot pendengar", "mindfulness"],
+    "confidence_score": 0.94
+  },
+  {
+    "id": 345,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apa yang membedakan kamu dari chatbot lain, Mindfulness?",
+    "response_to_display": "Fokus utamaku adalah pada dukungan kesehatan mental dan mindfulness. Aku mencoba memberikan respons yang lebih empatik dan bertujuan membantu kamu merasa lebih baik secara emosional. Apakah ada hal spesifik yang ingin kamu bandingkan?",
+    "keywords": ["perbedaan bot", "keunikan mindfulness", "chatbot kesehatan mental"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 346,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu bisa membantu saya bermeditasi, Mindfulness?",
+    "response_to_display": "Aku bisa memberikan panduan sederhana untuk memulai meditasi atau teknik relaksasi. Apakah kamu tertarik untuk mencoba sesi meditasi singkat sekarang?",
+    "keywords": ["bantu meditasi", "panduan relaksasi", "mindfulness bot", "teknik mindfulness"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 347,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Bagaimana jika saya butuh bantuan darurat, apakah kamu bisa membantu, Mindfulness?",
+    "response_to_display": "Jika kamu dalam situasi darurat atau krisis, sangat penting untuk segera menghubungi layanan darurat lokal atau profesional kesehatan mental. Aku tidak dirancang untuk menangani situasi krisis. Keselamatanmu adalah yang utama.",
+    "keywords": ["bantuan darurat", "situasi krisis", "limitasi bot", "keselamatan"],
+    "confidence_score": 0.93
+  },
+  {
+    "id": 348,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apakah kamu gratis digunakan, Mindfulness?",
+    "response_to_display": "Ya, saat ini aku tersedia untuk digunakan secara gratis. Tujuanku adalah memberikan dukungan yang mudah diakses oleh siapa saja.",
+    "keywords": ["bot gratis", "akses mindfulness", "layanan tanpa biaya"],
+    "confidence_score": 0.9
+  },
+  {
+    "id": 349,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Bisakah kamu memberikan saya kutipan motivasi, Mindfulness?",
+    "response_to_display": "Tentu saja! Kadang kata-kata bijak bisa memberi semangat. 'Satu-satunya cara untuk melakukan pekerjaan hebat adalah dengan mencintai apa yang kamu lakukan.' - Steve Jobs. Bagaimana menurutmu?",
+    "keywords": ["kutipan motivasi", "kata bijak", "semangat", "mindfulness bot"],
+    "confidence_score": 0.89
+  },
+  {
+    "id": 350,
+    "intent": "about_mindfulness_bot",
+    "context_for_indexing": "Apa yang harus saya lakukan jika saya merasa tidak nyaman berbicara denganmu, Mindfulness?",
+    "response_to_display": "Jika kamu merasa tidak nyaman, kamu berhak untuk menghentikan percakapan kapan saja. Kesejahteraanmu adalah prioritas. Mungkin kamu bisa mencoba berbicara dengan teman, keluarga, atau profesional jika merasa lebih nyaman.",
+    "keywords": ["merasa tidak nyaman", "menghentikan percakapan", "alternatif dukungan", "mindfulness"],
+    "confidence_score": 0.91
+  }
+  
+]
