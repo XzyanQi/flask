@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from transformers import AutoTokenizer, TFAutoModel
 import tensorflow as tf
 
+
 tokenizer = None
 model = None
 
@@ -21,7 +22,7 @@ def preprocess_text(text):
 def load_tokenizer_and_model():
     global tokenizer, model
     if tokenizer is None or model is None:
-        model_name = "cahya/distilbert-base-indonesian"
+        model_name = "model/indobert_local"
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = TFAutoModel.from_pretrained(model_name)
 
